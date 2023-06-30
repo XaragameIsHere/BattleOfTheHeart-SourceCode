@@ -61,7 +61,7 @@ public class playerMovement : MonoBehaviour
             rBody.velocity = new Vector2(rBody.velocity.x, jumpStrength);   
         
 
-        
+        //testing commits biiiiiiiitttcchhhhhh
 
         if (Input.GetButton("walk") && alive && walk)
             rBody.velocity = new Vector2(walkSpeed * Input.GetAxis("walk"), rBody.velocity.y);
