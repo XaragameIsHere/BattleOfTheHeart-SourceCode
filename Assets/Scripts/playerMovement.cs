@@ -24,7 +24,6 @@ public class playerMovement : MonoBehaviour
     private bool isGrounded;
     private bool wallRun;
     private bool alive = true;
-    private bool walk = true;
     Rigidbody2D rBody;
     Collider2D collisionBaybe;
     Collider2D[] hits;
@@ -63,7 +62,7 @@ public class playerMovement : MonoBehaviour
 
         //testing commits biiiiiiiitttcchhhhhh
 
-        if (Input.GetButton("walk") && alive && walk)
+        if (Input.GetButton("walk") && alive)
             rBody.velocity = new Vector2(walkSpeed * Input.GetAxis("walk"), rBody.velocity.y);
         else if (!Input.GetButton("walk") && Mathf.Abs(rBody.velocity.x) > 1)
         
@@ -75,10 +74,8 @@ public class playerMovement : MonoBehaviour
 
         if (collisionBaybe.IsTouchingLayers(wallLayers) /*&& Input.GetAxis("walk") != 0 && Input.GetButtonDown("Jump")*/)
         {
-            print(rBody.velocity);
             //walk = false;
             rBody.AddForce(new Vector2(-500 * Input.GetAxis("walk"), 500));
-            print(rBody.velocity);
         }
         /*
         else

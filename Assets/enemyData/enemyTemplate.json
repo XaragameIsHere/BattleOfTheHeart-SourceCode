@@ -1,0 +1,323 @@
+{
+  "Enemy Template":
+  
+  [
+    {
+      "Sprites": 
+      [
+        {
+          "enemy_Sprite": "Assets/Sprites/", 
+          "close_Up_Sprit": "Assets/Sprites/",
+          "animator_Path": "Assets/Sprites/",
+          "close_Up_Animator_Path": "Assets/Sprites/",
+          "bullet_Sprites": 
+          [
+            {
+                "Attack1": "Assets/Sprites/",
+                "Attack2": "Assets/Sprites/",
+                "Attack3": "Assets/Sprites/"
+            }
+          ]
+        }
+        
+      ],
+      "Particles":
+      [
+        {
+            "Attack1": 
+            [
+                {
+                    "start_Particles": "Assets/Particles/",
+                    "trail_Particles": "Assets/Particles/",
+                    "end_Particles": "Assets/Particles/"
+                }
+            ],
+            "Attack2": 
+            [
+                {
+                    "start_Particles": "Assets/Particles/",
+                    "trail_Particles": "Assets/Particles/",
+                    "end_Particles": "Assets/Particles/"
+                }
+            ],
+            "Attack3": 
+            [
+                {
+                    "start_Particles": "Assets/Particles/",
+                    "trail_Particles": "Assets/Particles/",
+                    "end_Particles": "Assets/Particles/"
+                }
+            ],
+        }
+      ],
+      "Audio":
+      [
+        {
+            "enemy_Music":
+            [
+                {
+                    "main_Music": "Assets/Audio/Music/",
+                    "dialogue_Music": "Assets/Audio/Music/",
+                    "walk": "Assets/Audio/Music/"
+                }
+            ],
+            "SFX":
+            [
+                {
+                    "speaking_SFX_Angry": "Assets/Audio/SFX/",
+                    "speaking_SFX_Happy": "Assets/Audio/SFX/",
+                    "annoyed_SFX": "Assets/Audio/SFX/",
+                    "happy_SFX": "Assets/Audio/SFX/",
+                }
+            ]
+        }
+      ],
+      "Dialogue":
+      [
+        {
+            "cutscene_Dialogue":
+            [
+                {
+                    "Start":
+                    [
+                        {
+                            "[Insert Dialogue Here]":
+                            [
+                                {
+                                    "Sprite": "Assets/Sprites/",
+                                    "Name": "TestDuck",
+                                }
+                            ],
+                            "[Insert Dialogue Here2]":
+                            [
+                                {
+                                    "Sprite": "Assets/Sprites/",
+                                    "Name": "TestDuck",
+                                }
+                            ],
+                            "[Insert Dialogue Here3]":
+                            [
+                                {
+                                    "Sprite": "Assets/Sprites/",
+                                    "Name": "TestDuck",
+                                }
+                            ],
+                            "[etc.]":
+                            [
+                                {
+                                    "Sprite": "Assets/Sprites/",
+                                    "Name": "TestDuck",
+                                }
+                            ],
+                        }
+                    ],
+                    "End":
+                    [
+                        {
+                            "[Insert Dialogue Here]":
+                            [
+                                {
+                                    "Sprite": "Assets/Sprites/",
+                                    "Name": "TestDuck",
+                                }
+                            ],
+                            "[Insert Dialogue Here2]":
+                            [
+                                {
+                                    "Sprite": "Assets/Sprites/",
+                                    "Name": "TestDuck",
+                                }
+                            ],
+                            "[Insert Dialogue Here3]":
+                            [
+                                {
+                                    "Sprite": "Assets/Sprites/",
+                                    "Name": "TestDuck",
+                                }
+                            ],
+                            "[etc.]":
+                            [
+                                {
+                                    "Sprite": "Assets/Sprites/",
+                                    "Name": "TestDuck",
+                                }
+                            ],
+                        }
+                    ],
+                }
+            ],
+            "combat_Selections":
+            [
+                {
+                    "Selection1":
+                    [
+                        {
+                            "[Insert Dialogue Here]":
+                            [
+                                {
+                                    "Reaction": 2,
+                                    "next_Dialogue_Selection": "Selection2"
+                                }
+                            ],
+                            "[Insert Dialogue Here2]":
+                            [
+                                {
+                                    "Reaction": 1,
+                                    "next_Dialogue_Selection": "Selection3"
+                                }
+                            ],
+                            "[Insert Dialogue Here3]":
+                            [
+                                {
+                                    "Reaction": -1,
+                                    "next_Dialogue_Selection": "Selection4"
+                                }
+                            ],
+                            "[Insert Dialogue Here4]":
+                            [
+                                {
+                                    "Reaction": -2,
+                                    "next_Dialogue_Selection": "Selection5"
+                                }
+                            ]
+                        }
+                    ],
+                    "Selection2":
+                    [
+                        {
+                            "[Insert Dialogue Here]":
+                            [
+                                {
+                                    "Reaction": 2,
+                                    "next_Dialogue_Selection": "Selection1"
+                                }
+                            ],
+                            "[Insert Dialogue Here2]":
+                            [
+                                {
+                                    "Reaction": 1,
+                                    "next_Dialogue_Selection": "Selection3"
+                                }
+                            ],
+                            "[Insert Dialogue Here3]":
+                            [
+                                {
+                                    "Reaction": -1,
+                                    "next_Dialogue_Selection": "Selection4"
+                                }
+                            ],
+                            "[Insert Dialogue Here4]":
+                            [
+                                {
+                                    "Reaction": -2,
+                                    "next_Dialogue_Selection": "Selection5"
+                                }
+                            ]
+                        }
+                    ],
+                    "Selection3":
+                    [
+                        {
+                            "[Insert Dialogue Here]":
+                            [
+                                {
+                                    "Reaction": 2,
+                                    "next_Dialogue_Selection": "Selection1"
+                                }
+                            ],
+                            "[Insert Dialogue Here2]":
+                            [
+                                {
+                                    "Reaction": 1,
+                                    "next_Dialogue_Selection": "Selection2"
+                                }
+                            ],
+                            "[Insert Dialogue Here3]":
+                            [
+                                {
+                                    "Reaction": -1,
+                                    "next_Dialogue_Selection": "Selection4"
+                                }
+                            ],
+                            "[Insert Dialogue Here4]":
+                            [
+                                {
+                                    "Reaction": -2,
+                                    "next_Dialogue_Selection": "Selection5"
+                                }
+                            ]
+                        }
+                    ],
+                    "Selection4":
+                    [
+                        {
+                            "[Insert Dialogue Here]":
+                            [
+                                {
+                                    "Reaction": 2,
+                                    "next_Dialogue_Selection": "Selection1"
+                                }
+                            ],
+                            "[Insert Dialogue Here2]":
+                            [
+                                {
+                                    "Reaction": 1,
+                                    "next_Dialogue_Selection": "Selection2"
+                                }
+                            ],
+                            "[Insert Dialogue Here3]":
+                            [
+                                {
+                                    "Reaction": -1,
+                                    "next_Dialogue_Selection": "Selection3"
+                                }
+                            ],
+                            "[Insert Dialogue Here4]":
+                            [
+                                {
+                                    "Reaction": -2,
+                                    "next_Dialogue_Selection": "Selection5"
+                                }
+                            ]
+                        }
+                    ],
+                    "Selection5":
+                    [
+                        {
+                            "[Insert Dialogue Here]":
+                            [
+                                {
+                                    "Reaction": 2,
+                                    "next_Dialogue_Selection": "Selection1"
+                                }
+                            ],
+                            "[Insert Dialogue Here2]":
+                            [
+                                {
+                                    "Reaction": 1,
+                                    "next_Dialogue_Selection": "Selection2"
+                                }
+                            ],
+                            "[Insert Dialogue Here3]":
+                            [
+                                {
+                                    "Reaction": -1,
+                                    "next_Dialogue_Selection": "Selection3"
+                                }
+                            ],
+                            "[Insert Dialogue Here4]":
+                            [
+                                {
+                                    "Reaction": -2,
+                                    "next_Dialogue_Selection": "Selection4"
+                                }
+                            ]
+                        }
+                    ],
+                }
+            ]
+        }
+      ]
+    },
+  ]
+}
