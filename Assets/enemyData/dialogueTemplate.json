@@ -1,0 +1,198 @@
+
+    {
+      
+     
+        "cutscene_Dialogue":
+        [
+            {
+                "Start":
+                [
+                    
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    }
+                ],
+                "End":
+                [
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    }
+                ]
+            }
+        ],
+        "combat_Selections":
+        [
+            {
+                "Selection1":
+                [
+                    {
+                        "Reaction": 2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": -2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ],
+                "Selection2":
+                [
+                    {
+                        "Reaction": 2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection1"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": -2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ],
+                "Selection3":
+                [
+                    {
+                        "Reaction": 2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection1"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": -2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ],
+                "Selection4":
+                [
+                    {
+                        "Reaction": 2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection1"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ],
+                "Selection5":
+                [
+                    {
+                        "Reaction": 2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection1"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection4"
+                    }
+                ]
+            }
+        ]
+      
+    }

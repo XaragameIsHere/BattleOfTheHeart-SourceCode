@@ -58,8 +58,8 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.4f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\quickTrigger.cs" />
     <Compile Include="Assets\Scripts\enemyScripting.cs" />
-    <Compile Include="Assets\Scripts\enemyData.cs" />
     <Compile Include="Assets\Scripts\interfaceComponent.cs" />
     <Compile Include="Assets\Scripts\playerMovement.cs" />
   </ItemGroup>
