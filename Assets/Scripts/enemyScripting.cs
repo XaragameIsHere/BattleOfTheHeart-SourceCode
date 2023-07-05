@@ -1,22 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
-//using jsonUtilities;
 
-[System.Serializable]
-public class Employee
-{
-    //these variables are case sensitive and must match the strings "firstName" and "lastName" in the JSON.
-    public string firstName;
-    public string lastName;
-}
 
-[System.Serializable]
-public class Employees
-{
-    //employees is case sensitive and must match the string "employees" in the JSON.
-    public Employee[] employees;
-}
+
 
 public class enemyScripting : MonoBehaviour
 {
@@ -32,12 +20,22 @@ public class enemyScripting : MonoBehaviour
     private void initializeFight()
     {
         print(jsonFile.text);
-        Employees employeesInJson = JsonUtility.FromJson<Employees>(jsonFile.text);
-        /*
-        foreach (Employee employee in employeesInJson.employees)
+        
+        enemyData.enemy enemyRoot = JsonUtility.FromJson<enemyData.enemy>(jsonFile.text);
+
+        Debug.Log(enemyRoot.Dialogue);
+
+        
+        foreach (enemyData.dialogueData data in enemyRoot.Dialogue)
         {
-            Debug.Log("Found employee: " + employee.firstName + " " + employee.lastName);
-        } */
+            foreach (enemyData.cutsceneData newData in data.cutscene_Dialogue)
+            {
+                foreach (enemyData.dialogueLine newNewData in newData.Start)
+                {
+                    Debug.Log(newNewData.Name);
+                }
+            }
+        } 
     }
 
     // Update is called once per frame

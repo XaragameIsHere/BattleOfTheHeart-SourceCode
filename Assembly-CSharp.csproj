@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\enemyScripting.cs" />
+    <Compile Include="Assets\Scripts\enemyData.cs" />
     <Compile Include="Assets\Scripts\interfaceComponent.cs" />
     <Compile Include="Assets\Scripts\playerMovement.cs" />
   </ItemGroup>
