@@ -1,0 +1,313 @@
+
+    {
+      
+     
+        "cutscene_Dialogue":
+        [
+            {
+                "Start":
+                [
+                    
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "It is I, a duck that happens to be a daughter of Sappho",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "...",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I haven't slept in like 29 hours now. You'll have to come down to my level of speech here",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "*sigh* I'm a lesbian duck",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Jesus fucking christ, must everyone who comes across my humble abode be a moron to the point of absurdity",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Sheesh you don't have to be so mean about it",
+                        "Subject": true
+                    }, 
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "What do you want anyways?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "One quick question",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Why do you look that way?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Because some game developer drew me in MS Paint and my whole life is her just venting about sapphic emotions for a tech demo.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "...",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Really?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "NOO0!",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "GOOD LORD I was being SARCASTIC!",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "JUST LEAVE!",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "okay, okay",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "*tries to open door*",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "It's locked",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "The fuck you mean 'it's locked'?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "It's not letting me out",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "You're messing with me",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I'm really not, I'm stuck here with you. Look I don't wanna be here either I just-",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "ENOUGH!",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "I'M DONE WITH Y'ALL MESSING WITH ME BECAUSE OF HOW I AM!",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "I DON'T KNOW WHY A DUCK CAN'T JUST ENJOY WOMEN IN PEACE!",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "YOU WANT A FIGHT YOU'VE GOT IT!",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Dammit",
+                        "Subject": true
+                    }
+                ],
+                "End":
+                [
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    }
+                ]
+            }
+        ],
+        "combat_Selections":
+        [
+            {
+                "Selection1":
+                [
+                    {
+                        "Reaction": 2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": -2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ],
+                "Selection2":
+                [
+                    {
+                        "Reaction": 2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection1"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": -2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ],
+                "Selection3":
+                [
+                    {
+                        "Reaction": 2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection1"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": -2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ],
+                "Selection4":
+                [
+                    {
+                        "Reaction": 2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection1"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ],
+                "Selection5":
+                [
+                    {
+                        "Reaction": 2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection1"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Insert text Here",
+                        "ReactionDialogue": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        "ReactionDialogue": "Insert text Here",
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection4"
+                    }
+                ]
+            }
+        ]
+      
+    }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour
@@ -23,7 +24,8 @@ public class playerMovement : MonoBehaviour
     //private Animator animationController;
     private bool isGrounded;
     private bool wallRun;
-    private bool alive = true;
+    public bool inDialogue = false;
+    public bool alive = true;
     Rigidbody2D rBody;
     Collider2D collisionBaybe;
     Collider2D[] hits;
@@ -32,37 +34,27 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
-        //animationController = GetComponentInChildren<Animator>();
-        //animationController.SetBool("Run", true);
+        
         rBody = GetComponent<Rigidbody2D>();
         collisionBaybe = GetComponent<Collider2D>();
     }
 
-    /*
-    public void kill()
-    {
-        playerCamera.transform.localPosition = new Vector3(0, -0.899999976f, 0.138999999f);
-        playerCamera.transform.localEulerAngles = new Vector3(0, 0, -28);
 
-
-    }
-    */
     // Update is called once per frame
+    
+
     void FixedUpdate()
     {
         isGrounded = rBody.IsTouchingLayers(groundLayers); //checks if the player is on a platform
         //calculates vertical velocity
 
         //character controls
-        if (isGrounded && Input.GetButtonDown("Jump") && alive)
+        if (isGrounded && Input.GetButtonDown("Jump") && alive && !inDialogue)
             rBody.velocity = new Vector2(rBody.velocity.x, jumpStrength);   
         
+        
 
-        //testing commits biiiiiiiitttcchhhhhh
-
-        if (Input.GetButton("walk") && alive)
+        if (Input.GetButton("walk") && alive && !inDialogue)
             rBody.velocity = new Vector2(walkSpeed * Input.GetAxis("walk"), rBody.velocity.y);
         else if (!Input.GetButton("walk") && Mathf.Abs(rBody.velocity.x) > 1)
         
@@ -70,9 +62,12 @@ public class playerMovement : MonoBehaviour
         else
             rBody.velocity = new Vector2(0, rBody.velocity.y);
 
-        //collisionBaybe.GetContacts(hits);
+        //for when you enter a cutscene
+        
 
-        if (collisionBaybe.IsTouchingLayers(wallLayers) /*&& Input.GetAxis("walk") != 0 && Input.GetButtonDown("Jump")*/)
+
+
+        if (collisionBaybe.IsTouchingLayers(wallLayers))
         {
             //walk = false;
             rBody.AddForce(new Vector2(-500 * Input.GetAxis("walk"), 500));

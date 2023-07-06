@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Diagnostics;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,6 +12,11 @@ using UnityEngine;
 
 public class enemyScripting : MonoBehaviour
 {
+
+    [SerializeField] playerMovement playerScript;
+    [SerializeField] playerUIController Controller;
+    dialogueParsing.Dialogue dialogueRoot;
+
     public TextAsset jsonFile;
     public int test;
 
@@ -29,32 +35,22 @@ public class enemyScripting : MonoBehaviour
         playerCollider = player.GetComponent<BoxCollider2D>();
     }
 
+    
 
-
-
-
-
+    
 
     public void initializeFight()
     {
+        playerScript.inDialogue = true;
+        LeanTween.move(player, new Vector3( 4.51f, 11, 0), .5f);
         print(jsonFile.text);
-        
-        interfaceComponent.Dialogue dialogueRoot = JsonUtility.FromJson<interfaceComponent.Dialogue>(jsonFile.text);
-
+        dialogueRoot = JsonUtility.FromJson<dialogueParsing.Dialogue>(jsonFile.text);
+        Controller.startDialogue(dialogueRoot);
         print(dialogueRoot.cutscene_Dialogue);
-        
-        
 
-        foreach (interfaceComponent.dialogueData data in dialogueRoot.cutscene_Dialogue)
-        {
-            foreach (interfaceComponent.dialogueLine newData in data.Start)
-            {
-                print(newData.Name);
-            }
-        } 
+
+
     }
-
-    
 
 
 
