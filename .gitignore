@@ -30,3 +30,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+/Assets/TextMesh Pro/Examples & Extras
+/Assets/TextMesh Pro/Resources
+/Assets/TextMesh Pro/Shaders
+/Assets/TextMesh Pro/Sprites
