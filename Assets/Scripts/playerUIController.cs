@@ -8,6 +8,7 @@ using DentedPixel;
 public class playerUIController : MonoBehaviour
 {
 	public playerMovement playerStuff;
+	public enemyScripting enemyStuff;
 
 	public Image dialoguePlayer;
 	public Image dialogueEnemy;
@@ -71,6 +72,8 @@ public class playerUIController : MonoBehaviour
 			StartCoroutine(dialogue(data.Start));
 			
 		}
+
+		
 	}
 
 	private void stopDialogue()
@@ -78,7 +81,7 @@ public class playerUIController : MonoBehaviour
 		playerStuff.inDialogue = false;
 		LeanTween.moveLocal(dialoguePlayer.gameObject, new Vector3(1431, -190, 0), 1);
 		LeanTween.moveLocal(dialogueEnemy.gameObject, new Vector3(-1712, -190, 0), 1);
-		
+		enemyStuff.continualizeFight();
 	}
 
 }

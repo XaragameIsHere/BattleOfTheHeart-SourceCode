@@ -38,11 +38,3 @@ public class dialogueParsing
     }
 }
 
-
-public class UIelements
-{
-    
-    
-}
-
-//public class 

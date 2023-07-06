@@ -9,14 +9,14 @@ public class playerMovement : MonoBehaviour
     [SerializeField] Vector2 velocity = new Vector2(1, 0);
     [SerializeField] LayerMask groundLayers;
     [SerializeField] LayerMask wallLayers;
-    [SerializeField] Camera playerCamera;
-    [SerializeField] float gravity = 9.8f;
+    public Camera playerCamera;
     [SerializeField] float jumpStrength = 20;
     [SerializeField] float friction = 2;
     [SerializeField] float walkSpeed = 5;
 
+    public int playerLives = 4;
+    public bool invincibility = false;
     public int playerHealth = 100;
-    public bool invincible = false;
     public Vector2 velocityUp;
     public Vector2 playerSpeed;
 
@@ -26,7 +26,7 @@ public class playerMovement : MonoBehaviour
     private bool wallRun;
     public bool inDialogue = false;
     public bool alive = true;
-    Rigidbody2D rBody;
+    public Rigidbody2D rBody;
     Collider2D collisionBaybe;
     Collider2D[] hits;
 
@@ -41,7 +41,7 @@ public class playerMovement : MonoBehaviour
 
 
     // Update is called once per frame
-    
+
 
     void FixedUpdate()
     {
