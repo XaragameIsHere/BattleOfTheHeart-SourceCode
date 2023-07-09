@@ -24,17 +24,21 @@ public class playerMovement : MonoBehaviour
     //private Animator animationController;
     private bool isGrounded;
     private bool wallRun;
+    private ParticleSystem rocketBoots;
     public bool inDialogue = false;
     public bool alive = true;
     public Rigidbody2D rBody;
     Collider2D collisionBaybe;
     Collider2D[] hits;
-
+    ParticleSystem.MainModule psMain;
+    ParticleSystem.ShapeModule shape;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rocketBoots = GetComponent<ParticleSystem>();
+        psMain = rocketBoots.main;
+        shape = rocketBoots.shape;
         rBody = GetComponent<Rigidbody2D>();
         collisionBaybe = GetComponent<Collider2D>();
     }
@@ -49,10 +53,15 @@ public class playerMovement : MonoBehaviour
         //calculates vertical velocity
 
         //character controls
-        if (isGrounded && Input.GetButtonDown("Jump") && alive && !inDialogue)
-            rBody.velocity = new Vector2(rBody.velocity.x, jumpStrength);   
-        
-        
+
+        if (Input.GetButton("Jump") && alive && !inDialogue)
+            rBody.velocity = new Vector2(rBody.velocity.x, walkSpeed * Input.GetAxis("Jump"));
+        else if (!Input.GetButton("Jump") && Mathf.Abs(rBody.velocity.y) > 1)
+
+            rBody.velocity = new Vector2(rBody.velocity.x, Mathf.Lerp(rBody.velocity.y, 0, friction * Time.deltaTime));
+        else
+            rBody.velocity = new Vector2(rBody.velocity.x, 0);
+
 
         if (Input.GetButton("walk") && alive && !inDialogue)
             rBody.velocity = new Vector2(walkSpeed * Input.GetAxis("walk"), rBody.velocity.y);
@@ -63,7 +72,16 @@ public class playerMovement : MonoBehaviour
             rBody.velocity = new Vector2(0, rBody.velocity.y);
 
         //for when you enter a cutscene
-        
+        shape.rotation = new Vector3(90+(45 * Input.GetAxis("walk")), 90, 0);
+
+        if (isGrounded)
+        {
+            rocketBoots.Stop();
+        }
+        else
+        {
+            rocketBoots.Play();
+        }
 
 
 
