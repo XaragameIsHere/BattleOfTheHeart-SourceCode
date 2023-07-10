@@ -10,7 +10,8 @@ public class playerMovement : MonoBehaviour
 	[SerializeField] Vector2 velocity = new Vector2(1, 0);
 	[SerializeField] LayerMask groundLayers;
 	[SerializeField] LayerMask wallLayers;
-	public Camera playerCamera;
+    [SerializeField] LayerMask enemyLayers;
+    public Camera playerCamera;
 	[SerializeField] float jumpStrength = 20;
 	[SerializeField] float friction = 2;
 	[SerializeField] float walkSpeed = 5;
@@ -32,6 +33,7 @@ public class playerMovement : MonoBehaviour
 	public bool inFight = false;
 	public bool inDialogue = false;
 	public bool alive = true;
+	public bool parrying = false;
 	public Rigidbody2D rBody;
 	Collider2D collisionBaybe;
 	Collider2D[] hits;
@@ -56,35 +58,49 @@ public class playerMovement : MonoBehaviour
 	{
 		yield return new WaitForSeconds(3);
 		invincibility = false;
-	}
+        collisionBaybe.excludeLayers = 0;
+    }
 
 	private void hurt()
 	{
 		if (alive && !invincibility)
 		{
-			print("herwo");
-			StartCoroutine(waitforit());
 			invincibility = true;
+			collisionBaybe.excludeLayers = enemyLayers;
+			StartCoroutine(waitforit());
 			badHearts.Add(hearts[0]);
-
 			hearts.RemoveAt(0);
 		}
 		
 	}
 
-	private void OnParticleCollision(GameObject particleSystem)
+    
+
+    private void OnParticleCollision(GameObject particleSystem)
 	{
-		if (particleSystem.layer == 8)
+		if (parrying)
 		{
-			hurt();
+			if (particleSystem.layer == 8)
+			{
+				hurt();
+			}
+		}
+		else
+		{
+			print("successful parry");
 		}
 		
 		
 	}
 
+	IEnumerator unParry()
+	{
+		yield return new WaitForSeconds(1);
+		parrying = false;
+	}
+
     private void OnCollisionStay2D(Collision2D collision)
 	{
-		print(collision.gameObject.layer);
 		if (collision.gameObject.layer == 8)
 			hurt();
 	}
@@ -145,6 +161,12 @@ public class playerMovement : MonoBehaviour
 
 		//for when you enter a cutscene
 		shape.rotation = new Vector3(90+(45 * Input.GetAxis("walk")), 90, 0);
+
+		if (Input.GetButton("parry") && !parrying)
+		{
+			parrying = true;
+			StartCoroutine(unParry());
+        }
 
 		if (isGrounded)
 		{
