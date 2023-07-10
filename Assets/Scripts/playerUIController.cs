@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using DentedPixel;
 
 public class playerUIController : MonoBehaviour
 {
@@ -60,8 +59,8 @@ public class playerUIController : MonoBehaviour
 	public void startDialogue(dialogueParsing.Dialogue dialogueRoot)
 	{
 		print("f");
-		LeanTween.moveLocal(dialoguePlayer.gameObject, new Vector3(664, -190, 0), 1);
-		LeanTween.moveLocal(dialogueEnemy.gameObject, new Vector3(-621, -190, 0), 1);
+		//LeanTween.moveLocal(dialoguePlayer.gameObject, new Vector3(664, -190, 0), 1);
+		//LeanTween.moveLocal(dialogueEnemy.gameObject, new Vector3(-621, -190, 0), 1);
 
 		
 		foreach (dialogueParsing.dialogueData data in dialogueRoot.cutscene_Dialogue)
@@ -69,18 +68,18 @@ public class playerUIController : MonoBehaviour
 			
 			
 
-			StartCoroutine(dialogue(data.Start));
+			//StartCoroutine(dialogue(data.Start));
 			
 		}
 
-		
-	}
+        stopDialogue();
+    }
 
 	private void stopDialogue()
 	{
 		playerStuff.inDialogue = false;
-		LeanTween.moveLocal(dialoguePlayer.gameObject, new Vector3(1431, -190, 0), 1);
-		LeanTween.moveLocal(dialogueEnemy.gameObject, new Vector3(-1712, -190, 0), 1);
+		//LeanTween.moveLocal(dialoguePlayer.gameObject, new Vector3(1431, -190, 0), 1);
+		//LeanTween.moveLocal(dialogueEnemy.gameObject, new Vector3(-1712, -190, 0), 1);
 		enemyStuff.continualizeFight();
 	}
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
 {
@@ -14,9 +15,12 @@ public class playerMovement : MonoBehaviour
     [SerializeField] float friction = 2;
     [SerializeField] float walkSpeed = 5;
 
+    [SerializeField] Sprite badheart;
+    [SerializeField] List<Image> hearts = new List<Image>();
+    [SerializeField] List<Image> badHearts = new List<Image>();
+
     public int playerLives = 4;
     public bool invincibility = false;
-    public int playerHealth = 100;
     public Vector2 velocityUp;
     public Vector2 playerSpeed;
 
@@ -25,6 +29,7 @@ public class playerMovement : MonoBehaviour
     private bool isGrounded;
     private bool wallRun;
     private ParticleSystem rocketBoots;
+    public bool inFight = false;
     public bool inDialogue = false;
     public bool alive = true;
     public Rigidbody2D rBody;
@@ -32,36 +37,95 @@ public class playerMovement : MonoBehaviour
     Collider2D[] hits;
     ParticleSystem.MainModule psMain;
     ParticleSystem.ShapeModule shape;
+    Animator playerAnimator;
+    SpriteRenderer playerSprite;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerSprite = GetComponent<SpriteRenderer>();
+        playerAnimator = GetComponent<Animator>();
         rocketBoots = GetComponent<ParticleSystem>();
         psMain = rocketBoots.main;
         shape = rocketBoots.shape;
         rBody = GetComponent<Rigidbody2D>();
-        collisionBaybe = GetComponent<Collider2D>();
+        collisionBaybe = GetComponent<PolygonCollider2D>();
     }
 
+    IEnumerator waitforit()
+    {
+        yield return new WaitForSeconds(3);
+        invincibility = false;
+    }
 
+    private void hurt()
+    {
+        if (alive)
+        {
+            StartCoroutine(waitforit());
+            invincibility = true;
+            badHearts.Add(hearts[0]);
+
+            hearts.RemoveAt(0);
+        }
+        
+    }
+
+    private void OnParticleCollision(GameObject particleSystem)
+    {
+        if (particleSystem.layer == 8 && !invincibility)
+        {
+            hurt();
+        }
+        
+        
+    }
     // Update is called once per frame
-
 
     void FixedUpdate()
     {
         isGrounded = rBody.IsTouchingLayers(groundLayers); //checks if the player is on a platform
         //calculates vertical velocity
 
-        //character controls
+        if (alive)
+        {
+            foreach (Image heart in badHearts)
+            {
+                heart.sprite = badheart;
+            }
+        }
+        
+        if (hearts.Count <= 0) 
+        {
+            alive = false;
+        }
 
-        if (Input.GetButton("Jump") && alive && !inDialogue)
+        //character controls
+        if (inFight)
+        {
+            rBody.gravityScale = 0;
+        }
+        else
+        {
+            rBody.gravityScale = 50f;
+        }
+
+        if (Input.GetAxis("walk") > .1)
+            playerSprite.flipX = false;
+        else if (Input.GetAxis("walk") < .1)
+            playerSprite.flipX = true;
+
+
+            if (Input.GetButton("Jump") && alive && !inDialogue && inFight)
             rBody.velocity = new Vector2(rBody.velocity.x, walkSpeed * Input.GetAxis("Jump"));
-        else if (!Input.GetButton("Jump") && Mathf.Abs(rBody.velocity.y) > 1)
+        else if (!Input.GetButton("Jump") && Mathf.Abs(rBody.velocity.y) > 1 && inFight)
 
             rBody.velocity = new Vector2(rBody.velocity.x, Mathf.Lerp(rBody.velocity.y, 0, friction * Time.deltaTime));
         else
             rBody.velocity = new Vector2(rBody.velocity.x, 0);
 
+
+        playerAnimator.SetFloat("playerDirection", Input.GetAxis("walk"));
 
         if (Input.GetButton("walk") && alive && !inDialogue)
             rBody.velocity = new Vector2(walkSpeed * Input.GetAxis("walk"), rBody.velocity.y);
@@ -88,7 +152,7 @@ public class playerMovement : MonoBehaviour
         if (collisionBaybe.IsTouchingLayers(wallLayers))
         {
             //walk = false;
-            rBody.AddForce(new Vector2(-500 * Input.GetAxis("walk"), 500));
+            rBody.AddForce(new Vector2(0, 750));
         }
         /*
         else

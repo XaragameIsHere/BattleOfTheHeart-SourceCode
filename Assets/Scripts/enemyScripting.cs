@@ -1,5 +1,7 @@
+using DG.Tweening;
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,6 +10,8 @@ using Random = UnityEngine.Random;
 
 public class enemyScripting : MonoBehaviour
 {
+    ParticleSystem.NoiseModule noice;
+    ParticleSystem.ShapeModule shape;
     [SerializeField] GameObject fallingObjectArea;
     [SerializeField] playerMovement playerScript;
     [SerializeField] playerUIController Controller;
@@ -22,18 +26,21 @@ public class enemyScripting : MonoBehaviour
     public TextAsset jsonFile;
     public int test;
 
-
+    private ParticleSystem shooter;
     public BoxCollider2D boxTrigger;
     public BoxCollider2D playerCollider;
     public GameObject player;
     private AudioSource audioSystem;
     private SpriteRenderer spriteComponent;
 
-
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        shooter = GetComponent<ParticleSystem>();
+        noice = shooter.noise;
+        shape = shooter.shape;
         spriteComponent = GetComponent<SpriteRenderer>();
         playerCollider = player.GetComponent<BoxCollider2D>();
         audioSystem = GetComponent<AudioSource>();
@@ -48,16 +55,15 @@ public class enemyScripting : MonoBehaviour
         player.GetComponent<AudioSource>().Stop();
         audioSystem.Play();
         playerScript.inDialogue = true;
-        LeanTween.move(player, new Vector3( 4.51f, 11, 0), .5f);
-        print(jsonFile.text);
+        player.transform.DOMove(new Vector3(4.51f, 11, 0), .5f);
+       
         dialogueRoot = JsonUtility.FromJson<dialogueParsing.Dialogue>(jsonFile.text);
         Controller.startDialogue(dialogueRoot);
-        print(dialogueRoot.cutscene_Dialogue);
 
 
 
     }
-
+    /*
     IEnumerator drop()
     {
         GameObject[] falling = new GameObject[7];
@@ -91,23 +97,67 @@ public class enemyScripting : MonoBehaviour
         }
         falling =null;
     }
+    */
+
+    IEnumerator timer(int waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        shootyshooty();
+    }
+
+    private void spray()
+    {
+        shape.angle = 45;
+        shape.arc = 360;
+        noice.enabled = true;
+        noice.frequency = 1.59f;
+        noice.scrollSpeed = 1.6f;
+        noice.strength = 0.09f;
+        StartCoroutine(timer(8));
+
+    }
+
+    private void narrow()
+    {
+        DOTween.To(() => shape.angle, x => shape.angle = x, 10, 2);
+        transform.Rotate(new Vector3(0, 0, -20));
+        //transform.DORotate(new Vector3(0, 0, -15), 1).WaitForCompletion();
+        transform.DORotate(new Vector3(0, 0, 40), 3).SetLoops(4, LoopType.Yoyo).OnComplete(shootyshooty);
+
+    }
+
+    int shootyState = 2;
+
+    private void shootyshooty()
+    {
+        
+        shooter.Play();
+
+        if (shootyState == 1)
+        {
+            spray();
+        }
+        else if (shootyState == 2) 
+        {
+            narrow();
+        }
+    }
 
     public void continualizeFight()
     {
         print("start");
+
         audioSystem.clip = FightMusic;
         audioSystem.Play();
-        LeanTween.move(gameObject, new Vector3(-10, 11), 1);
+        transform.DOMove(new Vector3(-7, 11), 1);
         playerScript.playerCamera.orthographicSize = 7;
-        StartCoroutine(drop());
+        playerScript.inFight = true;
+        shootyshooty();
+        //StartCoroutine(drop());
 
     }
 
-    IEnumerator waitforit()
-    {
-        yield return new WaitForSeconds(3);
-        playerScript.invincibility = false;
-    }
+    
 
     private void Update()
     {
