@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -28,7 +29,7 @@ public class enemyScripting : MonoBehaviour
 
     private ParticleSystem shooter;
     public BoxCollider2D boxTrigger;
-    public BoxCollider2D playerCollider;
+    public PolygonCollider2D playerCollider;
     public GameObject player;
     private AudioSource audioSystem;
     private SpriteRenderer spriteComponent;
@@ -42,7 +43,7 @@ public class enemyScripting : MonoBehaviour
         noice = shooter.noise;
         shape = shooter.shape;
         spriteComponent = GetComponent<SpriteRenderer>();
-        playerCollider = player.GetComponent<BoxCollider2D>();
+        playerCollider = player.GetComponent<PolygonCollider2D>();
         audioSystem = GetComponent<AudioSource>();
     }
 
@@ -63,41 +64,43 @@ public class enemyScripting : MonoBehaviour
 
 
     }
-    /*
+    
     IEnumerator drop()
     {
-        GameObject[] falling = new GameObject[7];
+        List<GameObject> falling = new List<GameObject>();
         for (int i = 0; i < 6; i++)
         {
-            
+
             GameObject bullet = Instantiate(attack1Sprite);
-            falling.SetValue(bullet, i);
-            
+            falling.Add(bullet);
 
         }
+
         for (int v = 0; v < 4; v++)
         {
-
-            for (int i = 0; i < 6; i++)
+            foreach (GameObject fallingObject in falling)
             {
-                falling[1].transform.position = fallingObjectArea.transform.GetChild(Mathf.RoundToInt(Random.Range(1, 11))).position;
+                fallingObject.transform.position = fallingObjectArea.transform.GetChild(Mathf.RoundToInt(Random.Range(1, 11))).position;
             }
 
-            yield return new WaitForSeconds(Random.Range(1, 3));
+            yield return new WaitForSeconds(3);
+            
 
-            for (int i = 0; i < 6; i++)
+            foreach (GameObject fallingObject in falling)
             {
-                LeanTween.moveY(falling[i], falling[i].transform.position.y - 6, .2f);
+                fallingObject.GetComponent<Rigidbody2D>().simulated = true;
             }
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2f);
 
-            
-            
-            
+            foreach (GameObject fallingObject in falling)
+            {
+                fallingObject.GetComponent<Rigidbody2D>().simulated = false;
+            }
+
         }
         falling =null;
     }
-    */
+    
 
     IEnumerator timer(int waitTime)
     {
@@ -113,6 +116,7 @@ public class enemyScripting : MonoBehaviour
         noice.frequency = 1.59f;
         noice.scrollSpeed = 1.6f;
         noice.strength = 0.09f;
+        shootyState = 2;
         StartCoroutine(timer(8));
 
     }
@@ -122,11 +126,12 @@ public class enemyScripting : MonoBehaviour
         DOTween.To(() => shape.angle, x => shape.angle = x, 10, 2);
         transform.Rotate(new Vector3(0, 0, -20));
         //transform.DORotate(new Vector3(0, 0, -15), 1).WaitForCompletion();
+        shootyState = 1;
         transform.DORotate(new Vector3(0, 0, 40), 3).SetLoops(4, LoopType.Yoyo).OnComplete(shootyshooty);
 
     }
 
-    int shootyState = 2;
+    int shootyState = 1;
 
     private void shootyshooty()
     {
@@ -152,8 +157,8 @@ public class enemyScripting : MonoBehaviour
         transform.DOMove(new Vector3(-7, 11), 1);
         playerScript.playerCamera.orthographicSize = 7;
         playerScript.inFight = true;
-        shootyshooty();
-        //StartCoroutine(drop());
+        //shootyshooty();
+        StartCoroutine(drop());
 
     }
 
