@@ -984,6 +984,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644191799}
   m_CullTransparentMesh: 1
+--- !u!1 &736240286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 736240287}
+  m_Layer: 0
+  m_Name: bigGuySpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &736240287
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736240286}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 21, z: -1.9364107}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &736589876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,10 +1059,14 @@ MonoBehaviour:
   wallLayers:
     serializedVersion: 2
     m_Bits: 64
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
   playerCamera: {fileID: 519420031}
   jumpStrength: 10
   friction: 5.19
   walkSpeed: 20.47
+  enemyScript: {fileID: 1475344614}
   badheart: {fileID: 21300000, guid: 4b2939cad3fd2ff418c38cb765e565cd, type: 3}
   hearts:
   - {fileID: 1678737938}
@@ -1046,7 +1081,8 @@ MonoBehaviour:
   inFight: 0
   inDialogue: 0
   alive: 1
-  rBody: {fileID: 0}
+  parrying: 0
+  rBody: {fileID: 736589881}
 --- !u!212 &736589878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6676,7 +6712,7 @@ RectTransform:
   - {fileID: 2121171090}
   - {fileID: 168946169}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7004,7 +7040,7 @@ Transform:
   - {fileID: 1693268084}
   - {fileID: 473972477}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1189130616
 GameObject:
@@ -7135,7 +7171,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1189130620
 MonoBehaviour:
@@ -7246,7 +7282,7 @@ RectTransform:
   m_Children:
   - {fileID: 995160118}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7860,7 +7896,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1435606630
 GameObject:
@@ -8062,11 +8098,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   death: {fileID: 1192749146}
+  bigGuySpawn: {fileID: 736240286}
+  bigGuy: {fileID: 8647537555690637181, guid: f98c2a8dcbc4642469589fc9a59265a2, type: 3}
   attack1Sprite: {fileID: 2435591273846580317, guid: b710f306d0945aa46b67dadfc62c47a4, type: 3}
+  attack2sprite: {fileID: 21300000, guid: 746449cae9932ba47a4b9844a49af16f, type: 3}
   jsonFile: {fileID: 4900000, guid: 8829ab1ed46a2044ea73a9d25e9fe6f9, type: 3}
   test: 0
   boxTrigger: {fileID: 1189130617}
-  playerCollider: {fileID: 0}
+  playerCollider: {fileID: 736589888}
   player: {fileID: 736589876}
 --- !u!212 &1475344615
 SpriteRenderer:
@@ -8128,12 +8167,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475344613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.02, y: 11, z: 0}
+  m_LocalPosition: {x: 2, y: 11, z: 0}
   m_LocalScale: {x: -0.36, y: 0.36, z: 0.36}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1475344617
 AudioSource:
@@ -8313,7 +8352,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 2
+  stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -13443,7 +13482,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1693268083
 GameObject:

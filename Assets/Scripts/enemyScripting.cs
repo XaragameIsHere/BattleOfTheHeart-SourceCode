@@ -27,6 +27,7 @@ public class enemyScripting : MonoBehaviour
     dialogueParsing.Dialogue dialogueRoot;
 
     [SerializeField] GameObject attack1Sprite; 
+    public Sprite attack2sprite;
 
     public TextAsset jsonFile;
     public int test;
@@ -47,7 +48,6 @@ public class enemyScripting : MonoBehaviour
         noice = shooter.noise;
         shape = shooter.shape;
         spriteComponent = GetComponent<SpriteRenderer>();
-        playerCollider = player.GetComponent<PolygonCollider2D>();
         audioSystem = GetComponent<AudioSource>();
     }
 
@@ -109,7 +109,15 @@ public class enemyScripting : MonoBehaviour
     IEnumerator timer(int waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        shootyshooty();
+        if (go >= Mathf.RoundToInt(Random.Range(3, 5)))
+        {
+            shooter.Stop();
+            loopFight();
+        }
+        else
+        {
+            shootyshooty();
+        }
     }
 
     private void spray()
@@ -122,23 +130,16 @@ public class enemyScripting : MonoBehaviour
         noice.scrollSpeed = 1.6f;
         noice.strength = 0.09f;
         StartCoroutine(timer(Random.Range(8, 25)));
-        if (go >= Mathf.RoundToInt(Random.Range(3, 5)))
-        {
-            shooter.Stop();
-            loopFight();
-        }
+        
     }
 
     private void narrow()
     {
+        int fruityLoops = Mathf.RoundToInt(Random.Range(3, 7));
         DOTween.To(() => shape.angle, x => shape.angle = x, 10, 2);
         transform.Rotate(new Vector3(0, 0, -35));
-        transform.DORotate(new Vector3(0, 0, 30), 2).SetLoops(Mathf.RoundToInt(Random.Range(3, 7)), LoopType.Yoyo).OnComplete(shootyshooty);
-
-        if (go >= Mathf.RoundToInt(Random.Range(3, 5)))
-        {
-            loopFight();
-        }
+        transform.DORotate(new Vector3(0, 0, 30), 2).SetLoops(fruityLoops, LoopType.Yoyo);
+        StartCoroutine(timer(fruityLoops * 2));
     }
 
     bool shootyState = true;
@@ -192,7 +193,7 @@ public class enemyScripting : MonoBehaviour
 
     public void loopFight()
     {
-
+        print("loop");
         switch (currentState)
         {
             case 1:
@@ -201,9 +202,9 @@ public class enemyScripting : MonoBehaviour
             case 2:
                 StartCoroutine(drop());
                 break;
-            case 3:
-                StartCoroutine(dropInTheBigGuy());
-                break;
+            //case 3:
+                //StartCoroutine(dropInTheBigGuy());
+                //break;
         }
         currentState = Mathf.RoundToInt(Random.Range(1, 3));
     }

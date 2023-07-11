@@ -1,5 +1,7 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -15,7 +17,7 @@ public class playerMovement : MonoBehaviour
 	[SerializeField] float jumpStrength = 20;
 	[SerializeField] float friction = 2;
 	[SerializeField] float walkSpeed = 5;
-
+	[SerializeField] enemyScripting enemyScript;
 	[SerializeField] Sprite badheart;
 	[SerializeField] List<Image> hearts = new List<Image>();
 	[SerializeField] List<Image> badHearts = new List<Image>();
@@ -50,7 +52,6 @@ public class playerMovement : MonoBehaviour
 		rocketBoots = GetComponent<ParticleSystem>();
 		psMain = rocketBoots.main;
 		shape = rocketBoots.shape;
-		rBody = GetComponent<Rigidbody2D>();
 		collisionBaybe = GetComponent<PolygonCollider2D>();
 	}
 
@@ -78,7 +79,7 @@ public class playerMovement : MonoBehaviour
 
     private void OnParticleCollision(GameObject particleSystem)
 	{
-		if (parrying)
+		if (!parrying)
 		{
 			if (particleSystem.layer == 8)
 			{
@@ -87,7 +88,15 @@ public class playerMovement : MonoBehaviour
 		}
 		else
 		{
-			print("successful parry");
+            GameObject newObj = new GameObject("Name");
+			Instantiate(newObj);
+			newObj.transform.position = transform.position;
+
+			SpriteRenderer throwSprite = newObj.AddComponent<SpriteRenderer>();
+			throwSprite.sprite = enemyScript.attack2sprite;
+
+			newObj.transform.localScale = new Vector3(.1f, .1f, .1f);
+			newObj.transform.DOMove(enemyScript.transform.position, .5f);
 		}
 		
 		
@@ -95,7 +104,7 @@ public class playerMovement : MonoBehaviour
 
 	IEnumerator unParry()
 	{
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(.5f);
 		parrying = false;
 	}
 
@@ -139,6 +148,7 @@ public class playerMovement : MonoBehaviour
 		else if (Input.GetAxis("walk") < .1)
 			playerSprite.flipX = true;
 
+		playerAnimator.SetBool("Flying", !isGrounded);
 
 		if (Input.GetButton("Jump") && alive && !inDialogue && inFight)
 			rBody.velocity = new Vector2(rBody.velocity.x, walkSpeed * Input.GetAxis("Jump"));
@@ -148,10 +158,10 @@ public class playerMovement : MonoBehaviour
 		else
 			rBody.velocity = new Vector2(rBody.velocity.x, 0);
 
+		playerAnimator.SetFloat("playerSpeed", Mathf.Abs(Input.GetAxis("walk")));
+        //playerAnimator.SetBool("walking", Input.GetButton("walk"));
 
-		playerAnimator.SetFloat("playerDirection", Input.GetAxis("walk"));
-
-		if (Input.GetButton("walk") && alive && !inDialogue)
+        if (Input.GetButton("walk") && alive && !inDialogue)
 			rBody.velocity = new Vector2(walkSpeed * Input.GetAxis("walk"), rBody.velocity.y);
 		else if (!Input.GetButton("walk") && Mathf.Abs(rBody.velocity.x) > 1)
 		
@@ -165,6 +175,7 @@ public class playerMovement : MonoBehaviour
 		if (Input.GetButton("parry") && !parrying)
 		{
 			parrying = true;
+			playerAnimator.SetTrigger("parry");
 			StartCoroutine(unParry());
         }
 
