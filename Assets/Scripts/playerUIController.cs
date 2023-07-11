@@ -1,23 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
-//using UnityEngine.UIElements;
+using UnityEngine.UIElements;
 
 public class playerUIController : MonoBehaviour
 {
 	public playerMovement playerStuff;
 	public enemyScripting enemyStuff;
 
-	public Image dialoguePlayer;
-	public Image dialogueEnemy;
 
-	public TMP_Text playerText;
-	public TMP_Text enemyText;
 
-	private IEnumerator dialogue(dialogueParsing.dialogueLine[] lines)
+	public Label playerText;
+	public Label enemyText;
+
+    private void Start()
+    {
+        var root = GetComponent<UIDocument>().rootVisualElement;
+
+		playerText = root.Q<Label>("PlayerDialogue");
+		enemyText = root.Q<Label>("EnemyDialogue");
+    }
+
+    private IEnumerator dialogue(dialogueParsing.dialogueLine[] lines)
 	{
 		foreach (dialogueParsing.dialogueLine line in lines)
 		{
@@ -61,8 +67,8 @@ public class playerUIController : MonoBehaviour
 	public void startDialogue(dialogueParsing.Dialogue dialogueRoot)
 	{
 		print("f");
-		dialoguePlayer.transform.DOLocalMoveX(664, 1);
-        dialogueEnemy.transform.DOLocalMoveX(-621, 1);
+		DOTween.To(() => playerText.transform.position.x, x => playerText.transform.position = new Vector3(x, playerText.transform.position.y), 0, 1).SetEase(Ease.Linear);
+        DOTween.To(() => enemyText.transform.position.x, x => enemyText.transform.position = new Vector3(x, enemyText.transform.position.y), 0, 1).SetEase(Ease.Linear);
 
 
         foreach (dialogueParsing.dialogueData data in dialogueRoot.cutscene_Dialogue)
@@ -78,8 +84,9 @@ public class playerUIController : MonoBehaviour
 	private void stopDialogue()
 	{
 		playerStuff.inDialogue = false;
-        dialoguePlayer.transform.DOLocalMoveX(1431, 1);
-        dialogueEnemy.transform.DOLocalMoveX(-1712, 1);
+        DOTween.To(() => playerText.transform.position.x, x => playerText.transform.position = new Vector3(x, playerText.transform.position.y), 113, 1).SetEase(Ease.Linear);
+        DOTween.To(() => enemyText.transform.position.x, x => enemyText.transform.position = new Vector3(x, enemyText.transform.position.y), -113, 1).SetEase(Ease.Linear);
+
         enemyStuff.continualizeFight();
 	}
 
