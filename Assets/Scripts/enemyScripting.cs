@@ -7,7 +7,7 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
+using UnityEngine.UIElements;
 
 
 
@@ -28,7 +28,8 @@ public class enemyScripting : MonoBehaviour
 
     [SerializeField] GameObject attack1Sprite; 
     public Sprite attack2sprite;
-
+    public int enemyHealth = 10;
+    private int maxEnemyHealth;
     public TextAsset jsonFile;
     public int test;
 
@@ -44,6 +45,7 @@ public class enemyScripting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxEnemyHealth = enemyHealth;
         shooter = GetComponent<ParticleSystem>();
         noice = shooter.noise;
         shape = shooter.shape;
@@ -191,23 +193,53 @@ public class enemyScripting : MonoBehaviour
         
     }
 
+    bool checking = false;
+    public void engageInDialogue()
+    {
+        if (checking)
+        {
+            playerScript.inDialogue = true;
+
+        }
+
+    }
+
+    IEnumerator check()
+    {
+        checking = true;
+        yield return new WaitForSeconds(10);
+
+        if (!playerScript.inDialogue)
+        {
+            enemyHealth = maxEnemyHealth;
+            loopFight();
+        }
+    }
+
     public void loopFight()
     {
         print("loop");
-        switch (currentState)
+        if (enemyHealth >= 0)
         {
-            case 1:
-                shootyshooty();
-                break;
-            case 2:
-                StartCoroutine(drop());
-                break;
-            //case 3:
-                //StartCoroutine(dropInTheBigGuy());
-                //break;
+            switch (currentState)
+            {
+                case 1:
+                    shootyshooty();
+                    break;
+                case 2:
+                    StartCoroutine(drop());
+                    break;
+                case 3:
+                    StartCoroutine(dropInTheBigGuy());
+                    break;
+            }
+            currentState = Mathf.RoundToInt(Random.Range(1, 3));
         }
-        currentState = Mathf.RoundToInt(Random.Range(1, 3));
+        else
+        {
+            StartCoroutine(check());
+        }
     }
 
-
+    
 }

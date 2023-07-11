@@ -13,6 +13,7 @@ public class playerMovement : MonoBehaviour
 	[SerializeField] LayerMask groundLayers;
 	[SerializeField] LayerMask wallLayers;
     [SerializeField] LayerMask enemyLayers;
+	[SerializeField] LayerMask playerLayer;
     public Camera playerCamera;
 	[SerializeField] float jumpStrength = 20;
 	[SerializeField] float friction = 2;
@@ -30,7 +31,6 @@ public class playerMovement : MonoBehaviour
 	private CharacterController playerMover;
 	//private Animator animationController;
 	private bool isGrounded;
-	private bool wallRun;
 	private ParticleSystem rocketBoots;
 	public bool inFight = false;
 	public bool inDialogue = false;
@@ -38,7 +38,6 @@ public class playerMovement : MonoBehaviour
 	public bool parrying = false;
 	public Rigidbody2D rBody;
 	Collider2D collisionBaybe;
-	Collider2D[] hits;
 	ParticleSystem.MainModule psMain;
 	ParticleSystem.ShapeModule shape;
 	Animator playerAnimator;
@@ -97,6 +96,7 @@ public class playerMovement : MonoBehaviour
 
 			newObj.transform.localScale = new Vector3(.1f, .1f, .1f);
 			newObj.transform.DOMove(enemyScript.transform.position, .5f);
+			enemyScript.enemyHealth -= 1;
 		}
 		
 		
@@ -128,20 +128,14 @@ public class playerMovement : MonoBehaviour
 			}
 		}
 		
-		if (hearts.Count <= 0) 
-		{
+		if (hearts.Count <= 0)
 			alive = false;
-		}
 
 		//character controls
 		if (inFight)
-		{
 			rBody.gravityScale = 0;
-		}
 		else
-		{
 			rBody.gravityScale = 50f;
-		}
 
 		if (Input.GetAxis("walk") > .1)
 			playerSprite.flipX = false;
@@ -180,30 +174,18 @@ public class playerMovement : MonoBehaviour
         }
 
 		if (isGrounded)
-		{
 			rocketBoots.Stop();
-		}
 		else
-		{
 			rocketBoots.Play();
-		}
 
-
+		if (Input.GetButton("use") && Vector3.Distance(transform.position, enemyScript.transform.position) <= 4)
+			enemyScript.engageInDialogue();
 
 		if (collisionBaybe.IsTouchingLayers(wallLayers))
-		{
-			//walk = false;
 			rBody.AddForce(new Vector2(0, 750));
-		}
-		/*
-		else
-		{
-			walk = true;
-		}*/
 	}
 
 
-		//actually executes moving the player forward
 
 	
 	

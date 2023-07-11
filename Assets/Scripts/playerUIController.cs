@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+//using UnityEngine.UIElements;
 
 public class playerUIController : MonoBehaviour
 {
@@ -67,11 +68,11 @@ public class playerUIController : MonoBehaviour
         foreach (dialogueParsing.dialogueData data in dialogueRoot.cutscene_Dialogue)
 		{
 			
-			//StartCoroutine(dialogue(data.Start));
+			StartCoroutine(dialogue(data.Start));
 			
 		}
 
-        stopDialogue();
+        //stopDialogue();
     }
 
 	private void stopDialogue()
