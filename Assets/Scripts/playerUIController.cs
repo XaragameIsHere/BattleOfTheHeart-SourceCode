@@ -68,11 +68,11 @@ public class playerUIController : MonoBehaviour
         foreach (dialogueParsing.dialogueData data in dialogueRoot.cutscene_Dialogue)
 		{
 			
-			StartCoroutine(dialogue(data.Start));
+			//StartCoroutine(dialogue(data.Start));
 			
 		}
 
-        //stopDialogue();
+        stopDialogue();
     }
 
     bool isClicked = false;
@@ -148,11 +148,12 @@ public class playerUIController : MonoBehaviour
     float patience = 5;
     public IEnumerator moveMeter()
     {
+        patienceMeter.value = patience / 10;
         while (patienceMeter.value > 0)
         {
+            yield return new WaitForSeconds(2);
             patience -= 1;
             patienceMeter.value -= patience/10;
-            yield return new WaitForSeconds(2);
         }
 
         

@@ -25,6 +25,7 @@ public class enemyScripting : MonoBehaviour
     [SerializeField] GameObject bigGuySpawn;
     [SerializeField] GameObject bigGuy;
     [HideInInspector] public dialogueParsing.Dialogue dialogueRoot;
+    public GameObject enemyObject;
 
     [SerializeField] GameObject attack1Sprite; 
     public Sprite attack2sprite;

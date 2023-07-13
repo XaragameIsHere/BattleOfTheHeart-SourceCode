@@ -203,6 +203,15 @@ public class playerMovement : MonoBehaviour
             StartCoroutine(uIController.moveMeter());
         }
 
+		if (enemyScript.enemyObject)
+		{
+			if (Vector3.Distance(enemyScript.enemyObject.transform.position, transform.position) < 1 && Input.GetButton("Use"))
+			{
+				objectAttained = true;
+				Destroy(enemyScript.enemyObject);
+			}
+		}
+        
 
         if (collisionBaybe.IsTouchingLayers(wallLayers))
 		{
