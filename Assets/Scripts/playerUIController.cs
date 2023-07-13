@@ -68,11 +68,11 @@ public class playerUIController : MonoBehaviour
         foreach (dialogueParsing.dialogueData data in dialogueRoot.cutscene_Dialogue)
 		{
 			
-			//StartCoroutine(dialogue(data.Start));
+			StartCoroutine(dialogue(data.Start));
 			
 		}
 
-        stopDialogue();
+        //stopDialogue();
     }
 
     bool isClicked = false;

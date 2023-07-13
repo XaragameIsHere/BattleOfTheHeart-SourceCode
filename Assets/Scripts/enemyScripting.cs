@@ -174,7 +174,13 @@ public class enemyScripting : MonoBehaviour
             newBigGuy.GetComponent<Rigidbody2D>().AddForce(new Vector2(5000 * player.transform.position.x - newBigGuy.transform.position.x, 30000));
             print("bee");
         }
+
+        newBigGuy.GetComponent<Rigidbody2D>().simulated = false;
+        Tween tween = newBigGuy.transform.DOLocalMoveY(46, 2.5f);
+        
         loopFight();
+        yield return tween.WaitForCompletion();
+        Destroy(newBigGuy);
     }
 
     int currentState = 1;

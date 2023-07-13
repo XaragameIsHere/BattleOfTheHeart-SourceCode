@@ -19,7 +19,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"B:/unityFiles/UntitledFightingRomanceGame/Builds/Build 0.0.5;B:/unityFiles/UntitledFightingRomanceGame/Builds/Build 0.0.4;B:/unityFiles/UntitledFightingRomanceGame/Builds/Build 0.0.3;B:/unityFiles/UntitledFightingRomanceGame/Builds/Build 0.0.2;B:/unityFiles/UntitledFightingRomanceGame/Build/Build;B:/unityFiles/UntitledFightingRomanceGame/Build;;;;\"}"
+                "value": "{\"m_Value\":\"B:/unityFiles/UntitledFightingRomanceGame/Builds/Build 0.0.7;B:/unityFiles/UntitledFightingRomanceGame/Builds/Build 0.0.5;B:/unityFiles/UntitledFightingRomanceGame/Builds/Build 0.0.4;B:/unityFiles/UntitledFightingRomanceGame/Builds/Build 0.0.3;B:/unityFiles/UntitledFightingRomanceGame/Builds/Build 0.0.2;B:/unityFiles/UntitledFightingRomanceGame/Build/Build;B:/unityFiles/UntitledFightingRomanceGame/Build;;;\"}"
             }
         ]
     }
