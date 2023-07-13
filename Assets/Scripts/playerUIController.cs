@@ -10,7 +10,11 @@ public class playerUIController : MonoBehaviour
 	public playerMovement playerStuff;
 	public enemyScripting enemyStuff;
 
-	public Image dialoguePlayer;
+	public RawImage dialogueChoiceBox;
+    public Slider patienceMeter;
+    public List<TMP_Text> choiceButtons;
+
+    public Image dialoguePlayer;
 	public Image dialogueEnemy;
 
 	public TMP_Text playerText;
@@ -54,10 +58,7 @@ public class playerUIController : MonoBehaviour
 		stopDialogue();
 	}
 
-	
-
-
-	public void startDialogue(dialogueParsing.Dialogue dialogueRoot)
+    public void startDialogue(dialogueParsing.Dialogue dialogueRoot)
 	{
 		print("f");
 		dialoguePlayer.transform.DOLocalMoveX(664, 1);
@@ -74,7 +75,90 @@ public class playerUIController : MonoBehaviour
         stopDialogue();
     }
 
-	private void stopDialogue()
+    bool isClicked = false;
+    int clickedButton;
+    public void click(int s) 
+    {
+        clickedButton = s;
+        isClicked = true;
+    }
+    private IEnumerator typeWrite(dialogueParsing.Dialogue dialogueRoot, dialogueParsing.selection line)
+    {
+        print("in new selection");
+        for (int i = 1; i <= line.enemy_Text.Length; i++)
+        {
+            enemyText.text = line.enemy_Text.Substring(0, i);
+
+
+            yield return new WaitForSeconds(.02f);
+        }
+
+        enemyText.text = line.enemy_Text;
+
+        yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
+
+        for (int i = 0; i < 4; i++)
+        {
+            choiceButtons[i].text = line.choices[i].dialogueLine;
+        }
+
+        dialogueChoiceBox.transform.DOLocalMoveY(-300, 1);
+
+        yield return new WaitUntil(() => isClicked);
+        isClicked = false;
+
+        dialogueChoiceBox.transform.DOLocalMoveY(-817, 1);
+
+        for (int i = 1; i <= line.choices[clickedButton].dialogueLine.Length; i++)
+        {
+            playerText.text = line.choices[clickedButton].dialogueLine.Substring(0, i);
+
+
+            yield return new WaitForSeconds(.02f);
+        }
+
+        yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
+
+        navigateToSelection(dialogueRoot, line.choices[clickedButton].next_Dialogue_Selection);
+        
+    }
+
+    public void navigateToSelection(dialogueParsing.Dialogue dialogueRoot, string nameOfSelection)
+    {
+        StopCoroutine("typeWrite");
+        print(dialogueRoot.combat_Selections);
+        patienceMeter.transform.DOLocalMoveX(-714, 1);
+        dialoguePlayer.transform.DOLocalMoveX(664, 1);
+        dialogueEnemy.transform.DOLocalMoveX(-621, 1);
+
+
+
+        foreach (dialogueParsing.selection data in dialogueRoot.combat_Selections)
+        {
+
+			if (data.Name == nameOfSelection)
+            {
+                StartCoroutine(typeWrite(dialogueRoot, data));
+            }
+
+        }
+
+    }
+
+    float patience = 5;
+    public IEnumerator moveMeter()
+    {
+        while (patienceMeter.value > 0)
+        {
+            patience -= 1;
+            patienceMeter.value -= patience/10;
+            yield return new WaitForSeconds(2);
+        }
+
+        
+    }
+
+    private void stopDialogue()
 	{
 		playerStuff.inDialogue = false;
         dialoguePlayer.transform.DOLocalMoveX(1431, 1);

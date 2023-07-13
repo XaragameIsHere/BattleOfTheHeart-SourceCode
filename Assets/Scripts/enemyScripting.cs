@@ -24,14 +24,14 @@ public class enemyScripting : MonoBehaviour
     [SerializeField] Canvas death;
     [SerializeField] GameObject bigGuySpawn;
     [SerializeField] GameObject bigGuy;
-    dialogueParsing.Dialogue dialogueRoot;
+    [HideInInspector] public dialogueParsing.Dialogue dialogueRoot;
 
     [SerializeField] GameObject attack1Sprite; 
     public Sprite attack2sprite;
 
     public TextAsset jsonFile;
     public int test;
-
+    public int enemyHealth = 0;
     private ParticleSystem shooter;
     public BoxCollider2D boxTrigger;
     public PolygonCollider2D playerCollider;
@@ -49,6 +49,9 @@ public class enemyScripting : MonoBehaviour
         shape = shooter.shape;
         spriteComponent = GetComponent<SpriteRenderer>();
         audioSystem = GetComponent<AudioSource>();
+
+        
+        dialogueRoot = JsonUtility.FromJson<dialogueParsing.Dialogue>(jsonFile.text);
     }
 
     
@@ -61,8 +64,7 @@ public class enemyScripting : MonoBehaviour
         audioSystem.Play();
         playerScript.inDialogue = true;
         player.transform.DOMove(new Vector3(4.51f, 11, 0), .5f);
-       
-        dialogueRoot = JsonUtility.FromJson<dialogueParsing.Dialogue>(jsonFile.text);
+
         Controller.startDialogue(dialogueRoot);
 
 
@@ -191,22 +193,37 @@ public class enemyScripting : MonoBehaviour
         
     }
 
+    
+    IEnumerator check()
+    {
+        yield return new WaitForSeconds(5);
+        if (!playerScript.inDialogue)
+            loopFight();
+    }
+
     public void loopFight()
     {
         print("loop");
-        switch (currentState)
+        if (enemyHealth > 0)
         {
-            case 1:
-                shootyshooty();
-                break;
-            case 2:
-                StartCoroutine(drop());
-                break;
-            //case 3:
-                //StartCoroutine(dropInTheBigGuy());
-                //break;
+            switch (currentState)
+            {
+                case 1:
+                    shootyshooty();
+                    break;
+                case 2:
+                    StartCoroutine(drop());
+                    break;
+                case 3:
+                    StartCoroutine(dropInTheBigGuy());
+                    break;
+            }
+            currentState = Mathf.RoundToInt(Random.Range(1, 3));
         }
-        currentState = Mathf.RoundToInt(Random.Range(1, 3));
+        else
+        {
+            StartCoroutine(check());
+        }
     }
 
 

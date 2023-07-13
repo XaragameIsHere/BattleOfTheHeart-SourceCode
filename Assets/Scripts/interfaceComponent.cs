@@ -31,10 +31,28 @@ public class dialogueParsing
     }
 
     [System.Serializable]
+    public class choice
+    {
+        public int Reaction;
+        public string dialogueLine;
+        public string next_Dialogue_Selection;
+    }
+
+    [System.Serializable]
+    public class selection
+    {
+        public string Name;
+        public string enemy_Text;
+        public choice[] choices;
+    }
+
+    [System.Serializable]
     public class Dialogue
     {
         public dialogueData[] cutscene_Dialogue;
-
+        public selection[] combat_Selections;
     }
+
+
 }
 

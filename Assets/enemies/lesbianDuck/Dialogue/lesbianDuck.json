@@ -148,23 +148,159 @@
                 [
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Insert text Here",
-                        "Name": "TestDuck"
+                        "dialogueText": "Well, there's another MSPaint Duck around the corner",
+                        "Subject": false
                     },
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Insert text Here",
-                        "Name": "TestDuck"
+                        "dialogueText": "Awww, and you like her",
+                        "Subject": true
                     },
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Insert text Here",
-                        "Name": "TestDuck"
+                        "dialogueText": "Nooo, I mean...maybe, yeah, yeah, she's perfect.",
+                        "Subject": false
                     },
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Insert text Here",
-                        "Name": "TestDuck"
+                        "dialogueText": "Well I'd like to know about her",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Maybe we can stop fighting and talk about this other duck?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Alright walk with me friend",
+                        "Subject": false
+                    }
+
+                    
+                ],
+                "After":
+                [
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "So what's her name",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Her name's Abagail",
+                        "Subject": false
+                    },
+                    
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "She was over here last night and she was playing her guitar",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I'm obsessed with women with guitars",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "OOOhhh",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Oh my god, noo, she was here for a meeting for work.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Although it seems like all we do is talk about work",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "It'd be nice if we could just go on a date and really get to know her",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well, have you asked her out on a date?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Absolutely not, what? Do you think I'm crazy",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I mean, come on, it should be obvious that I wanted to go on a date",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I literally said that I wanted to HANG OUT",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well I think that's kinda vague",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Really?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Yeah, I'm gonna real with you gorge, I don't think your romantic intentions are as obvious as you think",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I mean, we exchanged glances and smiled at each other when we met! Isn't that something",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well...",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well what do you suggest I do",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Talk to her, tell her that you like her",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Why don't I just create a game demo and tell her that I like her through the demo",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Where is Abagail?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "She's probably in front of that bar over there playing the guitar and being wonderful",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well, go in there and tell her you love her ",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You're right, I have to go in and honestly tell her",
+                        "Subject": true
                     }
                 ]
             }
@@ -172,142 +308,318 @@
         "combat_Selections":
         [
             {
-                "Selection1":
+                
+                "Name": "SelectionStartOBJECT1",
+                "enemy_Text": "What now?",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "What's this?",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "This is a pretty neat guitar",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Why do you have a dumbass guitar",
+                        
+                        "next_Dialogue_Selection": "Selection6"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Why's this guitar here?",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ]
+            },  
+            {
+                "Name": "SelectionStartNOOBJECT1",
+                "enemy_Text": "What do you want?",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "NOTHING!",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Still wondering why you look that way",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "What do you want? little miss crazy duck, you attacked first!",
+                        
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "I just wanna get away from your crazy ass",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ]
+            },       
+            {
+                "Name": "Selection2",
+                "enemy_Text": "LIES, you came here to mess with me, so what do you want?",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "I Just wanna go home!",
+                        "next_Dialogue_Selection": "Selection1"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "To never see you again!",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Insert text Here",
+                        
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "I just wanna get away from your crazy ass",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ]
+            },   
+            {
+                "Name": "Selection3",
+                "enemy_Text": "NOW YOU'RE MAKING FUN OF MY APPEARANCE!",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "No not in that way, I'm just curious",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Well, it's not my fault you look goofy",
+                        
+                        "next_Dialogue_Selection": "Selection1"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "It's just that you genuinely do look like you were made in MS Paint",
+                        
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "Insert text Here",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ]
+            },
+                      
+            {
+                "Name": "Selection4",
+                "enemy_Text": "YOU BROKE INTO MY HOUSE",
+                "choices": 
                 [
                     {
                         "Reaction": 2,
-                        "ReactionDialogue": "Insert text Here",
+                        
                         "dialogueLine": "Insert text Here",
                         "next_Dialogue_Selection": "Selection2"
                     },
                     {
                         "Reaction": 1,
                         "dialogueLine": "Insert text Here",
-                        "ReactionDialogue": "Insert text Here",
+                        
                         "next_Dialogue_Selection": "Selection3"
                     },
                     {
                         "Reaction": -1,
                         "dialogueLine": "Insert text Here",
-                        "ReactionDialogue": "Insert text Here",
-                        "next_Dialogue_Selection": "Selection4"
-                    },
-                    {
-                        "Reaction": -2,
-                        "ReactionDialogue": "Insert text Here",
-                        "dialogueLine": "Insert text Here",
-                        "next_Dialogue_Selection": "Selection5"
-                    }
-                ],
-                "Selection2":
-                [
-                    {
-                        "Reaction": 2,
-                        "ReactionDialogue": "Insert text Here",
-                        "dialogueLine": "Insert text Here",
+                        
                         "next_Dialogue_Selection": "Selection1"
                     },
                     {
-                        "Reaction": 1,
-                        "dialogueLine": "Insert text Here",
-                        "ReactionDialogue": "Insert text Here",
-                        "next_Dialogue_Selection": "Selection3"
-                    },
-                    {
-                        "Reaction": -1,
-                        "dialogueLine": "Insert text Here",
-                        "ReactionDialogue": "Insert text Here",
-                        "next_Dialogue_Selection": "Selection4"
-                    },
-                    {
                         "Reaction": -2,
-                        "ReactionDialogue": "Insert text Here",
+                        
                         "dialogueLine": "Insert text Here",
                         "next_Dialogue_Selection": "Selection5"
                     }
-                ],
-                "Selection3":
+                ]
+            },
+            {
+                "Name": "Selection5",
+                "enemy_Text": "CRAZY!!! UNBELIEVABLE! I LITERALLY JUST WANT YOU OUT OF MY HOUSE!",
+                "choices": 
                 [
                     {
                         "Reaction": 2,
-                        "ReactionDialogue": "Insert text Here",
+                        
                         "dialogueLine": "Insert text Here",
-                        "next_Dialogue_Selection": "Selection1"
-                    },
-                    {
-                        "Reaction": 1,
-                        "dialogueLine": "Insert text Here",
-                        "ReactionDialogue": "Insert text Here",
                         "next_Dialogue_Selection": "Selection2"
                     },
                     {
-                        "Reaction": -1,
-                        "dialogueLine": "Insert text Here",
-                        "ReactionDialogue": "Insert text Here",
-                        "next_Dialogue_Selection": "Selection4"
-                    },
-                    {
-                        "Reaction": -2,
-                        "ReactionDialogue": "Insert text Here",
-                        "dialogueLine": "Insert text Here",
-                        "next_Dialogue_Selection": "Selection5"
-                    }
-                ],
-                "Selection4":
-                [
-                    {
-                        "Reaction": 2,
-                        "ReactionDialogue": "Insert text Here",
-                        "dialogueLine": "Insert text Here",
-                        "next_Dialogue_Selection": "Selection1"
-                    },
-                    {
                         "Reaction": 1,
                         "dialogueLine": "Insert text Here",
-                        "ReactionDialogue": "Insert text Here",
-                        "next_Dialogue_Selection": "Selection2"
-                    },
-                    {
-                        "Reaction": -1,
-                        "dialogueLine": "Insert text Here",
-                        "ReactionDialogue": "Insert text Here",
+                        
                         "next_Dialogue_Selection": "Selection3"
                     },
                     {
                         "Reaction": -2,
-                        "ReactionDialogue": "Insert text Here",
-                        "dialogueLine": "Insert text Here",
-                        "next_Dialogue_Selection": "Selection5"
-                    }
-                ],
-                "Selection5":
-                [
-                    {
-                        "Reaction": 2,
-                        "ReactionDialogue": "Insert text Here",
-                        "dialogueLine": "Insert text Here",
-                        "next_Dialogue_Selection": "Selection1"
-                    },
-                    {
-                        "Reaction": 1,
-                        "dialogueLine": "Insert text Here",
-                        "ReactionDialogue": "Insert text Here",
-                        "next_Dialogue_Selection": "Selection2"
-                    },
-                    {
-                        "Reaction": -1,
-                        "dialogueLine": "Insert text Here",
-                        "ReactionDialogue": "Insert text Here",
-                        "next_Dialogue_Selection": "Selection3"
+                        "dialogueLine": "MAYBE IF YOU WEREN'T SO CRAZY I'D BE ABLE TO LEAVE EASIER",
+                        
+                        "next_Dialogue_Selection": "Selection4"
                     },
                     {
                         "Reaction": -2,
-                        "ReactionDialogue": "Insert text Here",
-                        "dialogueLine": "Insert text Here",
+                        
+                        "dialogueLine": "JUST OPEN THE DOOR",
+                        "next_Dialogue_Selection": "Selection1"
+                    }
+                ]
+            },    
+            {
+                "Name": "Selection6",
+                "enemy_Text": "YOU KNOW WHAT! IT'S NONE OF YOUR GODDAMN BUSINESS",
+                "choices": 
+                [
+                    {
+                        "Reaction": -1,
+                        
+                        "dialogueLine": "Fine, but I still don't get why you're so mad",
                         "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Well can I leave then?",
+                        
+                        "next_Dialogue_Selection": "SelectionStartNOOBJECT1"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Still Just a little curious",
+                        
+                        "next_Dialogue_Selection": "Selection7"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "Fine, crazy duck",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ]
+            },      
+            {
+                "Name": "Selection7",
+                "enemy_Text": "If you really want to know, I'm one of the few remaining MS Paint Ducks in the world",
+                "choices": 
+                [
+                    {
+                        "Reaction": -1,
+                        
+                        "dialogueLine": "Fine, but I still don't get why you're so mad",
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Well can I leave then?",
+                        
+                        "next_Dialogue_Selection": "SelectionStartNOOBJECT1"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Still Just a little curious",
+                        
+                        "next_Dialogue_Selection": "Selection1"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "Fine, crazy duck",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ]
+            }, 
+            {
+                "Name": "Selection8",
+                "enemy_Text": "It's a guitar I have",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "Who's guitar?",
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "You play guitar?",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "You probably suck pretty bad at guitar",
+                        
+                        "next_Dialogue_Selection": "Selection6"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "Weird Guitar",
+                        "next_Dialogue_Selection": "Selection6"
+                    }
+                ]
+            },      
+            {
+                "Name": "Selection9",
+                "enemy_Text": "It's the guitar of a duck who... is just simply wonderful.",
+                "choices": 
+                [
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "Tell me more about her",
+                        "next_Dialogue_Selection": "End"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Aww you have a crush on someone",
+                        
+                        "next_Dialogue_Selection": "End"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Weird Duck",
+                        
+                        "next_Dialogue_Selection": "Selection6"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "Who's this duck?",
+                        "next_Dialogue_Selection": "Selection7"
                     }
                 ]
             }
+            
         ]
       
     }

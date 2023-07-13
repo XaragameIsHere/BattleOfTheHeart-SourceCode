@@ -26,7 +26,7 @@ public class playerMovement : MonoBehaviour
 	public bool invincibility = false;
 	public Vector2 velocityUp;
 	public Vector2 playerSpeed;
-
+	private playerUIController uIController;
 	private CharacterController playerMover;
 	//private Animator animationController;
 	private bool isGrounded;
@@ -36,13 +36,14 @@ public class playerMovement : MonoBehaviour
 	public bool inDialogue = false;
 	public bool alive = true;
 	public bool parrying = false;
-	public Rigidbody2D rBody;
+    public Rigidbody2D rBody;
 	Collider2D collisionBaybe;
 	Collider2D[] hits;
 	ParticleSystem.MainModule psMain;
 	ParticleSystem.ShapeModule shape;
 	Animator playerAnimator;
 	SpriteRenderer playerSprite;
+	private bool objectAttained = false;
 
 	// Start is called before the first frame update
 	void Start()
@@ -53,6 +54,7 @@ public class playerMovement : MonoBehaviour
 		psMain = rocketBoots.main;
 		shape = rocketBoots.shape;
 		collisionBaybe = GetComponent<PolygonCollider2D>();
+		uIController = GetComponent<playerUIController>();
 	}
 
 	IEnumerator waitforit()
@@ -188,9 +190,21 @@ public class playerMovement : MonoBehaviour
 			rocketBoots.Play();
 		}
 
+		if (Vector3.Distance(enemyScript.transform.position, transform.position) < 1 && Input.GetButton("Use") && !objectAttained)
+		{
+			inDialogue = true;
+			uIController.navigateToSelection(enemyScript.dialogueRoot, "SelectionStartNOOBJECT1");
+			StartCoroutine(uIController.moveMeter());
+		}
+		else if (Vector3.Distance(enemyScript.transform.position, transform.position) < 1 && Input.GetButton("Use") && objectAttained)
+        {
+            inDialogue = true;
+            uIController.navigateToSelection(enemyScript.dialogueRoot, "SelectionStartOBJECT1");
+            StartCoroutine(uIController.moveMeter());
+        }
 
 
-		if (collisionBaybe.IsTouchingLayers(wallLayers))
+        if (collisionBaybe.IsTouchingLayers(wallLayers))
 		{
 			//walk = false;
 			rBody.AddForce(new Vector2(0, 750));
