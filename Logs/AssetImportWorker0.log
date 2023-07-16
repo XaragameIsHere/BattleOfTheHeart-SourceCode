@@ -1755,3 +1755,355 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 3774.803599 seconds.
+  path: Assets/enemies/testDuck.png
+  artifactKey: Guid(624cf06be0c49d041be67ec4c67d5176) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/testDuck.png using Guid(624cf06be0c49d041be67ec4c67d5176) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c831e4268ab90057580bd459b5ad77c') in 0.038155 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 2.712364 seconds.
+  path: Assets/enemies/gunslinger
+  artifactKey: Guid(6e9723e426a81f441a2e8ba7b154adcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger using Guid(6e9723e426a81f441a2e8ba7b154adcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1b252cdf4610e290ec9917ff0189d96') in 0.000579 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.072603 seconds.
+  path: Assets/enemies/gunslinger/Gunslinger_Idle.png
+  artifactKey: Guid(7b8c5d13903f32e42a8778517115222f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/Gunslinger_Idle.png using Guid(7b8c5d13903f32e42a8778517115222f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4087d2aeb7558abeb522a4c466889a0') in 0.002054 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/enemies/gunslinger/Gunslinger_Shoot.png
+  artifactKey: Guid(de7c8a61b663ded479a0e4efd847b829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/Gunslinger_Shoot.png using Guid(de7c8a61b663ded479a0e4efd847b829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cb1c226f456f69d3bee2f7a5645acbe') in 0.001381 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/enemies/gunslinger/Gunslinger_Throw.png
+  artifactKey: Guid(300b9a3667dcab04a8d1f36c52ec5f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/Gunslinger_Throw.png using Guid(300b9a3667dcab04a8d1f36c52ec5f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4de9b1d91078c1a95cccc6d451382c3b') in 0.001502 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/enemies/gunslinger/Gunslinger_Stun.png
+  artifactKey: Guid(8de5c9b4c64a4db4fbb1506b9d740f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/Gunslinger_Stun.png using Guid(8de5c9b4c64a4db4fbb1506b9d740f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3888683489633bfbde1226c23971a8c') in 0.001437 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 41.394786 seconds.
+  path: Assets/enemies/gunslinger/Gunslinger_Idle.png
+  artifactKey: Guid(7b8c5d13903f32e42a8778517115222f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/Gunslinger_Idle.png using Guid(7b8c5d13903f32e42a8778517115222f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff7f07aafc94cc395550ef6367252a07') in 0.001110 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 665.737229 seconds.
+  path: Assets/enemies/gunslinger/Gunslinger_Idle.png
+  artifactKey: Guid(7b8c5d13903f32e42a8778517115222f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/Gunslinger_Idle.png using Guid(7b8c5d13903f32e42a8778517115222f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87eb077c42bf96e47672c175d93d1479') in 0.003590 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 191.560789 seconds.
+  path: Assets/enemies/gunslinger/Gunslinger_Idle_0.controller
+  artifactKey: Guid(84c34ed7b6c4b2442bb2d3527758c6be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/Gunslinger_Idle_0.controller using Guid(84c34ed7b6c4b2442bb2d3527758c6be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbe8d06658c1d9b1a791b5acee67d22d') in 0.011175 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 22.358483 seconds.
+  path: Assets/enemies/Gunslinger_Idle_0.controller
+  artifactKey: Guid(84c34ed7b6c4b2442bb2d3527758c6be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/Gunslinger_Idle_0.controller using Guid(84c34ed7b6c4b2442bb2d3527758c6be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '102a801b024ffce1feede1fd478efddb') in 0.002668 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 92.957921 seconds.
+  path: Assets/enemies/gunslinger/idle
+  artifactKey: Guid(d37796a8f1f7e4b4eb78c8e4b1c94c77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/idle using Guid(d37796a8f1f7e4b4eb78c8e4b1c94c77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd662ea6344e7228eb0637092c3a9b252') in 0.000665 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 61.173018 seconds.
+  path: Assets/enemies/gunslinger/New Folder
+  artifactKey: Guid(0577c70e6c0feb0448068604e4b73418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/New Folder using Guid(0577c70e6c0feb0448068604e4b73418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d85fa6cde5685ccef833518c69f0071') in 0.000575 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 7.615696 seconds.
+  path: Assets/enemies/gunslinger/stun
+  artifactKey: Guid(0577c70e6c0feb0448068604e4b73418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/stun using Guid(0577c70e6c0feb0448068604e4b73418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8136edecce510b4c9e4f27f959a950ea') in 0.000700 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 22.704733 seconds.
+  path: Assets/enemies/gunslinger/shoot
+  artifactKey: Guid(6d17cad6da488954ca193a17afe1d552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/shoot using Guid(6d17cad6da488954ca193a17afe1d552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76b244706189a8efed37a99ca1a2c937') in 0.000515 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 37.207349 seconds.
+  path: Assets/enemies/gunslinger/throw
+  artifactKey: Guid(76bf18c890f4b6046afffeb532f1bf90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/throw using Guid(76bf18c890f4b6046afffeb532f1bf90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d1658e6bc90d179000bef69d0537048') in 0.000549 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 190.438812 seconds.
+  path: Assets/enemies/gunslinger/idle/gunslinger_Idle.anim
+  artifactKey: Guid(2d54f292081092645a99c8ddeab9e3ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/idle/gunslinger_Idle.anim using Guid(2d54f292081092645a99c8ddeab9e3ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24c5983b33e83861e23588c429a110dd') in 0.001409 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 18.518553 seconds.
+  path: Assets/enemies/gunslinger/gunslinger_Animator.controller
+  artifactKey: Guid(84c34ed7b6c4b2442bb2d3527758c6be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/gunslinger_Animator.controller using Guid(84c34ed7b6c4b2442bb2d3527758c6be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3daf4a8ad8eab6526ad0a1c621ee14a6') in 0.001360 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 252.568817 seconds.
+  path: Assets/enemies/gunslinger/idle/Gunslinger_Idle.png
+  artifactKey: Guid(7b8c5d13903f32e42a8778517115222f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/idle/Gunslinger_Idle.png using Guid(7b8c5d13903f32e42a8778517115222f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2451fdce6608734b795dd4850908ff3a') in 0.004151 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 31.232042 seconds.
+  path: Assets/enemies/gunslinger/idle/Gunslinger_Idle.png
+  artifactKey: Guid(7b8c5d13903f32e42a8778517115222f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/idle/Gunslinger_Idle.png using Guid(7b8c5d13903f32e42a8778517115222f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e6d65cd2889d1cf9101916552c979ca') in 0.003135 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 1157.613892 seconds.
+  path: Assets/enemies/gunslinger/shoot/Gunslinger_Shoot.png
+  artifactKey: Guid(de7c8a61b663ded479a0e4efd847b829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/shoot/Gunslinger_Shoot.png using Guid(de7c8a61b663ded479a0e4efd847b829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81546e8064e146fef3b01ec31bc0a23f') in 0.002906 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 48.375863 seconds.
+  path: Assets/enemies/gunslinger/shoot/Gunslinger_Shoot.png
+  artifactKey: Guid(de7c8a61b663ded479a0e4efd847b829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/shoot/Gunslinger_Shoot.png using Guid(de7c8a61b663ded479a0e4efd847b829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2dc45fcc8cd5c4be5b9ba329f0edfa5') in 0.003701 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 30.297303 seconds.
+  path: Assets/enemies/gunslinger/shoot/Gunslinger_Shoot.png
+  artifactKey: Guid(de7c8a61b663ded479a0e4efd847b829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/shoot/Gunslinger_Shoot.png using Guid(de7c8a61b663ded479a0e4efd847b829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e0c890d18308e2a3100b73c3aa55a64') in 0.003170 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 22.308308 seconds.
+  path: Assets/enemies/gunslinger/throw/Gunslinger_Throw.png
+  artifactKey: Guid(300b9a3667dcab04a8d1f36c52ec5f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/throw/Gunslinger_Throw.png using Guid(300b9a3667dcab04a8d1f36c52ec5f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a91f915f61df425b2019dc2befff1a2') in 0.005077 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 2.346322 seconds.
+  path: Assets/enemies/gunslinger/stun/Gunslinger_Stun.png
+  artifactKey: Guid(8de5c9b4c64a4db4fbb1506b9d740f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/stun/Gunslinger_Stun.png using Guid(8de5c9b4c64a4db4fbb1506b9d740f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56441db4c2c59aaf8abb0ed248fb5c7b') in 0.002814 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 35.750167 seconds.
+  path: Assets/enemies/gunslinger/shoot/Gunslinger_Shoot_0.controller
+  artifactKey: Guid(b573dfe75b8e06e4988caaf8a8600425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/shoot/Gunslinger_Shoot_0.controller using Guid(b573dfe75b8e06e4988caaf8a8600425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0d85dbbcef5b9d370659f31fec5ff6f') in 0.001454 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 8.209479 seconds.
+  path: Assets/enemies/gunslinger/shoot/gunslinger_Shoot.anim
+  artifactKey: Guid(2e41943551b8149449d3b7d71981f7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/shoot/gunslinger_Shoot.anim using Guid(2e41943551b8149449d3b7d71981f7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '498a24c52926f443f3a73d0085493cf4') in 0.000959 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 218.975543 seconds.
+  path: Assets/enemies/gunslinger/stun/Gunslinger_Stun.png
+  artifactKey: Guid(8de5c9b4c64a4db4fbb1506b9d740f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/stun/Gunslinger_Stun.png using Guid(8de5c9b4c64a4db4fbb1506b9d740f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9b0ea28a74ea2bd19f143db238aafdc') in 0.002209 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 13.369300 seconds.
+  path: Assets/enemies/gunslinger/stun/Gunslinger_Stun.png
+  artifactKey: Guid(8de5c9b4c64a4db4fbb1506b9d740f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/stun/Gunslinger_Stun.png using Guid(8de5c9b4c64a4db4fbb1506b9d740f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa44b91642119ec6e2e91a71be8709ab') in 0.002004 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 42.589164 seconds.
+  path: Assets/enemies/gunslinger/stun/Gunslinger_Stun_1.controller
+  artifactKey: Guid(942adace38d6dca46a8e54ca18eb63be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/stun/Gunslinger_Stun_1.controller using Guid(942adace38d6dca46a8e54ca18eb63be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1630e85325c15664fc7f5cbfad6cf13') in 0.001222 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 22.617982 seconds.
+  path: Assets/enemies/gunslinger/stun/stunned.anim
+  artifactKey: Guid(96aacd1e8f1f97c448420a6111698977) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/stun/stunned.anim using Guid(96aacd1e8f1f97c448420a6111698977) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68006d44b65116cabcdcef3108628a1b') in 0.001391 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 9.315689 seconds.
+  path: Assets/enemies/gunslinger/stun/gunslinger_Stunned.anim
+  artifactKey: Guid(96aacd1e8f1f97c448420a6111698977) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/stun/gunslinger_Stunned.anim using Guid(96aacd1e8f1f97c448420a6111698977) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46c84956762524c608cadbd3bcdb485b') in 0.000958 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 246.832415 seconds.
+  path: Assets/enemies/gunslinger/throw/Gunslinger_Throw.png
+  artifactKey: Guid(300b9a3667dcab04a8d1f36c52ec5f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/throw/Gunslinger_Throw.png using Guid(300b9a3667dcab04a8d1f36c52ec5f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c6328fc089586b0f7a2fe2e00702004') in 0.004167 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 15.367186 seconds.
+  path: Assets/enemies/gunslinger/throw/Gunslinger_Throw.png
+  artifactKey: Guid(300b9a3667dcab04a8d1f36c52ec5f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/throw/Gunslinger_Throw.png using Guid(300b9a3667dcab04a8d1f36c52ec5f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f020d78cf2165b72ce54034455d8e32e') in 0.005097 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 38.570763 seconds.
+  path: Assets/enemies/gunslinger/throw/Gunslinger_Throw_0.controller
+  artifactKey: Guid(2f0ba11750b713348b33711e326e1ff1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/throw/Gunslinger_Throw_0.controller using Guid(2f0ba11750b713348b33711e326e1ff1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75366faf52fdf51654f0bbbe79098c97') in 0.001498 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 81.264327 seconds.
+  path: Assets/enemies/gunslinger/throw/gunslinger_Throw.anim
+  artifactKey: Guid(4c9a77ac690682e439f235565ced0007) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/gunslinger/throw/gunslinger_Throw.anim using Guid(4c9a77ac690682e439f235565ced0007) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75e95e50ddd37b6acee4df6e6a5eebea') in 0.001187 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image B:\unityFiles\UntitledFightingRomanceGame\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image B:\unityFiles\UntitledFightingRomanceGame\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.062 seconds
+Refreshing native plugins compatible for Editor in 2.65 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.134 seconds
+Domain Reload Profiling: 2194ms
+	BeginReloadAssembly (243ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (23ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (99ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (744ms)
+		LoadAssemblies (504ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (316ms)
+			TypeCache.Refresh (306ms)
+				TypeCache.ScanAssembly (285ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (1134ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (510ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (7ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (143ms)
+			ProcessInitializeOnLoadAttributes (265ms)
+			ProcessInitializeOnLoadMethodAttributes (80ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Refreshing native plugins compatible for Editor in 3.63 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5565 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 56 unused Assets / (221.6 KB). Loaded Objects now: 6233.
+Memory consumption went from 270.3 MB to 270.1 MB.
+Total: 3.959800 ms (FindLiveObjects: 0.415400 ms CreateObjectMapping: 0.438700 ms MarkObjects: 2.854900 ms  DeleteObjects: 0.249900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 114.683991 seconds.
+  path: Assets/enemies/lesbianDuck/bulletSprites/sprite2Mat.mat
+  artifactKey: Guid(36259bfa4acd8f446bbea536e8655e2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/lesbianDuck/bulletSprites/sprite2Mat.mat using Guid(36259bfa4acd8f446bbea536e8655e2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26d40062ef2b6e9591beda874a9fdd64') in 0.028746 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
