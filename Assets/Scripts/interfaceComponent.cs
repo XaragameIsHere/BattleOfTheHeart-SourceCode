@@ -1,12 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
-using TMPro;
-using System.Threading;
-using UnityEngine.SceneManagement;
+
 /// <summary>
 /// this is the componenent of the UI that controls the dialogue in game
 /// ye

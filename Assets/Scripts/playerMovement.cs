@@ -14,13 +14,14 @@ public class playerMovement : MonoBehaviour
 	[SerializeField] LayerMask wallLayers;
     [SerializeField] LayerMask enemyLayers;
     public Camera playerCamera;
-	[SerializeField] float jumpStrength = 20;
 	[SerializeField] float friction = 2;
 	[SerializeField] float walkSpeed = 5;
 	[SerializeField] enemyScripting enemyScript;
 	[SerializeField] Sprite badheart;
 	[SerializeField] List<Image> hearts = new List<Image>();
 	[SerializeField] List<Image> badHearts = new List<Image>();
+	[SerializeField] GameObject trigger;
+	[SerializeField] Slider fuelMeter;
 
 	public int playerLives = 4;
 	public bool invincibility = false;
@@ -44,10 +45,12 @@ public class playerMovement : MonoBehaviour
 	Animator playerAnimator;
 	SpriteRenderer playerSprite;
 	private bool objectAttained = false;
+	private float startDistance;
 
 	// Start is called before the first frame update
 	void Start()
 	{
+		startDistance = Vector3.Distance(transform.position, trigger.transform.position);
 		playerSprite = GetComponent<SpriteRenderer>();
 		playerAnimator = GetComponent<Animator>();
 		rocketBoots = GetComponent<ParticleSystem>();
@@ -64,7 +67,9 @@ public class playerMovement : MonoBehaviour
         collisionBaybe.excludeLayers = 0;
     }
 
-	private void hurt()
+    public void giveRocketBoots() { fuelMeter.gameObject.SetActive(true); }
+
+    private void hurt()
 	{
 		if (alive && !invincibility)
 		{
@@ -203,20 +208,17 @@ public class playerMovement : MonoBehaviour
             StartCoroutine(uIController.moveMeter());
         }
 
-		if (enemyScript.enemyObject)
-		{
-			if (Vector3.Distance(enemyScript.enemyObject.transform.position, transform.position) < 1 && Input.GetButton("Use"))
-			{
-				objectAttained = true;
-				Destroy(enemyScript.enemyObject);
-			}
-		}
-        
+
+		if (!inFight && !inDialogue)
+			fuelMeter.value = Mathf.Abs(Vector3.Distance(transform.position, trigger.transform.position) - startDistance)/ startDistance;
+        else 
+			fuelMeter.value = 1;
+
 
         if (collisionBaybe.IsTouchingLayers(wallLayers))
 		{
 			//walk = false;
-			rBody.AddForce(new Vector2(0, 750));
+			rBody.AddForce(new Vector2(0, 2500));
 		}
 		/*
 		else

@@ -64,7 +64,7 @@ public class enemyScripting : MonoBehaviour
         player.GetComponent<AudioSource>().Stop();
         audioSystem.Play();
         playerScript.inDialogue = true;
-        player.transform.DOMove(new Vector3(4.51f, 11, 0), .5f);
+        player.transform.DOMove(new Vector3(37, 11, 0), .5f);
 
         Controller.startDialogue(dialogueRoot);
 
@@ -192,7 +192,7 @@ public class enemyScripting : MonoBehaviour
 
         audioSystem.clip = FightMusic;
         audioSystem.Play();
-        transform.DOMove(new Vector3(-7, 11), 1);
+        transform.DOMove(new Vector3(45, 11), 1);
         playerScript.playerCamera.orthographicSize = 7;
         playerScript.inFight = true;
         loopFight();
