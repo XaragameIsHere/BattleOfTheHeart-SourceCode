@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/lvl_gunslinger.unity
     guid: 04867f98b827c6f46a51de4c659212e0
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/dev_combat_test.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
