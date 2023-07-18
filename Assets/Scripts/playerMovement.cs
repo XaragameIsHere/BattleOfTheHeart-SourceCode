@@ -86,6 +86,7 @@ public class playerMovement : MonoBehaviour
 
     private void OnParticleCollision(GameObject particleSystem)
 	{
+		enemyScript.hit = true;
 		if (!parrying)
 		{
 			if (particleSystem.layer == 8)

@@ -1,11 +1,9 @@
 using DG.Tweening;
-using JetBrains.Annotations;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using Random = UnityEngine.Random;
 
 
@@ -15,6 +13,8 @@ public class enemyScripting : MonoBehaviour
 {
     ParticleSystem.NoiseModule noice;
     ParticleSystem.ShapeModule shape;
+    ParticleSystem.MainModule main;
+    ParticleSystem.EmissionModule emission;
     [SerializeField] GameObject fallingObjectArea;
     [SerializeField] playerMovement playerScript;
     [SerializeField] playerUIController Controller;
@@ -26,11 +26,20 @@ public class enemyScripting : MonoBehaviour
     [SerializeField] GameObject bigGuy;
     [SerializeField] Vector3 playerPostion;
     [SerializeField] Vector3 enemyPosition;
+    [SerializeField] tutorialScripting tutorial;
+    [SerializeField] GameObject tutorialKey;
     [HideInInspector] public dialogueParsing.Dialogue dialogueRoot;
+    [HideInInspector] public bool hit = false;
     public GameObject enemyObject;
+    [ColorUsage(true, true)]
+    public Color someHDRColor;
+    [ColorUsage(true, true)]
+    private Color newHDRColor = Color.white;
 
     [SerializeField] GameObject attack1Sprite; 
     public Sprite attack2sprite;
+    [SerializeField] Volume postProcess;
+    ColorAdjustments colorAd;
 
     public TextAsset jsonFile;
     public int test;
@@ -41,33 +50,54 @@ public class enemyScripting : MonoBehaviour
     public GameObject player;
     private AudioSource audioSystem;
     private SpriteRenderer spriteComponent;
-
-    
+    private AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        postProcess.profile.TryGet(out colorAd);
+        colorAd.colorFilter.hdr = false;
         shooter = GetComponent<ParticleSystem>();
+        emission = shooter.emission;
+        main = shooter.main;
         noice = shooter.noise;
         shape = shooter.shape;
+        
         spriteComponent = GetComponent<SpriteRenderer>();
         audioSystem = GetComponent<AudioSource>();
 
-        
         dialogueRoot = JsonUtility.FromJson<dialogueParsing.Dialogue>(jsonFile.text);
     }
 
-    
+    IEnumerator slowMoParry()
+    {
 
-    
+        yield return new WaitForSeconds(.65f);
+        shape.rotation = new Vector3(0, -90, 0);
+        shape.arc = 1;
+        main.startSpeed = 30;
+        emission.rateOverTime = .75f;
+        shooter.Emit(1);
+        yield return new WaitForSeconds(.2f);
+
+        tutorial.dropHint(tutorialKey);
+
+        colorAd.colorFilter.Override(someHDRColor);
+        main.simulationSpeed = .02f;
+        yield return new WaitUntil(() => hit == true);
+        colorAd.colorFilter.Override(newHDRColor);
+        main.simulationSpeed = .6f;
+        
+
+    }
 
     public void initializeFight()
     {
-        player.GetComponent<AudioSource>().Stop();
-        audioSystem.Play();
+        //player.GetComponent<AudioSource>().Stop();
+        //audioSystem.Play();
         playerScript.inDialogue = true;
-        player.transform.DOMove(playerPostion, .5f);
-
+        //player.transform.DOMove(playerPostion, .5f);
         Controller.startDialogue(dialogueRoot);
 
 
@@ -192,12 +222,13 @@ public class enemyScripting : MonoBehaviour
 
         print("start");
 
-        audioSystem.clip = FightMusic;
-        audioSystem.Play();
-        transform.DOMove(enemyPosition, 1);
+        //audioSystem.clip = FightMusic;
+        //audioSystem.Play();
+        //transform.DOMove(enemyPosition, 1);
         playerScript.playerCamera.orthographicSize = 7;
         playerScript.inFight = true;
-        loopFight();
+        StartCoroutine(slowMoParry());
+        //loopFight();
 
         
     }
