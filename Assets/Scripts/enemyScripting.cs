@@ -24,6 +24,8 @@ public class enemyScripting : MonoBehaviour
     [SerializeField] Canvas death;
     [SerializeField] GameObject bigGuySpawn;
     [SerializeField] GameObject bigGuy;
+    [SerializeField] Vector3 playerPostion;
+    [SerializeField] Vector3 enemyPosition;
     [HideInInspector] public dialogueParsing.Dialogue dialogueRoot;
     public GameObject enemyObject;
 
@@ -32,7 +34,7 @@ public class enemyScripting : MonoBehaviour
 
     public TextAsset jsonFile;
     public int test;
-    public int enemyHealth = 0;
+    public int enemyHealth = 10;
     private ParticleSystem shooter;
     public BoxCollider2D boxTrigger;
     public PolygonCollider2D playerCollider;
@@ -64,7 +66,7 @@ public class enemyScripting : MonoBehaviour
         player.GetComponent<AudioSource>().Stop();
         audioSystem.Play();
         playerScript.inDialogue = true;
-        player.transform.DOMove(new Vector3(37, 11, 0), .5f);
+        player.transform.DOMove(playerPostion, .5f);
 
         Controller.startDialogue(dialogueRoot);
 
@@ -192,7 +194,7 @@ public class enemyScripting : MonoBehaviour
 
         audioSystem.clip = FightMusic;
         audioSystem.Play();
-        transform.DOMove(new Vector3(45, 11), 1);
+        transform.DOMove(enemyPosition, 1);
         playerScript.playerCamera.orthographicSize = 7;
         playerScript.inFight = true;
         loopFight();

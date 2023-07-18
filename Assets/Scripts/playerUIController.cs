@@ -9,6 +9,7 @@ public class playerUIController : MonoBehaviour
 {
 	public playerMovement playerStuff;
 	public enemyScripting enemyStuff;
+    public bool dev_SkipCutscene = false;
 
 	public RawImage dialogueChoiceBox;
     public Slider patienceMeter;
@@ -64,15 +65,21 @@ public class playerUIController : MonoBehaviour
 		dialoguePlayer.transform.DOLocalMoveX(664, 1);
         dialogueEnemy.transform.DOLocalMoveX(-621, 1);
 
-
-        foreach (dialogueParsing.dialogueData data in dialogueRoot.cutscene_Dialogue)
-		{
+        if (!dev_SkipCutscene)
+        {
+            foreach (dialogueParsing.dialogueData data in dialogueRoot.cutscene_Dialogue)
+		    {
 			
-			StartCoroutine(dialogue(data.Start));
+			    StartCoroutine(dialogue(data.Start));
 			
-		}
+		    }
+        }
+        else
+        {
+            stopDialogue();
+        }
 
-        //stopDialogue();
+        
     }
 
     bool isClicked = false;
