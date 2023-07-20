@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 
@@ -14,7 +15,9 @@ public class enemyScripting : MonoBehaviour
     ParticleSystem.NoiseModule noice;
     ParticleSystem.ShapeModule shape;
     ParticleSystem.MainModule main;
+    ParticleSystem.ForceOverLifetimeModule forceOverLifetime;
     ParticleSystem.EmissionModule emission;
+    ParticleSystem.SubEmittersModule explody;
     [SerializeField] GameObject fallingObjectArea;
     [SerializeField] playerMovement playerScript;
     [SerializeField] playerUIController Controller;
@@ -28,6 +31,7 @@ public class enemyScripting : MonoBehaviour
     [SerializeField] Vector3 enemyPosition;
     [SerializeField] tutorialScripting tutorial;
     [SerializeField] GameObject tutorialKey;
+    [SerializeField] GameObject eKey;
     [HideInInspector] public dialogueParsing.Dialogue dialogueRoot;
     [HideInInspector] public bool hit = false;
     public GameObject enemyObject;
@@ -50,7 +54,9 @@ public class enemyScripting : MonoBehaviour
     public GameObject player;
     private AudioSource audioSystem;
     private SpriteRenderer spriteComponent;
+    private LineRenderer lasersBitch;
     private AudioSource audio;
+    private RaycastHit2D snipeHit;
 
     // Start is called before the first frame update
     void Start()
@@ -60,10 +66,14 @@ public class enemyScripting : MonoBehaviour
         colorAd.colorFilter.hdr = false;
         shooter = GetComponent<ParticleSystem>();
         emission = shooter.emission;
+        forceOverLifetime = shooter.forceOverLifetime;
         main = shooter.main;
         noice = shooter.noise;
         shape = shooter.shape;
+        explody = shooter.subEmitters;
+        shooter.Play();
         
+        lasersBitch = GetComponent<LineRenderer>();
         spriteComponent = GetComponent<SpriteRenderer>();
         audioSystem = GetComponent<AudioSource>();
 
@@ -88,7 +98,8 @@ public class enemyScripting : MonoBehaviour
         yield return new WaitUntil(() => hit == true);
         colorAd.colorFilter.Override(newHDRColor);
         main.simulationSpeed = .6f;
-        
+
+        loopFight();
 
     }
 
@@ -97,7 +108,7 @@ public class enemyScripting : MonoBehaviour
         //player.GetComponent<AudioSource>().Stop();
         //audioSystem.Play();
         playerScript.inDialogue = true;
-        //player.transform.DOMove(playerPostion, .5f);
+        player.transform.DOMove(playerPostion, .5f);
         Controller.startDialogue(dialogueRoot);
 
 
@@ -155,6 +166,68 @@ public class enemyScripting : MonoBehaviour
         }
     }
 
+    private IEnumerator snipe()
+    {
+        for (int i = 0; i < 12; i++)
+        {
+            rotate = Mathf.Rad2Deg * Mathf.Atan(Mathf.Abs(player.transform.position.y - transform.position.y) / Mathf.Abs(player.transform.position.x - transform.position.x));
+
+            snipeHit = Physics2D.Raycast(transform.position, new Vector2(-rotate, 0));
+            if (snipeHit.collider != null)
+            {
+                
+                lasersBitch.enabled = true;
+                lasersBitch.SetPositions( new Vector3[] {transform.localPosition, player.transform.localPosition});
+                yield return new WaitForSeconds(.75f);
+
+                shape.rotation = new Vector3(-rotate, -90, 0);
+                shape.arc = 1;
+                main.startSpeed = 100;
+                emission.rateOverTime = .75f;
+                shooter.Emit(1);
+                yield return new WaitForSeconds(.5f);
+                lasersBitch.enabled = false;
+
+            }
+        }
+
+        loopFight();
+
+    }
+
+    float rotate;
+    private IEnumerator doubleShot()
+    {
+
+        emission.rateOverTime = 0;
+        shooter.Play();
+        ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
+        bursts[0].count = 6;
+        bursts[0].repeatInterval = 0.1f;
+        bursts[0].time = 1;
+        bursts[0].cycleCount = 2;
+        bursts[0].probability = 1;
+        emission.SetBursts(bursts);
+
+        shape.angle = 15;
+        shape.radius = 2;
+        ParticleSystem.EmitParams emitOverride = new ParticleSystem.EmitParams();
+            emitOverride.startLifetime = 10f;
+        
+        for (int i = 0; i < 12; i++)
+        {
+            rotate = Mathf.Rad2Deg * Mathf.Atan(Mathf.Abs(player.transform.position.y - transform.position.y) / Mathf.Abs(player.transform.position.x - transform.position.x));
+            shape.rotation = new Vector3(-rotate, -90, 0);
+            shooter.Emit(emitOverride, 12);
+            yield return new WaitForSeconds(.5f);
+        }
+            
+        emission.SetBursts(new ParticleSystem.Burst[0]);
+        
+        print("sasdfs");
+        loopFight();
+    }
+
     private void spray()
     {
         transform.DORotate(new Vector3(0, 0, 0), .5f);
@@ -165,7 +238,7 @@ public class enemyScripting : MonoBehaviour
         noice.scrollSpeed = 1.6f;
         noice.strength = 0.09f;
         StartCoroutine(timer(Random.Range(8, 25)));
-        
+
     }
 
     private void narrow()
@@ -175,6 +248,28 @@ public class enemyScripting : MonoBehaviour
         transform.Rotate(new Vector3(0, 0, -35));
         transform.DORotate(new Vector3(0, 0, 30), 2).SetLoops(fruityLoops, LoopType.Yoyo);
         StartCoroutine(timer(fruityLoops * 2));
+    }
+
+    private IEnumerator throwable()
+    {
+        shape.rotation = new Vector3(-60, -90, 0);
+        shape.arc = 1;
+        emission.rateOverTime = .5f;
+        forceOverLifetime.enabled = true;
+
+        explody.SetSubEmitterEmitProbability(0, 1);
+        for (int i = 0; i < 6; i++)
+        {
+            main.startSpeed = Mathf.Clamp((player.transform.localPosition.y/12) * 140, 60, 120);
+            shooter.Emit(1);
+            yield return new WaitForSeconds(1.25f);
+        }
+
+
+        forceOverLifetime.enabled = false;
+        explody.SetSubEmitterEmitProbability(0, 0);
+        loopFight();
+
     }
 
     bool shootyState = true;
@@ -216,6 +311,7 @@ public class enemyScripting : MonoBehaviour
         Destroy(newBigGuy);
     }
 
+    [SerializeField] bool FirstLevel;
     int currentState = 1;
     public void continualizeFight()
     {
@@ -224,13 +320,15 @@ public class enemyScripting : MonoBehaviour
 
         //audioSystem.clip = FightMusic;
         //audioSystem.Play();
-        //transform.DOMove(enemyPosition, 1);
+        transform.DOMove(enemyPosition, 1);
         playerScript.playerCamera.orthographicSize = 7;
         playerScript.inFight = true;
-        StartCoroutine(slowMoParry());
-        //loopFight();
 
-        
+        if (FirstLevel)
+            StartCoroutine(slowMoParry());
+        else
+            loopFight();
+
     }
 
     
@@ -249,19 +347,22 @@ public class enemyScripting : MonoBehaviour
             switch (currentState)
             {
                 case 1:
-                    shootyshooty();
+                    StartCoroutine(snipe());
                     break;
                 case 2:
-                    StartCoroutine(drop());
+                    StartCoroutine(throwable());
                     break;
                 case 3:
-                    StartCoroutine(dropInTheBigGuy());
+                    StartCoroutine(doubleShot());
                     break;
+
             }
+
             currentState = Mathf.RoundToInt(Random.Range(1, 3));
         }
         else
         {
+            tutorial.dropHint(eKey);
             StartCoroutine(check());
         }
     }

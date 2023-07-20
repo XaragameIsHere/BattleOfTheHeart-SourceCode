@@ -20,8 +20,10 @@ public class playerUIController : MonoBehaviour
 
 	public TMP_Text playerText;
 	public TMP_Text enemyText;
+    [SerializeField] TMP_Text playerTextEnter;
+    [SerializeField] TMP_Text enemyTextEnter;
 
-	private IEnumerator dialogue(dialogueParsing.dialogueLine[] lines)
+    private IEnumerator dialogue(dialogueParsing.dialogueLine[] lines)
 	{
 		foreach (dialogueParsing.dialogueLine line in lines)
 		{
@@ -34,7 +36,7 @@ public class playerUIController : MonoBehaviour
 
                     yield return new WaitForSeconds(.02f);
                 }
-
+                playerTextEnter.enabled = true;
                 playerText.text = line.dialogueText;
             }
 			else
@@ -46,14 +48,17 @@ public class playerUIController : MonoBehaviour
 
                     yield return new WaitForSeconds(.02f);
                 }
-				enemyText.text = line.dialogueText;
+                enemyTextEnter.enabled = true;
+                enemyText.text = line.dialogueText;
             }
 
 			
 			
 			yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
+            playerTextEnter.enabled = false;
+            enemyTextEnter.enabled = false;
 
-			enemyText.text = "";
+            enemyText.text = "";
 			playerText.text = "";
 		}
 		stopDialogue();
@@ -62,8 +67,8 @@ public class playerUIController : MonoBehaviour
     public void startDialogue(dialogueParsing.Dialogue dialogueRoot)
 	{
 		print("f");
-		dialoguePlayer.transform.DOLocalMoveX(664, 1);
-        dialogueEnemy.transform.DOLocalMoveX(-621, 1);
+		dialoguePlayer.transform.DOLocalMoveX(-664, 1);
+        dialogueEnemy.transform.DOLocalMoveX(621, 1);
 
         if (!dev_SkipCutscene)
         {
@@ -133,10 +138,10 @@ public class playerUIController : MonoBehaviour
     public void navigateToSelection(dialogueParsing.Dialogue dialogueRoot, string nameOfSelection)
     {
         StopCoroutine("typeWrite");
-        print(dialogueRoot.combat_Selections);
+        print(nameOfSelection);
         patienceMeter.transform.DOLocalMoveX(-714, 1);
-        dialoguePlayer.transform.DOLocalMoveX(664, 1);
-        dialogueEnemy.transform.DOLocalMoveX(-621, 1);
+        dialoguePlayer.transform.DOLocalMoveX(-664, 1);
+        dialogueEnemy.transform.DOLocalMoveX(621, 1);
 
 
 
@@ -145,6 +150,7 @@ public class playerUIController : MonoBehaviour
 
 			if (data.Name == nameOfSelection)
             {
+                print(data.Name);
                 StartCoroutine(typeWrite(dialogueRoot, data));
             }
 

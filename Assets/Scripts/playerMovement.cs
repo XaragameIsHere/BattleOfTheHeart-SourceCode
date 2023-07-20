@@ -105,6 +105,7 @@ public class playerMovement : MonoBehaviour
 
 			newObj.transform.localScale = new Vector3(.1f, .1f, .1f);
 			newObj.transform.DOMove(enemyScript.transform.position, .5f);
+			enemyScript.enemyHealth -= 1; 
 		}
 		
 		
@@ -153,8 +154,9 @@ public class playerMovement : MonoBehaviour
 
 		if (Input.GetAxis("walk") > .1)
 			playerSprite.flipX = false;
-		else if (Input.GetAxis("walk") < .1)
+		else if (Input.GetAxis("walk") < -.1)
 			playerSprite.flipX = true;
+		
 
 		playerAnimator.SetBool("Flying", !isGrounded);
 
@@ -180,7 +182,7 @@ public class playerMovement : MonoBehaviour
 		//for when you enter a cutscene
 		shape.rotation = new Vector3(90+(45 * Input.GetAxis("walk")), 90, 0);
 
-		if (Input.GetButton("parry") && !parrying)
+		if (Input.GetButton("parry") && !parrying && !inDialogue)
 		{
 			parrying = true;
 			playerAnimator.SetTrigger("parry");

@@ -1,0 +1,858 @@
+
+    {
+      
+     
+        "cutscene_Dialogue":
+        [
+            {
+                "Start":
+                [
+                    
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Helloooooo",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Is anyone there?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Where am I?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Can anyone hear me",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Ghost?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Where are you ghost?",
+                        "Subject": true
+                    }, 
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Oh, hello there sir. Do you know where my best friend in the whole world, Ghost is?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Ghost?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Yeah, he’s my best friend, Ghost!",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "My god…",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "What?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "HOW!",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "HOW’D YOU FIND ME!",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Well, I woke up, walked into this very weirdly empty town. Came looking for my friend and I saw you.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "It’s a bit of an anti-climactic story.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "NO...",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "NO, NO, NO, I’M NOT DYING AT THE HANDS OF SOME SMARTASS KID!",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "what’s a smartAHHH!",
+                        "Subject": true
+                    }
+                ],
+                "End":
+                [
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well, there's another MSPaint Duck around the corner",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Awww, and you like her",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Nooo, I mean...maybe, yeah, yeah, she's perfect.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well I'd like to know about her",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Maybe we can stop fighting and talk about this other duck?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Alright walk with me friend",
+                        "Subject": false
+                    }
+
+                    
+                ],
+                "After":
+                [
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "So what's her name",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Her name's Abagail",
+                        "Subject": false
+                    },
+                    
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "She was over here last night and she was playing her guitar",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I'm obsessed with women with guitars",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "OOOhhh",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Oh my god, noo, she was here for a meeting for work.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Although it seems like all we do is talk about work",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "It'd be nice if we could just go on a date and really get to know her",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well, have you asked her out on a date?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Absolutely not, what? Do you think I'm crazy",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I mean, come on, it should be obvious that I wanted to go on a date",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I literally said that I wanted to HANG OUT",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well I think that's kinda vague",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Really?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Yeah, I'm gonna real with you gorge, I don't think your romantic intentions are as obvious as you think",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I mean, we exchanged glances and smiled at each other when we met! Isn't that something",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well...",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well what do you suggest I do",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Talk to her, tell her that you like her",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Why don't I just create a game demo and tell her that I like her through the demo",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Where is Abagail?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "She's probably in front of that bar over there playing the guitar and being wonderful",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well, go in there and tell her you love her ",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You're right, I have to go in and honestly tell her",
+                        "Subject": true
+                    }
+                ]
+            }
+        ],
+        "combat_Selections":
+        [
+            {
+                
+                "Name": "SelectionStartOBJECT1",
+                "enemy_Text": "What now?",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "What's this?",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "This is a pretty neat guitar",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Why do you have a dumbass guitar",
+                        
+                        "next_Dialogue_Selection": "Selection6"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Why's this guitar here?",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ]
+            },  
+            {
+                "Name": "SelectionStartNOOBJECT1",
+                "enemy_Text": "What is it?",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Look, I don’t wanna kill you",
+                        "next_Dialogue_Selection": "Selection12"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Stop overreacting",
+                        
+                        "next_Dialogue_Selection": "Selection6"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "I don’t even know what you want from me",
+                        
+                        "next_Dialogue_Selection": "Selection12"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "I don't even know what you want from me",
+                        "next_Dialogue_Selection": "Selection12"
+                    }
+                ]
+            },       
+            {
+                "Name": "Selection2",
+                "enemy_Text": "Yeah What's it to ya?",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "Just curious",
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "You wanna talk about it?",
+                        
+                        "next_Dialogue_Selection": "Selection5"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "It’s just kinda interesting is all?",
+                        
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": -1,
+                        
+                        "dialogueLine": "Can I have it?",
+                        "next_Dialogue_Selection": "Selection7"
+                    }
+                ]
+            },   
+            {
+                "Name": "Selection3",
+                "enemy_Text": "What? A cat? Stop trying to get into my head!",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "I’m Dead serious about the cat",
+                        "next_Dialogue_Selection": "Selection11"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "I have no clue who this human ghost is",
+                        
+                        "next_Dialogue_Selection": "Selection11"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Can’t believe you’re scared of a stupid cat",
+                        
+                        "next_Dialogue_Selection": "Selection13"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Who even is ghost",
+                        "next_Dialogue_Selection": "Selection15"
+                    }
+                ]
+            },
+                      
+            {
+                "Name": "Selection4",
+                "enemy_Text": "Long story behind it, look your attempts at humor bore me",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "Why do you have this bullet?",
+                        "next_Dialogue_Selection": "Selection5"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "How does it relate to my cat?",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Fine I don’t care about it anyways",
+                        
+                        "next_Dialogue_Selection": "Selection18"
+                    },
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "Wanna tell me the story?",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection5",
+                "enemy_Text": "No absolutely not, never with you.",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "Why not?",
+                        "next_Dialogue_Selection": "Selection8"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Fine it’s stupid anyways",
+                        
+                        "next_Dialogue_Selection": "Selection6"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Fine I’ll just take it with me then",
+                        
+                        "next_Dialogue_Selection": "Selection7"
+                    },
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "I just wanna know the story behind it",
+                        "next_Dialogue_Selection": "Selection8"
+                    }
+                ]
+            },    
+            {
+                "Name": "Selection6",
+                "enemy_Text": "I’M GONNA END YOU. I’M NOT LETTING GHOST FIND ME",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Why are you so spooked by a kitty cat?",
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "So weird that you’re scared of a cat",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "GOOD LORD LEAVE ME ALONE I DON’T EVEN KNOW WHAT YOU’RE TALKING ABOUT",
+                        
+                        "next_Dialogue_Selection": "Selection7"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Where even am I?",
+                        "next_Dialogue_Selection": "Selection12"
+                    }
+                ]
+            },      
+            {
+                "Name": "Selection7",
+                "enemy_Text": "You can’t have it, and I’m not letting you out of here alive",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "I still don’t know why you’re trying to kill me!",
+                        "next_Dialogue_Selection": "Selection12"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Fine it’s stupid anyways",
+                        
+                        "next_Dialogue_Selection": "Selection6"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Don’t care I’m gonna get away from you",
+                        
+                        "next_Dialogue_Selection": "Selection6"
+                    },
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "Look, surely we can talk this out",
+                        "next_Dialogue_Selection": "Selection8"
+                    }
+                ]
+            }, 
+            {
+                "Name": "Selection8",
+                "enemy_Text": "why would I talk with you! The friend of the man who ruined my life! My god I’m surprised that inhuman monster even has friends",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "Ghost? He’s a cat. Of course he isn’t human",
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "I think we might be talking about two different Ghosts here.",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "How’d a cat ruin your life?",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "A CAT! You’re positively insane",
+                        "next_Dialogue_Selection": "Selection6"
+                    }
+                ]
+            },      
+            {
+                "Name": "Selection9",
+                "enemy_Text": "Huh?",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "I was just looking for my cat is all",
+                        "next_Dialogue_Selection": "Selection10"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "I’m lost, I’m just looking for my cat but I’d like to hear about this other Ghost",
+                        
+                        "next_Dialogue_Selection": "Selection10"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "You’re scared of a cat!",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "I don’t see how a cat can be a murderer",
+                        "next_Dialogue_Selection": "Selection3"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection10",
+                "enemy_Text": "Uh-... Wha-... Oh my god.",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "I was just looking for my cat is all",
+                        "next_Dialogue_Selection": "end"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "I’m lost, I’m just looking for my cat but I’d like to hear about this other Ghost",
+                        
+                        "next_Dialogue_Selection": "end"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Yeah, psycho, nearly killing because I wanted my cat?",
+                        
+                        "next_Dialogue_Selection": "Selection11"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "You know it would have been nice if you had LISTENED TO ME as opposed to trying to KILL ME!",
+                        "next_Dialogue_Selection": "Selection11"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection11",
+                "enemy_Text": "A Cat? Really? I’m gonna be honest I’m not quite buying it",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "I was just looking for my cat is all",
+                        "next_Dialogue_Selection": "Selection17"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "I’m lost, I’m just looking for my cat but I’d like to hear about this other Ghost",
+                        
+                        "next_Dialogue_Selection": "Selection17"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Yeah, psycho, nearly killing because I wanted my cat?",
+                        
+                        "next_Dialogue_Selection": "Selection16"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "You know it would have been nice if you had LISTENED TO ME as opposed to trying to KILL ME!",
+                        "next_Dialogue_Selection": "Selection16"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection12",
+                "enemy_Text": "DON’T PLAY DUMB WITH ME! YOU’RE WITH HIM!",
+                "choices": 
+                [
+                    {
+                        "Reaction": -1,
+                        
+                        "dialogueLine": "I was just looking for my cat is all",
+                        "next_Dialogue_Selection": "Selection17"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "WHO IS HIM?",
+                        
+                        "next_Dialogue_Selection": "Selection17"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "GOOD LORD LEAVE ME ALONE I DON’T EVEN KNOW WHAT YOU’RE TALKING ABOUT",
+                        
+                        "next_Dialogue_Selection": "Selection16"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Who are you?",
+                        "next_Dialogue_Selection": "Selection16"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection13",
+                "enemy_Text": "WHEN I FINISH YOU I’M GONNA FIND OUT WHERE GHOST IS TOO AND GET HIM!",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "DON’T KILL MY CAT!",
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "WHO IS HIM?",
+                        
+                        "next_Dialogue_Selection": "Selection15"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "I DARE YOU TO TRY ME!",
+                        
+                        "next_Dialogue_Selection": "Selection6"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "What Happened?",
+                        "next_Dialogue_Selection": "Selection15"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection14",
+                "enemy_Text": "THE MAN WHO RUINED MY LIFE",
+                "choices": 
+                [
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "How did ghost ruin your life?",
+                        "next_Dialogue_Selection": "Selection8"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "I think we might be talking about two different Ghosts here.",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "How’d a cat ruin your life?",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "A CAT! You’re positively insane",
+                        "next_Dialogue_Selection": "Selection3"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection15",
+                "enemy_Text": "DON’T ACT LIKE YOU DON’T KNOW",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": " I Genuinely don’t know",
+                        "next_Dialogue_Selection": "Selection16"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Who are we talking about? I really don’t know",
+                        
+                        "next_Dialogue_Selection": "Selection14"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "I just want to go!",
+                        
+                        "next_Dialogue_Selection": "Selection16"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "A CAT! You’re positively insane",
+                        "next_Dialogue_Selection": "Selection3"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection16",
+                "enemy_Text": "I DON’T HAVE TO DEAL WITH THIS. I’M DONE",
+                "choices": 
+                [
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "THERE IS JUST NO CONVINCING YOU",
+                        "next_Dialogue_Selection": "Selection8"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Look can’t we just talk it out?",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "I swear I was just looking for my cat",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "I don’t care anymore. I’m done with this fight!",
+                        "next_Dialogue_Selection": "Selection3"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection17",
+                "enemy_Text": "What’s the cat’s name?",
+                "choices": 
+                [
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "UHHHH! GHOST! you moron!",
+                        "next_Dialogue_Selection": "Selection8"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "It...It’s Ghost, Remember? The confusion we had that started the fight",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Who caresss",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "WHY DO YOU CARE!",
+                        "next_Dialogue_Selection": "Selection3"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection18",
+                "enemy_Text": "Well I don’t care about YOUR LIFE!",
+                "choices": 
+                [
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "Why would I care EITHER!",
+                        "next_Dialogue_Selection": "Selection16"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "Can I just Leave",
+                        
+                        "next_Dialogue_Selection": "Selection6"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Leave me be!",
+                        
+                        "next_Dialogue_Selection": "Selection6"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "I wanna know where my cat is and where I am!",
+                        "next_Dialogue_Selection": "Selection6"
+                    }
+                ]
+            }
+        ]
+      
+    }
