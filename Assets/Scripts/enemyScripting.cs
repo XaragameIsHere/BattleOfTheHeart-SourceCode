@@ -15,6 +15,7 @@ public class enemyScripting : MonoBehaviour
     ParticleSystem.NoiseModule noice;
     ParticleSystem.ShapeModule shape;
     ParticleSystem.MainModule main;
+    ParticleSystem.CollisionModule particleCollider;
     ParticleSystem.ForceOverLifetimeModule forceOverLifetime;
     ParticleSystem.EmissionModule emission;
     ParticleSystem.SubEmittersModule explody;
@@ -31,6 +32,7 @@ public class enemyScripting : MonoBehaviour
     [SerializeField] Vector3 enemyPosition;
     [SerializeField] tutorialScripting tutorial;
     [SerializeField] GameObject tutorialKey;
+    [SerializeField] GameObject tutorialFlyingKey;
     [SerializeField] GameObject eKey;
     [HideInInspector] public dialogueParsing.Dialogue dialogueRoot;
     [HideInInspector] public bool hit = false;
@@ -39,7 +41,7 @@ public class enemyScripting : MonoBehaviour
     public Color someHDRColor;
     [ColorUsage(true, true)]
     private Color newHDRColor = Color.white;
-
+    private Animator enemyAnimator;
     [SerializeField] GameObject attack1Sprite; 
     public Sprite attack2sprite;
     [SerializeField] Volume postProcess;
@@ -48,7 +50,7 @@ public class enemyScripting : MonoBehaviour
     public TextAsset jsonFile;
     public int test;
     public int enemyHealth = 10;
-    private ParticleSystem shooter;
+    public ParticleSystem shooter;
     public BoxCollider2D boxTrigger;
     public PolygonCollider2D playerCollider;
     public GameObject player;
@@ -58,6 +60,10 @@ public class enemyScripting : MonoBehaviour
     private AudioSource audio;
     private RaycastHit2D snipeHit;
 
+    
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +79,7 @@ public class enemyScripting : MonoBehaviour
         explody = shooter.subEmitters;
         shooter.Play();
         
+        enemyAnimator = GetComponent<Animator>();
         lasersBitch = GetComponent<LineRenderer>();
         spriteComponent = GetComponent<SpriteRenderer>();
         audioSystem = GetComponent<AudioSource>();
@@ -80,21 +87,23 @@ public class enemyScripting : MonoBehaviour
         dialogueRoot = JsonUtility.FromJson<dialogueParsing.Dialogue>(jsonFile.text);
     }
 
+    
+
     IEnumerator slowMoParry()
     {
 
-        yield return new WaitForSeconds(.65f);
+        yield return new WaitForSeconds(2);
         shape.rotation = new Vector3(0, -90, 0);
         shape.arc = 1;
         main.startSpeed = 30;
         emission.rateOverTime = .75f;
         shooter.Emit(1);
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.5f);
 
         tutorial.dropHint(tutorialKey);
 
         colorAd.colorFilter.Override(someHDRColor);
-        main.simulationSpeed = .02f;
+        main.simulationSpeed = .08f;
         yield return new WaitUntil(() => hit == true);
         colorAd.colorFilter.Override(newHDRColor);
         main.simulationSpeed = .6f;
@@ -168,6 +177,8 @@ public class enemyScripting : MonoBehaviour
 
     private IEnumerator snipe()
     {
+
+        particleCollider.lifetimeLoss = 1;
         for (int i = 0; i < 12; i++)
         {
             rotate = Mathf.Rad2Deg * Mathf.Atan(Mathf.Abs(player.transform.position.y - transform.position.y) / Mathf.Abs(player.transform.position.x - transform.position.x));
@@ -184,6 +195,7 @@ public class enemyScripting : MonoBehaviour
                 shape.arc = 1;
                 main.startSpeed = 100;
                 emission.rateOverTime = .75f;
+                enemyAnimator.SetTrigger("Snipe");
                 shooter.Emit(1);
                 yield return new WaitForSeconds(.5f);
                 lasersBitch.enabled = false;
@@ -198,7 +210,7 @@ public class enemyScripting : MonoBehaviour
     float rotate;
     private IEnumerator doubleShot()
     {
-
+        particleCollider.lifetimeLoss = 1;
         emission.rateOverTime = 0;
         shooter.Play();
         ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
@@ -216,6 +228,7 @@ public class enemyScripting : MonoBehaviour
         
         for (int i = 0; i < 12; i++)
         {
+            enemyAnimator.SetTrigger("DualShot");
             rotate = Mathf.Rad2Deg * Mathf.Atan(Mathf.Abs(player.transform.position.y - transform.position.y) / Mathf.Abs(player.transform.position.x - transform.position.x));
             shape.rotation = new Vector3(-rotate, -90, 0);
             shooter.Emit(emitOverride, 12);
@@ -255,17 +268,21 @@ public class enemyScripting : MonoBehaviour
         shape.rotation = new Vector3(-60, -90, 0);
         shape.arc = 1;
         emission.rateOverTime = .5f;
+        main.simulationSpeed = .7f;
+        particleCollider.lifetimeLoss = 0;
         forceOverLifetime.enabled = true;
 
         explody.SetSubEmitterEmitProbability(0, 1);
         for (int i = 0; i < 6; i++)
         {
+            enemyAnimator.SetTrigger("Throw");
             main.startSpeed = Mathf.Clamp((player.transform.localPosition.y/12) * 140, 60, 120);
             shooter.Emit(1);
             yield return new WaitForSeconds(1.25f);
         }
 
 
+        main.simulationSpeed = 1;
         forceOverLifetime.enabled = false;
         explody.SetSubEmitterEmitProbability(0, 0);
         loopFight();
@@ -321,29 +338,40 @@ public class enemyScripting : MonoBehaviour
         //audioSystem.clip = FightMusic;
         //audioSystem.Play();
         transform.DOMove(enemyPosition, 1);
-        playerScript.playerCamera.orthographicSize = 7;
         playerScript.inFight = true;
 
         if (FirstLevel)
+        {
+            tutorial.dropHint(tutorialFlyingKey);
             StartCoroutine(slowMoParry());
+        }
         else
+        {
             loopFight();
-
+        }
     }
 
     
     IEnumerator check()
     {
+        enemyAnimator.SetBool("stunned", true);
         yield return new WaitForSeconds(5);
         if (!playerScript.inDialogue)
+        {
+            
             loopFight();
+            enemyAnimator.SetBool("stunned", false);
+        }
+
     }
 
     public void loopFight()
     {
+
         print("loop");
         if (enemyHealth > 0)
         {
+            
             switch (currentState)
             {
                 case 1:
@@ -357,7 +385,8 @@ public class enemyScripting : MonoBehaviour
                     break;
 
             }
-
+            
+            //StartCoroutine(throwable());
             currentState = Mathf.RoundToInt(Random.Range(1, 3));
         }
         else

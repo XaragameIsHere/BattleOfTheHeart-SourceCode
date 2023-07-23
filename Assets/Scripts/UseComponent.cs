@@ -1,29 +1,48 @@
+using DG.Tweening;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class UseComponent : MonoBehaviour
 {
     public UnityEvent eventDemo;
+    [SerializeField] enemyScripting enemyScript;
+    [SerializeField] playerMovement playerScript;
     [SerializeField] GameObject player;
-    [SerializeField] bool use;
+    private enum UseableTypes
+    {
+        noKey,
+        Use,
+        
+    };
+    [SerializeField] UseableTypes inputType;
 
 
     private void Update()
     {
-        if (Input.GetButton("Use") && Vector3.Distance(player.transform.position, transform.position) < 1 && use)
+        switch (inputType)
         {
-            eventDemo.Invoke();
-            Destroy(gameObject);
+            case UseableTypes.noKey:
+                if (Vector3.Distance(player.transform.position, transform.position) < 1)
+                {
+                    eventDemo.Invoke();
+                    Destroy(gameObject);
+                }
+                break;
+            case UseableTypes.Use:
+                if (Input.GetButton("Use") && Vector3.Distance(player.transform.position, transform.position) < 1)
+                {
+                    eventDemo.Invoke();
+                    Destroy(gameObject);
+                }
+                break;
+            
         }
 
-        if (Vector3.Distance(player.transform.position, transform.position) < 1 && !use)
-        {
-            eventDemo.Invoke();
-            Destroy(gameObject);
-        }
+        
+
+        
     }
-
-    
 
 }

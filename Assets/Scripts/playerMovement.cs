@@ -1,9 +1,6 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +10,6 @@ public class playerMovement : MonoBehaviour
 	[SerializeField] LayerMask groundLayers;
 	[SerializeField] LayerMask wallLayers;
     [SerializeField] LayerMask enemyLayers;
-    public Camera playerCamera;
 	[SerializeField] float friction = 2;
 	[SerializeField] float walkSpeed = 5;
 	[SerializeField] enemyScripting enemyScript;
@@ -22,23 +18,25 @@ public class playerMovement : MonoBehaviour
 	[SerializeField] List<Image> badHearts = new List<Image>();
 	[SerializeField] GameObject trigger;
 	[SerializeField] Slider fuelMeter;
+	[SerializeField] ParticleSystem parryParticles;
 
+	public CircleCollider2D parryCollider;
 	public int playerLives = 4;
+    public Transform tweenPos;
+    public Camera playerCamera;
 	public bool invincibility = false;
 	public Vector2 velocityUp;
 	public Vector2 playerSpeed;
 	private playerUIController uIController;
-	private CharacterController playerMover;
-	//private Animator animationController;
+	private ParticleSystem.EmissionModule parryEmitter;
 	private bool isGrounded;
-	private bool wallRun;
 	private ParticleSystem rocketBoots;
 	public bool inFight = false;
 	public bool inDialogue = false;
 	public bool alive = true;
 	public bool parrying = false;
     public Rigidbody2D rBody;
-	Collider2D collisionBaybe;
+    Collider2D collisionBaybe;
 	Collider2D[] hits;
 	ParticleSystem.MainModule psMain;
 	ParticleSystem.ShapeModule shape;
@@ -46,6 +44,7 @@ public class playerMovement : MonoBehaviour
 	SpriteRenderer playerSprite;
 	private bool objectAttained = false;
 	private float startDistance;
+	
 
 	// Start is called before the first frame update
 	void Start()
@@ -56,6 +55,7 @@ public class playerMovement : MonoBehaviour
 		rocketBoots = GetComponent<ParticleSystem>();
 		psMain = rocketBoots.main;
 		shape = rocketBoots.shape;
+		parryEmitter = parryParticles.emission;
 		collisionBaybe = GetComponent<PolygonCollider2D>();
 		uIController = GetComponent<playerUIController>();
 	}
@@ -74,7 +74,7 @@ public class playerMovement : MonoBehaviour
 		if (alive && !invincibility)
 		{
 			invincibility = true;
-			collisionBaybe.excludeLayers = enemyLayers;
+			//collisionBaybe.excludeLayers = enemyLayers;
 			StartCoroutine(waitforit());
 			badHearts.Add(hearts[0]);
 			hearts.RemoveAt(0);
@@ -82,49 +82,50 @@ public class playerMovement : MonoBehaviour
 		
 	}
 
-    
+    public void parry()
+    {
+		playerCamera.DOShakePosition(1, .1f);
+        GameObject newObj = new GameObject("Name");
+        Instantiate(newObj);
+        newObj.transform.position = transform.position;
+
+        SpriteRenderer throwSprite = newObj.AddComponent<SpriteRenderer>();
+        throwSprite.sprite = enemyScript.attack2sprite;
+
+        newObj.transform.localScale = new Vector3(.1f, .1f, .1f);
+        newObj.transform.DOMove(enemyScript.transform.position, .5f);
+        enemyScript.enemyHealth -= 1;
+    }
 
     private void OnParticleCollision(GameObject particleSystem)
 	{
-		enemyScript.hit = true;
-		if (!parrying)
-		{
-			if (particleSystem.layer == 8)
-			{
-				hurt();
-			}
-		}
-		else
-		{
-            GameObject newObj = new GameObject("Name");
-			Instantiate(newObj);
-			newObj.transform.position = transform.position;
+        if (particleSystem.layer == 8)
+        {
+            enemyScript.hit = true;
+            if (parryCollider.enabled)
+            {
+                parry();
+            }
 
-			SpriteRenderer throwSprite = newObj.AddComponent<SpriteRenderer>();
-			throwSprite.sprite = enemyScript.attack2sprite;
-
-			newObj.transform.localScale = new Vector3(.1f, .1f, .1f);
-			newObj.transform.DOMove(enemyScript.transform.position, .5f);
-			enemyScript.enemyHealth -= 1; 
-		}
-		
-		
+            else
+            {
+                hurt();
+            }
+        }
 	}
 
-	IEnumerator unParry()
-	{
-		yield return new WaitForSeconds(.5f);
-		parrying = false;
-	}
+    IEnumerator unParry()
+    {
+        yield return new WaitForSeconds(.5f);
+        parrying = false;
+        parryCollider.enabled = false;
+    }
 
-    private void OnCollisionStay2D(Collision2D collision)
-	{
-		if (collision.gameObject.layer == 8)
-			hurt();
-	}
-	// Update is called once per frame
 
-	void FixedUpdate()
+    // Update is called once per frame
+
+
+    void FixedUpdate()
 	{
 		isGrounded = rBody.IsTouchingLayers(groundLayers); //checks if the player is on a platform
 		//calculates vertical velocity
@@ -182,12 +183,6 @@ public class playerMovement : MonoBehaviour
 		//for when you enter a cutscene
 		shape.rotation = new Vector3(90+(45 * Input.GetAxis("walk")), 90, 0);
 
-		if (Input.GetButton("parry") && !parrying && !inDialogue)
-		{
-			parrying = true;
-			playerAnimator.SetTrigger("parry");
-			StartCoroutine(unParry());
-        }
 
 		if (isGrounded)
 		{
@@ -198,7 +193,8 @@ public class playerMovement : MonoBehaviour
 			rocketBoots.Play();
 		}
 
-		if (Vector3.Distance(enemyScript.transform.position, transform.position) < 1 && Input.GetButton("Use") && !objectAttained)
+        
+        if (Vector3.Distance(enemyScript.transform.position, transform.position) < 1 && Input.GetButton("Use") && !objectAttained)
 		{
 			inDialogue = true;
 			uIController.navigateToSelection(enemyScript.dialogueRoot, "SelectionStartNOOBJECT1");
@@ -211,12 +207,26 @@ public class playerMovement : MonoBehaviour
             StartCoroutine(uIController.moveMeter());
         }
 
+        if (Input.GetButton("parry") && !parryCollider.enabled)
+        {
+			playerAnimator.SetTrigger("parry");
 
-		if (!inFight && !inDialogue)
+            
+            parryParticles.Emit( 50);
+			parrying = true;
+            parryCollider.enabled = true;
+			StartCoroutine(unParry());
+        }
+
+        if (!inFight && !inDialogue)
+		{
 			fuelMeter.value = Mathf.Abs(Vector3.Distance(transform.position, trigger.transform.position) - startDistance)/ startDistance;
-        else 
+		}
+        else
+		{
 			fuelMeter.value = 1;
-
+			playerCamera.transform.position = tweenPos.position;
+		}
 
         if (collisionBaybe.IsTouchingLayers(wallLayers))
 		{

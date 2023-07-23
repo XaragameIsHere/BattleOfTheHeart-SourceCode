@@ -7,6 +7,7 @@ using DG.Tweening;
 
 public class playerUIController : MonoBehaviour
 {
+
 	public playerMovement playerStuff;
 	public enemyScripting enemyStuff;
     public bool dev_SkipCutscene = false;
@@ -22,6 +23,7 @@ public class playerUIController : MonoBehaviour
 	public TMP_Text enemyText;
     [SerializeField] TMP_Text playerTextEnter;
     [SerializeField] TMP_Text enemyTextEnter;
+    
 
     private IEnumerator dialogue(dialogueParsing.dialogueLine[] lines)
 	{
@@ -69,6 +71,8 @@ public class playerUIController : MonoBehaviour
 		print("f");
 		dialoguePlayer.transform.DOLocalMoveX(-664, 1);
         dialogueEnemy.transform.DOLocalMoveX(621, 1);
+        playerStuff.playerCamera.transform.DOMove(playerStuff.tweenPos.transform.position, 1);
+        playerStuff.playerCamera.DOOrthoSize(10, 1);
 
         if (!dev_SkipCutscene)
         {
@@ -96,6 +100,7 @@ public class playerUIController : MonoBehaviour
     }
     private IEnumerator typeWrite(dialogueParsing.Dialogue dialogueRoot, dialogueParsing.selection line)
     {
+
         print("in new selection");
         for (int i = 1; i <= line.enemy_Text.Length; i++)
         {
