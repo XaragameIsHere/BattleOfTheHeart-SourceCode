@@ -92,16 +92,16 @@ AnimatorStateMachine:
     m_Position: {x: 190, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1123216212418930166}
-    m_Position: {x: 500, y: 480, z: 0}
+    m_Position: {x: 440, y: 550, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6914818525251895331}
-    m_Position: {x: 770, y: 140, z: 0}
+    m_Position: {x: 710, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8659049379081549093}
-    m_Position: {x: 500, y: 330, z: 0}
+    m_Position: {x: 440, y: 400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4487019331655928020}
-    m_Position: {x: 500, y: 220, z: 0}
+    m_Position: {x: 440, y: 290, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -226,25 +226,25 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: stunned
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Snipe
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: DualShot
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
