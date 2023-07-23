@@ -77,6 +77,7 @@ public class enemyScripting : MonoBehaviour
         noice = shooter.noise;
         shape = shooter.shape;
         explody = shooter.subEmitters;
+        particleCollider = shooter.collision;
         shooter.Play();
         
         enemyAnimator = GetComponent<Animator>();

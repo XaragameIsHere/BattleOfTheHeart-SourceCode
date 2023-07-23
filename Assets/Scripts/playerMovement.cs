@@ -44,12 +44,16 @@ public class playerMovement : MonoBehaviour
 	SpriteRenderer playerSprite;
 	private bool objectAttained = false;
 	private float startDistance;
+
+	private Dictionary<bool, string> dialogueType = new Dictionary<bool, string>();
 	
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		startDistance = Vector3.Distance(transform.position, trigger.transform.position);
+		dialogueType.Add(true, "SelectionStartOBJECT1");
+        dialogueType.Add(false, "SelectionStartNOOBJECT1");
+        startDistance = Vector3.Distance(transform.position, trigger.transform.position);
 		playerSprite = GetComponent<SpriteRenderer>();
 		playerAnimator = GetComponent<Animator>();
 		rocketBoots = GetComponent<ParticleSystem>();
@@ -194,18 +198,13 @@ public class playerMovement : MonoBehaviour
 		}
 
         
-        if (Vector3.Distance(enemyScript.transform.position, transform.position) < 1 && Input.GetButton("Use") && !objectAttained)
+        if (Vector3.Distance(enemyScript.transform.position, transform.position) < 3 && Input.GetButton("Use") && !inDialogue)
 		{
 			inDialogue = true;
-			uIController.navigateToSelection(enemyScript.dialogueRoot, "SelectionStartNOOBJECT1");
+			uIController.navigateToSelection(enemyScript.dialogueRoot, dialogueType.GetValueOrDefault(objectAttained));
 			StartCoroutine(uIController.moveMeter());
 		}
-		else if (Vector3.Distance(enemyScript.transform.position, transform.position) < 1 && Input.GetButton("Use") && objectAttained)
-        {
-            inDialogue = true;
-            uIController.navigateToSelection(enemyScript.dialogueRoot, "SelectionStartOBJECT1");
-            StartCoroutine(uIController.moveMeter());
-        }
+		
 
         if (Input.GetButton("parry") && !parryCollider.enabled)
         {

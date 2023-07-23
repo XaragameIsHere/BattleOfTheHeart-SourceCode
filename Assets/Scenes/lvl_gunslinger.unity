@@ -3706,6 +3706,7 @@ MonoBehaviour:
   enemyText: {fileID: 644191801}
   playerTextEnter: {fileID: 1297376543}
   enemyTextEnter: {fileID: 430347281}
+  isClicked: 0
 --- !u!82 &736589884
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17223,7 +17224,7 @@ MonoBehaviour:
   postProcess: {fileID: 1348107741}
   jsonFile: {fileID: 4900000, guid: bfdf7ec15f13dc54db978fa6859a7e74, type: 3}
   test: 0
-  enemyHealth: 10
+  enemyHealth: 0
   shooter: {fileID: 0}
   boxTrigger: {fileID: 1189130617}
   playerCollider: {fileID: 736589888}
@@ -29390,7 +29391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867705407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.73, y: 5.5682, z: 6.7215}
+  m_LocalPosition: {x: 59.73, y: 5.5682, z: 6.01}
   m_LocalScale: {x: 1.5125, y: 1.5125, z: 1.5125}
   m_ConstrainProportionsScale: 1
   m_Children: []

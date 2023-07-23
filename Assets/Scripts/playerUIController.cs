@@ -91,7 +91,7 @@ public class playerUIController : MonoBehaviour
         
     }
 
-    bool isClicked = false;
+    public bool isClicked = false;
     int clickedButton;
     public void click(int s) 
     {
@@ -111,19 +111,21 @@ public class playerUIController : MonoBehaviour
         }
 
         enemyText.text = line.enemy_Text;
-
+        print("finished typewriting "+ line.enemy_Text);
         yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
-
+        print("finished creating choices " );
         for (int i = 0; i < 4; i++)
         {
             choiceButtons[i].text = line.choices[i].dialogueLine;
         }
 
         dialogueChoiceBox.transform.DOLocalMoveY(-300, 1);
-
-        yield return new WaitUntil(() => isClicked);
         isClicked = false;
-
+        print("moving box of choices" );
+        yield return new WaitUntil(() => isClicked);
+        print(isClicked);
+        isClicked = false;
+        print("player has chosen");
         dialogueChoiceBox.transform.DOLocalMoveY(-817, 1);
 
         for (int i = 1; i <= line.choices[clickedButton].dialogueLine.Length; i++)
@@ -134,7 +136,9 @@ public class playerUIController : MonoBehaviour
             yield return new WaitForSeconds(.02f);
         }
 
+        print("finished typewriting " + line.choices[clickedButton].dialogueLine);
         yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
+        print("moving on");
 
         navigateToSelection(dialogueRoot, line.choices[clickedButton].next_Dialogue_Selection);
         
@@ -155,7 +159,7 @@ public class playerUIController : MonoBehaviour
 
 			if (data.Name == nameOfSelection)
             {
-                print(data.Name);
+                //print(data.Name);
                 StartCoroutine(typeWrite(dialogueRoot, data));
             }
 
