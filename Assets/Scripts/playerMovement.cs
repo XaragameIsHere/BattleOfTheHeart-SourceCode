@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using SickDev.CommandSystem;
 using Slider = UnityEngine.UI.Slider;
 
 public class playerMovement : MonoBehaviour
@@ -68,8 +67,6 @@ public class playerMovement : MonoBehaviour
 		uIController = GetComponent<playerUIController>();
 		theScript = this;
 
-        DevConsole.singleton.AddCommand(new ActionCommand(killPlayer) { className = "PlayerSettings" });
-        DevConsole.singleton.AddCommand(new ActionCommand(hurt) { className = "PlayerSettings"});
 	}
 
 	IEnumerator waitforit()
