@@ -338,7 +338,6 @@ public class enemyScripting : MonoBehaviour
     }
 
     public bool FirstLevel;
-    int currentState = 1;
     public void continualizeFight()
     {
 
@@ -379,6 +378,21 @@ public class enemyScripting : MonoBehaviour
 
     }
 
+    private enum attacks
+    {
+        doubleShot,
+        Throwable,
+        spray,
+        narrow,
+        snipe,
+        drop,
+        dropInTheBigGuy,
+        sloMoParry,
+    }
+
+    [SerializeField] List<attacks> availableAttackTypes = new List<attacks>();
+    attacks currentState = attacks.snipe;
+
     public void loopFight()
     {
 
@@ -387,20 +401,31 @@ public class enemyScripting : MonoBehaviour
         {
             switch (currentState)
             {
-                case 1:
+                case attacks.snipe:
                     StartCoroutine(snipe());
                     break;
-                case 2:
+                case attacks.Throwable:
                     StartCoroutine(throwable());
                     break;
-                case 3:
+                case attacks.doubleShot:
                     StartCoroutine(doubleShot());
+                    break;
+                case attacks.narrow:
+                    narrow();
+                    break;
+                case attacks.spray:
+                    spray();
+                    break;
+                case attacks.drop:
+                    drop(); 
+                    break;
+                case attacks.dropInTheBigGuy:
+                    StartCoroutine(dropInTheBigGuy());
                     break;
 
             }
 
-            //StartCoroutine(doubleShot());
-            currentState = Random.Range(1, 4);
+            currentState = availableAttackTypes[Random.Range(0,availableAttackTypes.Count)];
         }
         else
         {
