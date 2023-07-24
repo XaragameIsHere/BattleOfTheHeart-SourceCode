@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using SickDev.CommandSystem;
+using Slider = UnityEngine.UI.Slider;
 
 public class playerMovement : MonoBehaviour
 {
@@ -19,6 +22,7 @@ public class playerMovement : MonoBehaviour
 	[SerializeField] GameObject trigger;
 	[SerializeField] Slider fuelMeter;
 	[SerializeField] ParticleSystem parryParticles;
+	[SerializeField] Canvas deathScreen;
 
 	public CircleCollider2D parryCollider;
 	public int playerLives = 4;
@@ -44,7 +48,7 @@ public class playerMovement : MonoBehaviour
 	SpriteRenderer playerSprite;
 	private bool objectAttained = false;
 	private float startDistance;
-
+	private playerMovement theScript;
 	private Dictionary<bool, string> dialogueType = new Dictionary<bool, string>();
 	
 
@@ -62,6 +66,10 @@ public class playerMovement : MonoBehaviour
 		parryEmitter = parryParticles.emission;
 		collisionBaybe = GetComponent<PolygonCollider2D>();
 		uIController = GetComponent<playerUIController>();
+		theScript = this;
+
+        DevConsole.singleton.AddCommand(new ActionCommand(killPlayer) { className = "PlayerSettings" });
+        DevConsole.singleton.AddCommand(new ActionCommand(hurt) { className = "PlayerSettings"});
 	}
 
 	IEnumerator waitforit()
@@ -73,9 +81,11 @@ public class playerMovement : MonoBehaviour
 
     public void giveRocketBoots() { fuelMeter.gameObject.SetActive(true); }
 
-    private void hurt()
+    
+    void hurt()
 	{
-		if (alive && !invincibility)
+		
+		if ( alive && !invincibility)
 		{
 			invincibility = true;
 			//collisionBaybe.excludeLayers = enemyLayers;
@@ -86,7 +96,7 @@ public class playerMovement : MonoBehaviour
 		
 	}
 
-    public void parry()
+    void parry()
     {
 		playerCamera.DOShakePosition(1, .1f);
         GameObject newObj = new GameObject("Name");
@@ -128,6 +138,13 @@ public class playerMovement : MonoBehaviour
 
     // Update is called once per frame
 
+	public void killPlayer()
+	{
+		alive = false;
+        deathScreen.gameObject.SetActive(true);
+        if (Input.anyKeyDown)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
     void FixedUpdate()
 	{
@@ -184,7 +201,6 @@ public class playerMovement : MonoBehaviour
 		else
 			rBody.velocity = new Vector2(0, rBody.velocity.y);
 
-		//for when you enter a cutscene
 		shape.rotation = new Vector3(90+(45 * Input.GetAxis("walk")), 90, 0);
 
 
@@ -206,7 +222,7 @@ public class playerMovement : MonoBehaviour
 		}
 		
 
-        if (Input.GetButton("parry") && !parryCollider.enabled)
+        if (Input.GetButton("parry") && !parryCollider.enabled && inFight)
         {
 			playerAnimator.SetTrigger("parry");
 
@@ -232,11 +248,11 @@ public class playerMovement : MonoBehaviour
 			//walk = false;
 			rBody.AddForce(new Vector2(0, 2500));
 		}
-		/*
-		else
+
+		if (!alive)
 		{
-			walk = true;
-		}*/
+			killPlayer();
+        }
 	}
 
 

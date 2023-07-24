@@ -178,7 +178,7 @@ public class enemyScripting : MonoBehaviour
 
     private IEnumerator snipe()
     {
-
+        lasersBitch.SetPosition(0, transform.localPosition);
         particleCollider.lifetimeLoss = 1;
         for (int i = 0; i < 12; i++)
         {
@@ -189,8 +189,8 @@ public class enemyScripting : MonoBehaviour
             {
                 
                 lasersBitch.enabled = true;
-                lasersBitch.SetPositions( new Vector3[] {transform.localPosition, player.transform.localPosition});
-                yield return new WaitForSeconds(.75f);
+                DOTween.To(() => lasersBitch.GetPosition(1), (x) => lasersBitch.SetPosition(1, x), player.transform.localPosition, .5f).Play();
+                yield return new WaitForSeconds(1);
 
                 shape.rotation = new Vector3(-rotate, -90, 0);
                 shape.arc = 1;

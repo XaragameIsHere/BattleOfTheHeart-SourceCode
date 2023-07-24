@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 
+
 public class playerUIController : MonoBehaviour
 {
 
@@ -87,10 +88,10 @@ public class playerUIController : MonoBehaviour
         {
             stopDialogue();
         }
-
+        
         
     }
-
+    
     public bool isClicked = false;
     int clickedButton;
     public void click(int s) 
@@ -101,7 +102,7 @@ public class playerUIController : MonoBehaviour
     private IEnumerator typeWrite(dialogueParsing.Dialogue dialogueRoot, dialogueParsing.selection line)
     {
 
-        print("in new selection");
+        //print("in new selection");
         for (int i = 1; i <= line.enemy_Text.Length; i++)
         {
             enemyText.text = line.enemy_Text.Substring(0, i);
@@ -111,9 +112,9 @@ public class playerUIController : MonoBehaviour
         }
 
         enemyText.text = line.enemy_Text;
-        print("finished typewriting "+ line.enemy_Text);
+        //print("finished typewriting "+ line.enemy_Text);
         yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
-        print("finished creating choices " );
+        //print("finished creating choices " );
         for (int i = 0; i < 4; i++)
         {
             choiceButtons[i].text = line.choices[i].dialogueLine;
@@ -121,11 +122,11 @@ public class playerUIController : MonoBehaviour
 
         dialogueChoiceBox.transform.DOLocalMoveY(-300, 1);
         isClicked = false;
-        print("moving box of choices" );
+        //print("moving box of choices" );
         yield return new WaitUntil(() => isClicked);
-        print(isClicked);
+        //print(isClicked);
         isClicked = false;
-        print("player has chosen");
+        //print("player has chosen");
         dialogueChoiceBox.transform.DOLocalMoveY(-817, 1);
 
         for (int i = 1; i <= line.choices[clickedButton].dialogueLine.Length; i++)
@@ -136,9 +137,9 @@ public class playerUIController : MonoBehaviour
             yield return new WaitForSeconds(.02f);
         }
 
-        print("finished typewriting " + line.choices[clickedButton].dialogueLine);
+        //print("finished typewriting " + line.choices[clickedButton].dialogueLine);
         yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
-        print("moving on");
+        //print("moving on");
 
         navigateToSelection(dialogueRoot, line.choices[clickedButton].next_Dialogue_Selection);
         
