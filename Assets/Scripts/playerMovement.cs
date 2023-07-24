@@ -96,6 +96,8 @@ public class playerMovement : MonoBehaviour
 		
 	}
 
+	
+
     void parry()
     {
 		playerCamera.DOShakePosition(1, .1f);
@@ -136,14 +138,16 @@ public class playerMovement : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-
+	// Update is called once per frame
+	bool killed = false;
+	bool playerCanRestart = false;
+    IEnumerator waitToStart() { yield return new WaitForSeconds(2); deathScreen.transform.GetChild(1).gameObject.SetActive(true); playerCanRestart = true;}
 	public void killPlayer()
 	{
 		alive = false;
         deathScreen.gameObject.SetActive(true);
-        if (Input.anyKeyDown)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		StartCoroutine(waitToStart());
+        
     }
 
     void FixedUpdate()
@@ -220,7 +224,6 @@ public class playerMovement : MonoBehaviour
 			uIController.navigateToSelection(enemyScript.dialogueRoot, dialogueType.GetValueOrDefault(objectAttained));
 			StartCoroutine(uIController.moveMeter());
 		}
-		
 
         if (Input.GetButton("parry") && !parryCollider.enabled && inFight)
         {
@@ -249,10 +252,15 @@ public class playerMovement : MonoBehaviour
 			rBody.AddForce(new Vector2(0, 2500));
 		}
 
-		if (!alive)
-		{
-			killPlayer();
+		if (!alive && !killed)
+        {
+			killed = true;
+            killPlayer();
+            
         }
+		
+		if (Input.anyKeyDown && playerCanRestart)
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
 

@@ -3,17 +3,18 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9340f545dec0840479a6b26033680948, type: 3}
   m_Name: DevConsoleSettings
   m_EditorClassIdentifier: 
-  selectedTab: 0
+  selectedTab: 1
   attachedLogLevel: -1
-  openKey: 282
+  openKey: 96
   autoCompleteKey: 283
   historyKey: 284
   autoInstantiate: 1
@@ -28,7 +29,7 @@ MonoBehaviour:
   autoCompleteBehaviour: 2
   defaultTag: Default
   preferredHeight: 0.5
-  showOpenButton: 1
+  showOpenButton: 0
   scale: 1
   font: {fileID: 12800000, guid: 78753e46f39c8a24e87a1fca523f3f72, type: 3}
   fontSize: 12

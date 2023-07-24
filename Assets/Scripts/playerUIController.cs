@@ -99,6 +99,8 @@ public class playerUIController : MonoBehaviour
         clickedButton = s;
         isClicked = true;
     }
+
+    private Coroutine dialogueRoutine;
     private IEnumerator typeWrite(dialogueParsing.Dialogue dialogueRoot, dialogueParsing.selection line)
     {
 
@@ -124,6 +126,7 @@ public class playerUIController : MonoBehaviour
         isClicked = false;
         //print("moving box of choices" );
         yield return new WaitUntil(() => isClicked);
+        patience =+ line.choices[clickedButton].Reaction;
         //print(isClicked);
         isClicked = false;
         //print("player has chosen");
@@ -147,7 +150,6 @@ public class playerUIController : MonoBehaviour
 
     public void navigateToSelection(dialogueParsing.Dialogue dialogueRoot, string nameOfSelection)
     {
-        StopCoroutine("typeWrite");
         print(nameOfSelection);
         patienceMeter.transform.DOLocalMoveX(-714, 1);
         dialoguePlayer.transform.DOLocalMoveX(-664, 1);
@@ -161,32 +163,37 @@ public class playerUIController : MonoBehaviour
 			if (data.Name == nameOfSelection)
             {
                 //print(data.Name);
-                StartCoroutine(typeWrite(dialogueRoot, data));
+                dialogueRoutine = StartCoroutine(typeWrite(dialogueRoot, data));
             }
 
         }
 
     }
 
-    float patience = 5;
+    public float patience = 5;
     public IEnumerator moveMeter()
     {
         patienceMeter.value = patience / 10;
-        while (patienceMeter.value > 0)
+        while (patience > 0)
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3);
             patience -= 1;
-            patienceMeter.value -= patience/10;
+            patienceMeter.value = patience/10;
         }
+        StopCoroutine(dialogueRoutine);
 
-        
+        enemyStuff.FirstLevel = false;
+        stopDialogue();
     }
 
     private void stopDialogue()
 	{
 		playerStuff.inDialogue = false;
+        patienceMeter.transform.DOLocalMoveX(-1309, 1);
         dialoguePlayer.transform.DOLocalMoveX(1431, 1);
         dialogueEnemy.transform.DOLocalMoveX(-1712, 1);
+        dialogueChoiceBox.transform.DOLocalMoveY(-781, 1);
+        enemyStuff.enemyHealth = enemyStuff.enemyMax;
         enemyStuff.continualizeFight();
 	}
 

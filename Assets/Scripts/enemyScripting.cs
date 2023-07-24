@@ -49,6 +49,7 @@ public class enemyScripting : MonoBehaviour
 
     public TextAsset jsonFile;
     public int test;
+    [HideInInspector] public int enemyMax;
     public int enemyHealth = 10;
     public ParticleSystem shooter;
     public BoxCollider2D boxTrigger;
@@ -67,7 +68,7 @@ public class enemyScripting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        enemyMax = enemyHealth;
         postProcess.profile.TryGet(out colorAd);
         colorAd.colorFilter.hdr = false;
         shooter = GetComponent<ParticleSystem>();
@@ -180,7 +181,7 @@ public class enemyScripting : MonoBehaviour
     {
         lasersBitch.SetPosition(0, transform.localPosition);
         particleCollider.lifetimeLoss = 1;
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < 8; i++)
         {
             rotate = Mathf.Rad2Deg * Mathf.Atan(Mathf.Abs(player.transform.position.y - transform.position.y) / Mathf.Abs(player.transform.position.x - transform.position.x));
 
@@ -194,7 +195,7 @@ public class enemyScripting : MonoBehaviour
 
                 shape.rotation = new Vector3(-rotate, -90, 0);
                 shape.arc = 1;
-                main.startSpeed = 100;
+                main.startSpeed = 50;
                 emission.rateOverTime = .75f;
                 enemyAnimator.SetTrigger("Snipe");
                 shooter.Emit(1);
@@ -213,6 +214,7 @@ public class enemyScripting : MonoBehaviour
     {
         particleCollider.lifetimeLoss = 1;
         emission.rateOverTime = 0;
+        main.startSpeed = 35;
         shooter.Play();
         ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
         bursts[0].count = 6;
@@ -221,7 +223,7 @@ public class enemyScripting : MonoBehaviour
         bursts[0].cycleCount = 2;
         bursts[0].probability = 1;
         emission.SetBursts(bursts);
-
+        shape.arc = 360;
         shape.angle = 15;
         shape.radius = 2;
         ParticleSystem.EmitParams emitOverride = new ParticleSystem.EmitParams();
@@ -233,7 +235,7 @@ public class enemyScripting : MonoBehaviour
             rotate = Mathf.Rad2Deg * Mathf.Atan(Mathf.Abs(player.transform.position.y - transform.position.y) / Mathf.Abs(player.transform.position.x - transform.position.x));
             shape.rotation = new Vector3(-rotate, -90, 0);
             shooter.Emit(emitOverride, 12);
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(1.5f);
         }
             
         emission.SetBursts(new ParticleSystem.Burst[0]);
@@ -269,7 +271,7 @@ public class enemyScripting : MonoBehaviour
         shape.rotation = new Vector3(-60, -90, 0);
         shape.arc = 1;
         emission.rateOverTime = .5f;
-        main.simulationSpeed = .7f;
+        main.simulationSpeed = .4f;
         particleCollider.lifetimeLoss = 0;
         forceOverLifetime.enabled = true;
 
@@ -329,7 +331,13 @@ public class enemyScripting : MonoBehaviour
         Destroy(newBigGuy);
     }
 
-    [SerializeField] bool FirstLevel;
+    IEnumerator waitForFall()
+    {
+        yield return new WaitForSeconds(1);
+        playerScript.inFight = true;
+    }
+
+    public bool FirstLevel;
     int currentState = 1;
     public void continualizeFight()
     {
@@ -343,12 +351,17 @@ public class enemyScripting : MonoBehaviour
 
         if (FirstLevel)
         {
+            print("sdsf");
             tutorial.dropHint(tutorialFlyingKey);
             StartCoroutine(slowMoParry());
         }
         else
         {
-            loopFight();
+            enemyAnimator.SetBool("stunned", false);
+            playerScript.inFight = false;
+            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1000, 1000));
+            StartCoroutine(waitForFall());
+            
         }
     }
 
@@ -356,7 +369,7 @@ public class enemyScripting : MonoBehaviour
     IEnumerator check()
     {
         enemyAnimator.SetBool("stunned", true);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         if (!playerScript.inDialogue)
         {
             
@@ -369,10 +382,9 @@ public class enemyScripting : MonoBehaviour
     public void loopFight()
     {
 
-        print("loop");
+        print(currentState);
         if (enemyHealth > 0)
         {
-            
             switch (currentState)
             {
                 case 1:
@@ -386,13 +398,15 @@ public class enemyScripting : MonoBehaviour
                     break;
 
             }
-            
-            //StartCoroutine(throwable());
-            currentState = Mathf.RoundToInt(Random.Range(1, 3));
+
+            //StartCoroutine(doubleShot());
+            currentState = Random.Range(1, 4);
         }
         else
         {
-            tutorial.dropHint(eKey);
+            if (FirstLevel)
+                tutorial.dropHint(eKey);
+            
             StartCoroutine(check());
         }
     }
