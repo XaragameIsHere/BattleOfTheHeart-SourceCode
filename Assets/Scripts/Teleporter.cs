@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class Teleporter : MonoBehaviour
 {
-    [SerializeField] SceneAsset nextLevel;
+    [SerializeField] string nextLevel;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene(nextLevel.name);
-        print("loading " + nextLevel.name + "...");
+        SceneManager.LoadScene(nextLevel);
+        print("loading " + nextLevel + "...");
     }
 
 }
