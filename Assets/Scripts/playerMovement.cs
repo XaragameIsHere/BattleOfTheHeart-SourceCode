@@ -219,10 +219,10 @@ public class playerMovement : MonoBehaviour
 		{
 			inDialogue = true;
 			uIController.navigateToSelection(enemyScript.dialogueRoot, dialogueType.GetValueOrDefault(objectAttained));
-			StartCoroutine(uIController.moveMeter());
+			//StartCoroutine(uIController.moveMeter());
 		}
 
-        if (Input.GetButton("parry") && !parryCollider.enabled && inFight)
+        if (Input.GetButton("parry") && !parryCollider.enabled && inFight && !inDialogue)
         {
 			playerAnimator.SetTrigger("parry");
 

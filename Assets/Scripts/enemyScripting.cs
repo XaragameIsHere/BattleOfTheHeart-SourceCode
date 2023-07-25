@@ -33,6 +33,7 @@ public class enemyScripting : MonoBehaviour
     [SerializeField] tutorialScripting tutorial;
     [SerializeField] GameObject tutorialKey;
     [SerializeField] GameObject tutorialFlyingKey;
+    [SerializeField] BoxCollider2D teleporter;
     [SerializeField] GameObject eKey;
     [HideInInspector] public dialogueParsing.Dialogue dialogueRoot;
     [HideInInspector] public bool hit = false;
@@ -118,12 +119,19 @@ public class enemyScripting : MonoBehaviour
     {
         //player.GetComponent<AudioSource>().Stop();
         //audioSystem.Play();
+        playerScript.inFight = true;
         playerScript.inDialogue = true;
         player.transform.DOMove(playerPostion, .5f);
         Controller.startDialogue(dialogueRoot);
 
 
 
+    }
+
+    public void endFight()
+    {
+        enemyAnimator.SetBool("stunned", false);
+        teleporter.isTrigger = true;
     }
     
     IEnumerator drop()

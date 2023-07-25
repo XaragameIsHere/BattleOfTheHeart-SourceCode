@@ -20,6 +20,7 @@ public class dialogueParsing
     public class dialogueData
     {
         public dialogueLine[] Start;
+        public dialogueLine[] End;
     }
 
     [System.Serializable]

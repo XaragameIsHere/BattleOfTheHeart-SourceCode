@@ -12,6 +12,7 @@ public class playerUIController : MonoBehaviour
 	public playerMovement playerStuff;
 	public enemyScripting enemyStuff;
     public bool dev_SkipCutscene = false;
+    private dialogueParsing.dialogueData mainData;
 
 	public RawImage dialogueChoiceBox;
     public Slider patienceMeter;
@@ -22,6 +23,7 @@ public class playerUIController : MonoBehaviour
 
 	public TMP_Text playerText;
 	public TMP_Text enemyText;
+    [SerializeField] float dialogueSpeed = .02f;
     [SerializeField] TMP_Text playerTextEnter;
     [SerializeField] TMP_Text enemyTextEnter;
     
@@ -37,7 +39,7 @@ public class playerUIController : MonoBehaviour
                     playerText.text = line.dialogueText.Substring(0, i);
                     
 
-                    yield return new WaitForSeconds(.02f);
+                    yield return new WaitForSeconds(dialogueSpeed);
                 }
                 playerTextEnter.enabled = true;
                 playerText.text = line.dialogueText;
@@ -49,7 +51,7 @@ public class playerUIController : MonoBehaviour
                     enemyText.text = line.dialogueText.Substring(0, i);
 					
 
-                    yield return new WaitForSeconds(.02f);
+                    yield return new WaitForSeconds(dialogueSpeed);
                 }
                 enemyTextEnter.enabled = true;
                 enemyText.text = line.dialogueText;
@@ -79,8 +81,9 @@ public class playerUIController : MonoBehaviour
         {
             foreach (dialogueParsing.dialogueData data in dialogueRoot.cutscene_Dialogue)
 		    {
-			
-			    StartCoroutine(dialogue(data.Start));
+                mainData = data;
+                print(data.Start);
+                StartCoroutine(dialogue(data.Start));
 			
 		    }
         }
@@ -92,7 +95,7 @@ public class playerUIController : MonoBehaviour
         
     }
     
-    public bool isClicked = false;
+    private bool isClicked = false;
     int clickedButton;
     public void click(int s) 
     {
@@ -110,7 +113,7 @@ public class playerUIController : MonoBehaviour
             enemyText.text = line.enemy_Text.Substring(0, i);
 
 
-            yield return new WaitForSeconds(.02f);
+            yield return new WaitForSeconds(dialogueSpeed);
         }
 
         enemyText.text = line.enemy_Text;
@@ -137,14 +140,24 @@ public class playerUIController : MonoBehaviour
             playerText.text = line.choices[clickedButton].dialogueLine.Substring(0, i);
 
 
-            yield return new WaitForSeconds(.02f);
+            yield return new WaitForSeconds(dialogueSpeed);
         }
 
         //print("finished typewriting " + line.choices[clickedButton].dialogueLine);
         yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
         //print("moving on");
 
-        navigateToSelection(dialogueRoot, line.choices[clickedButton].next_Dialogue_Selection);
+        if (line.choices[clickedButton].next_Dialogue_Selection == "end")
+        {
+            patienceMeter.transform.DOLocalMoveX(-1309, 1);
+            playerStuff.inFight = false; 
+            StartCoroutine( dialogue(mainData.End));
+        }
+        else
+        {
+            navigateToSelection(dialogueRoot, line.choices[clickedButton].next_Dialogue_Selection);
+        }
+            
         
     }
 
@@ -163,6 +176,7 @@ public class playerUIController : MonoBehaviour
 			if (data.Name == nameOfSelection)
             {
                 //print(data.Name);
+                
                 dialogueRoutine = StartCoroutine(typeWrite(dialogueRoot, data));
             }
 
@@ -170,7 +184,7 @@ public class playerUIController : MonoBehaviour
 
     }
 
-    public float patience = 5;
+    private float patience = 5;
     public IEnumerator moveMeter()
     {
         patienceMeter.value = patience / 10;
@@ -187,14 +201,22 @@ public class playerUIController : MonoBehaviour
     }
 
     private void stopDialogue()
-	{
-		playerStuff.inDialogue = false;
+	{       
+        playerStuff.inDialogue = false;
         patienceMeter.transform.DOLocalMoveX(-1309, 1);
         dialoguePlayer.transform.DOLocalMoveX(1431, 1);
         dialogueEnemy.transform.DOLocalMoveX(-1712, 1);
         dialogueChoiceBox.transform.DOLocalMoveY(-781, 1);
-        enemyStuff.enemyHealth = enemyStuff.enemyMax;
-        enemyStuff.continualizeFight();
+
+        if (playerStuff.inFight)
+        {
+            enemyStuff.enemyHealth = enemyStuff.enemyMax;
+            enemyStuff.continualizeFight();
+        }
+        else
+        {
+            enemyStuff.endFight();
+        }
 	}
 
 }

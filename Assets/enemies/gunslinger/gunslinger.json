@@ -103,36 +103,279 @@
                 [
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Well, there's another MSPaint Duck around the corner",
+                        "dialogueText": "Look kid I’m sorry you can’t find your cat but you can’t throw that name around here like that",
                         "Subject": false
                     },
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Awww, and you like her",
+                        "dialogueText": "Why not?",
                         "Subject": true
                     },
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Nooo, I mean...maybe, yeah, yeah, she's perfect.",
+                        "dialogueText": "Who’s this Ghost guy?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "The most remorseless killer in the New West",
                         "Subject": false
                     },
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Well I'd like to know about her",
+                        "dialogueText": "If someone gives him a job he’ll get it done. No questions asked.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "He puts no thought to it. He’s- He’s like a robot",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Why do they call him Ghost?",
                         "Subject": true
                     },
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Maybe we can stop fighting and talk about this other duck?",
+                        "dialogueText": "Because no one knows his real name and he acts almost like a ghost",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Almost no one has ever seen him and the few who do are usually dead. Even if they don’t know it yet",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Woah",
                         "Subject": true
                     },
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Alright walk with me friend",
+                        "dialogueText": "No one's seen him?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well that’s the thing, I’m one of the select few who’s seen the man and made it out alive",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "It was during my Bounty Hunting days. Back in ‘76.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "He was spotted blowing a up a fuel station. All for a distraction as he robbed a gun store for ammo.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I was silently tracking him down and fired my shot at what would’ve been the perfect time",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "And?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "And I misssed...",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Worst part wasn’t that he got away. But that he looked back, and saw my face and shot back",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I was lucky enough to have my flask on me. When he shot back the bullet was blocked by it. Only reason I’m still here before you.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "My life hasn’t been the same ever since. I’ve been a dead man walking for 23 years now.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Had to leave my job, my family, my friends, everything",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "That's terrible",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You ain't from around here are you?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Correct",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well, where ya from?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "The Garden Planet",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "The Garden Planet?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well, it seems you’re a long way from home",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Yeah my spaceship crashed here",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Did you see where it landed?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Was it a small space ship?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Yeah",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Was it white?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Yeah!",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Did a weird, annoying girl get ejected out of it?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "YEAH! I’m a weird, annoying- wait.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "WAIT. So you know where I can find my ship and my cat?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "No",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "But...",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I never said I saw where it landed.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Oh.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "But... I did see it go that way, Towards the saloon maybe someone else saw it.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "But beware, Ghost is over that way",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "No offense but, I don’t think you’ll have what it takes to go up agains him",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You don’t seem like fighting type",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well...",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Look just be careful he... he’s just. Not someone you take lightly.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "It’d be a shame to lose someone like you in a place like this.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Don’t worry, I’m just going to get my ship and leave",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Ehhh, sure",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I promise, I’ll be fine, uhh...",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Llewelyn, the name’s Llewelyn",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "And, If you come back alive I’ll buy you a drink. You know where to find me",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "A soda sounds nice",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Sure, a soda. Good luck.",
                         "Subject": false
                     }
-
-                    
                 ],
                 "After":
                 [
