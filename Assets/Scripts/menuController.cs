@@ -19,7 +19,8 @@ public class menuController : MonoBehaviour
     {
         yield return black.DOColor(new Color(70, 70, 70, 0), 1).WaitForCompletion();
 
-        Destroy(black.gameObject);
+        //Destroy(black.gameObject);
+        black.gameObject.SetActive(false);
         if (Application.platform == RuntimePlatform.WebGLPlayer)
         {
             quitButton.enabled = false;
@@ -31,7 +32,9 @@ public class menuController : MonoBehaviour
 
     public void playGame()
     {
-        if (PlayerPrefs.GetString("Level") == null)
+        black.DOColor(new Color(70, 70, 70, 255), 1);
+        print(PlayerPrefs.GetString("Level"));
+        if (PlayerPrefs.GetString("Level") == "")
         {
             print("Loading previous save");
             SceneManager.LoadScene("ctscn_opening");
