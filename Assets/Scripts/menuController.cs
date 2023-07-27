@@ -24,8 +24,8 @@ public class menuController : MonoBehaviour
         {
             quitButton.enabled = false;
         } 
-        playButton.transform.DOLocalMoveY(-147, 1);
-        quitButton.transform.DOLocalMoveY(-269, 1);
+        playButton.transform.DOLocalMoveY(-305, 1);
+        quitButton.transform.DOLocalMoveY(-413, 1);
 
     }
 
