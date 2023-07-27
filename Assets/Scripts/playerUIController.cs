@@ -24,8 +24,9 @@ public class playerUIController : MonoBehaviour
 	public TMP_Text playerText;
 	public TMP_Text enemyText;
     [SerializeField] float dialogueSpeed = .02f;
-    [SerializeField] TMP_Text playerTextEnter;
-    [SerializeField] TMP_Text enemyTextEnter;
+    [SerializeField] Image playerTextEnter;
+    [SerializeField] Image enemyTextEnter;
+    [SerializeField] Image zoomIn;
     
 
     private IEnumerator dialogue(dialogueParsing.dialogueLine[] lines)
@@ -72,8 +73,9 @@ public class playerUIController : MonoBehaviour
     public void startDialogue(dialogueParsing.Dialogue dialogueRoot)
 	{
 		print("f");
-		dialoguePlayer.transform.DOLocalMoveX(-664, 1);
-        dialogueEnemy.transform.DOLocalMoveX(621, 1);
+		dialoguePlayer.transform.DOMoveX(50, 1);
+        dialogueEnemy.transform.DOMoveX(1080, 1);
+        zoomIn.transform.DOLocalMoveY(0, 1);
         playerStuff.playerCamera.transform.DOMove(playerStuff.tweenPos.transform.position, 1);
         playerStuff.playerCamera.DOOrthoSize(10, 1);
 
@@ -165,8 +167,9 @@ public class playerUIController : MonoBehaviour
     {
         print(nameOfSelection);
         patienceMeter.transform.DOLocalMoveX(-714, 1);
-        dialoguePlayer.transform.DOLocalMoveX(-664, 1);
-        dialogueEnemy.transform.DOLocalMoveX(621, 1);
+        dialoguePlayer.transform.DOMoveX(50, 1);
+        dialogueEnemy.transform.DOMoveX(1080, 1);
+        zoomIn.transform.DOLocalMoveY(0, 1);
 
 
 
@@ -204,9 +207,10 @@ public class playerUIController : MonoBehaviour
 	{       
         playerStuff.inDialogue = false;
         patienceMeter.transform.DOLocalMoveX(-1309, 1);
-        dialoguePlayer.transform.DOLocalMoveX(1431, 1);
-        dialogueEnemy.transform.DOLocalMoveX(-1712, 1);
+        dialoguePlayer.transform.DOMoveX(1431, 1);
+        dialogueEnemy.transform.DOMoveX(-1712, 1);
         dialogueChoiceBox.transform.DOLocalMoveY(-781, 1);
+        zoomIn.transform.DOLocalMoveY(1635, 1);
 
         if (playerStuff.inFight)
         {
