@@ -73,8 +73,8 @@ public class playerUIController : MonoBehaviour
     public void startDialogue(dialogueParsing.Dialogue dialogueRoot)
 	{
 		print("f");
-		dialoguePlayer.transform.DOMoveX(50, 1);
-        dialogueEnemy.transform.DOMoveX(1080, 1);
+		dialoguePlayer.transform.DOLocalMoveX(-880, 1);
+        dialogueEnemy.transform.DOLocalMoveX(880, 1);
         zoomIn.transform.DOLocalMoveY(0, 1);
         playerStuff.playerCamera.transform.DOMove(playerStuff.tweenPos.transform.position, 1);
         playerStuff.playerCamera.DOOrthoSize(10, 1);
@@ -168,7 +168,7 @@ public class playerUIController : MonoBehaviour
         print(nameOfSelection);
         patienceMeter.transform.DOLocalMoveX(-714, 1);
         dialoguePlayer.transform.DOMoveX(50, 1);
-        dialogueEnemy.transform.DOMoveX(1080, 1);
+        dialogueEnemy.transform.DOMoveX(0, 1);
         zoomIn.transform.DOLocalMoveY(0, 1);
 
 
