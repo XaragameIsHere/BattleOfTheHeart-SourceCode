@@ -103,7 +103,7 @@ public class playerMovement : MonoBehaviour
         newObj.transform.position = transform.position;
 
         SpriteRenderer throwSprite = newObj.AddComponent<SpriteRenderer>();
-        throwSprite.sprite = enemyScript.attack2sprite;
+        throwSprite.sprite = enemyScript.currentData.sprites[0];
 
         newObj.transform.localScale = new Vector3(.1f, .1f, .1f);
         newObj.transform.DOMove(enemyScript.transform.position, .5f);
@@ -206,13 +206,9 @@ public class playerMovement : MonoBehaviour
 
 
 		if (isGrounded)
-		{
 			rocketBoots.Stop();
-		}
 		else
-		{
 			rocketBoots.Play();
-		}
 
         
         if (Vector3.Distance(enemyScript.transform.position, transform.position) < 3 && Input.GetButton("Use") && !inDialogue)
@@ -222,7 +218,7 @@ public class playerMovement : MonoBehaviour
 			//StartCoroutine(uIController.moveMeter());
 		}
 
-        if (Input.GetButton("parry") && !parryCollider.enabled && inFight && !inDialogue)
+        if (Input.GetButton("parry") && !parryCollider.enabled && inFight && !inDialogue && enemyScript.currentData.parryable)
         {
 			playerAnimator.SetTrigger("parry");
 
@@ -257,7 +253,7 @@ public class playerMovement : MonoBehaviour
         }
 		
 		if (Input.anyKeyDown && playerCanRestart)
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
 

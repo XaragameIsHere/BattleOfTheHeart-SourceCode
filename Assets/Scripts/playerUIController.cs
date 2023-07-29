@@ -207,7 +207,7 @@ public class playerUIController : MonoBehaviour
 	{       
         playerStuff.inDialogue = false;
         patienceMeter.transform.DOLocalMoveX(-1309, 1);
-        dialoguePlayer.transform.DOMoveX(1431, 1);
+        dialoguePlayer.transform.DOMoveX(-1712, 1);
         dialogueEnemy.transform.DOMoveX(-1712, 1);
         dialogueChoiceBox.transform.DOLocalMoveY(-781, 1);
         zoomIn.transform.DOLocalMoveY(1635, 1);
