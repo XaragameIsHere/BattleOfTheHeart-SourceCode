@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b8c5d13903f32e42a8778517115222f
+guid: de7c8a61b663ded479a0e4efd847b829
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,12 +123,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gambler_Idle_0
+      name: gambler_Shoot_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 170
+        width: 280
         height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -137,19 +137,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fe88679eff55fb42b9e52325e3fd370
-      internalID: 704462494
+      spriteID: 2a44ff85867c8f64abb44f580f48b2f5
+      internalID: -674545760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gambler_Idle_1
+      name: gambler_Shoot_1
       rect:
         serializedVersion: 2
-        x: 170
+        x: 280
         y: 0
-        width: 170
+        width: 280
         height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -158,19 +158,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51e3e625c9014e244bf030bd8dc315f5
-      internalID: 1248850081
+      spriteID: 5d814ffea770f3c429872dc74d58f318
+      internalID: -823060403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gambler_Idle_2
+      name: gambler_Shoot_2
       rect:
         serializedVersion: 2
-        x: 340
+        x: 560
         y: 0
-        width: 170
+        width: 280
         height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -179,19 +179,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07be4d5a3e08fa248b9237c928b3fe85
-      internalID: 1830101953
+      spriteID: 8cd3c158f72bbe4498ca29eb62fc76b5
+      internalID: 1926144476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gambler_Idle_3
+      name: gambler_Shoot_3
       rect:
         serializedVersion: 2
-        x: 510
+        x: 840
         y: 0
-        width: 170
+        width: 280
         height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -200,19 +200,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c04b2d051820ca48be42b487387eb03
-      internalID: 135517327
+      spriteID: 77ebc1ef7a569e04081d69f1f2e3a699
+      internalID: 1486238627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gambler_Idle_4
+      name: gambler_Shoot_4
       rect:
         serializedVersion: 2
-        x: 680
+        x: 1120
         y: 0
-        width: 170
+        width: 280
         height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -221,29 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b34623d528f31a44894253fd1184e5a3
-      internalID: 1275527004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gambler_Idle_5
-      rect:
-        serializedVersion: 2
-        x: 850
-        y: 0
-        width: 170
-        height: 470
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c6effb918efc6842a42b5b58bd09e3b
-      internalID: -362457131
+      spriteID: 1bfa762a61065834880f3aaf3fee0846
+      internalID: -388545720
       vertices: []
       indices: 
       edges: []
@@ -259,12 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gambler_Idle_0: 704462494
-      gambler_Idle_1: 1248850081
-      gambler_Idle_2: 1830101953
-      gambler_Idle_3: 135517327
-      gambler_Idle_4: 1275527004
-      gambler_Idle_5: -362457131
+      gambler_Shoot_0: -674545760
+      gambler_Shoot_1: -823060403
+      gambler_Shoot_2: 1926144476
+      gambler_Shoot_3: 1486238627
+      gambler_Shoot_4: -388545720
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

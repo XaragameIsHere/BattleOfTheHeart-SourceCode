@@ -8,6 +8,8 @@ using Slider = UnityEngine.UI.Slider;
 
 public class playerMovement : MonoBehaviour
 {
+	[SerializeField] AudioClip parrySound;
+	[SerializeField] AudioSource sfxSource;
 	[SerializeField] Vector2 velocity = new Vector2(1, 0);
 	[SerializeField] LayerMask groundLayers;
 	[SerializeField] LayerMask wallLayers;
@@ -115,7 +117,7 @@ public class playerMovement : MonoBehaviour
         if (particleSystem.layer == 8)
         {
             enemyScript.hit = true;
-            if (parryCollider.enabled)
+            if (parryCollider.enabled && enemyScript.currentData.parryable)
             {
                 parry();
             }
@@ -218,10 +220,11 @@ public class playerMovement : MonoBehaviour
 			//StartCoroutine(uIController.moveMeter());
 		}
 
-        if (Input.GetButton("parry") && !parryCollider.enabled && inFight && !inDialogue && enemyScript.currentData.parryable)
+        if (Input.GetButton("parry") && !parryCollider.enabled && inFight && !inDialogue)
         {
 			playerAnimator.SetTrigger("parry");
-
+			sfxSource.clip = parrySound;
+			sfxSource.Play();
             
             parryParticles.Emit( 50);
 			parrying = true;
@@ -242,7 +245,7 @@ public class playerMovement : MonoBehaviour
         if (collisionBaybe.IsTouchingLayers(wallLayers))
 		{
 			//walk = false;
-			rBody.AddForce(new Vector2(0, 2500));
+			rBody.AddForce(new Vector2(0, 10000));
 		}
 
 		if (!alive && !killed)

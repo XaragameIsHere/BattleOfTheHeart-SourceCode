@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de7c8a61b663ded479a0e4efd847b829
+guid: 44e1bb8bd6f843e46973c62d877d177e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,112 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Gunslinger_Shoot_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 140
-        height: 235
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2a44ff85867c8f64abb44f580f48b2f5
-      internalID: -674545760
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gunslinger_Shoot_1
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 0
-        width: 140
-        height: 235
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d814ffea770f3c429872dc74d58f318
-      internalID: -823060403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gunslinger_Shoot_2
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 0
-        width: 140
-        height: 235
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8cd3c158f72bbe4498ca29eb62fc76b5
-      internalID: 1926144476
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gunslinger_Shoot_3
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 0
-        width: 140
-        height: 235
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77ebc1ef7a569e04081d69f1f2e3a699
-      internalID: 1486238627
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gunslinger_Shoot_4
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 0
-        width: 140
-        height: 235
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1bfa762a61065834880f3aaf3fee0846
-      internalID: -388545720
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -237,12 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Gunslinger_Shoot_0: -674545760
-      Gunslinger_Shoot_1: -823060403
-      Gunslinger_Shoot_2: 1926144476
-      Gunslinger_Shoot_3: 1486238627
-      Gunslinger_Shoot_4: -388545720
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

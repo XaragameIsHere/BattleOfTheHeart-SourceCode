@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gunslinger_Throw_0
+      name: gambler_Throw_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 130
-        height: 235
+        width: 260
+        height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,13 +144,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger_Throw_1
+      name: gambler_Throw_1
       rect:
         serializedVersion: 2
-        x: 130
+        x: 260
         y: 0
-        width: 130
-        height: 235
+        width: 260
+        height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,13 +165,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger_Throw_2
+      name: gambler_Throw_2
       rect:
         serializedVersion: 2
-        x: 260
+        x: 520
         y: 0
-        width: 130
-        height: 235
+        width: 260
+        height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,13 +186,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger_Throw_3
+      name: gambler_Throw_3
       rect:
         serializedVersion: 2
-        x: 390
+        x: 780
         y: 0
-        width: 130
-        height: 235
+        width: 260
+        height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,13 +207,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger_Throw_4
+      name: gambler_Throw_4
       rect:
         serializedVersion: 2
-        x: 520
+        x: 1040
         y: 0
-        width: 130
-        height: 235
+        width: 260
+        height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,13 +228,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger_Throw_5
+      name: gambler_Throw_5
       rect:
         serializedVersion: 2
-        x: 650
+        x: 1300
         y: 0
-        width: 130
-        height: 235
+        width: 260
+        height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,13 +249,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger_Throw_6
+      name: gambler_Throw_6
       rect:
         serializedVersion: 2
-        x: 780
+        x: 1560
         y: 0
-        width: 130
-        height: 235
+        width: 260
+        height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,13 +280,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gunslinger_Throw_0: -1769027853
-      Gunslinger_Throw_1: -1209277477
-      Gunslinger_Throw_2: -41434454
-      Gunslinger_Throw_3: 1725451377
-      Gunslinger_Throw_4: -575676770
-      Gunslinger_Throw_5: 1291431920
-      Gunslinger_Throw_6: -518333064
+      gambler_Throw_0: -1769027853
+      gambler_Throw_1: -1209277477
+      gambler_Throw_2: -41434454
+      gambler_Throw_3: 1725451377
+      gambler_Throw_4: -575676770
+      gambler_Throw_5: 1291431920
+      gambler_Throw_6: -518333064
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

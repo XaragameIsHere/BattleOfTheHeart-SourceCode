@@ -15,6 +15,7 @@ public class enemyScripting : MonoBehaviour
     ParticleSystem.NoiseModule noice;
     ParticleSystem.ShapeModule shape;
     ParticleSystem.MainModule main;
+    ParticleSystem.RotationOverLifetimeModule rotationOverLifetime;
     ParticleSystem.CollisionModule particleCollider;
     ParticleSystem.ForceOverLifetimeModule forceOverLifetime;
     ParticleSystem.EmissionModule emission;
@@ -37,6 +38,7 @@ public class enemyScripting : MonoBehaviour
     [SerializeField] GameObject tutorialFlyingKey;
     [SerializeField] BoxCollider2D teleporter;
     [SerializeField] GameObject eKey;
+    [SerializeField] GameObject dropTemplate;
     [HideInInspector] public dialogueParsing.Dialogue dialogueRoot;
     [HideInInspector] public bool hit = false;
     public GameObject enemyObject;
@@ -101,12 +103,13 @@ public class enemyScripting : MonoBehaviour
         noice = shooter.noise;
         shape = shooter.shape;
         explody = shooter.subEmitters;
+        rotationOverLifetime = shooter.rotationOverLifetime;
         textureAnimation = shooter.textureSheetAnimation;
         particleCollider = shooter.collision;
         atkRenderer = GetComponent<ParticleSystemRenderer>();
         shooter.Play();
 
-        currentData = availableAttackTypes[0];
+        //currentData = availableAttackTypes[0];
         enemyAnimator = GetComponent<Animator>();
         lasersBitch = GetComponent<LineRenderer>();
         spriteComponent = GetComponent<SpriteRenderer>();
@@ -115,10 +118,32 @@ public class enemyScripting : MonoBehaviour
         dialogueRoot = JsonUtility.FromJson<dialogueParsing.Dialogue>(jsonFile.text);
     }
 
-    
+    private void clearSprites()
+    {
+        print(textureAnimation.spriteCount);
+        if (textureAnimation.GetSprite(0) is Sprite)
+        {
+            for (int i = textureAnimation.spriteCount; i >= 1; i--)
+            {
+                print(textureAnimation.GetSprite(i - 1).name);
+                textureAnimation.RemoveSprite(i - 1);
+            }
+        }
+        
+    }
+
+    private void regenerateSprites()
+    {
+        for (int i = 0; i < currentData.sprites.Length; i++)
+        {
+            textureAnimation.AddSprite(currentData.sprites[i]);
+        }
+    }
 
     IEnumerator slowMoParry()
     {
+        clearSprites();
+        regenerateSprites();
 
         yield return new WaitForSeconds(2);
         shape.rotation = new Vector3(0, -90, 0);
@@ -146,9 +171,9 @@ public class enemyScripting : MonoBehaviour
         //audioSystem.Play();
         playerScript.inFight = true;
         playerScript.inDialogue = true;
-        player.transform.DOMove(playerPostion, .5f);
+        player.transform.DOLocalMove(playerPostion, .5f);
         Controller.startDialogue(dialogueRoot);
-
+        currentData = availableAttackTypes[0];
 
 
     }
@@ -165,21 +190,24 @@ public class enemyScripting : MonoBehaviour
         for (int i = 0; i < 6; i++)
         {
 
-            var gameObject = new GameObject();
-            var spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
+            
+            Instantiate(dropTemplate);
+            var spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = currentData.sprites[Random.Range(0, currentData.sprites.Length)];
 
         }
 
         for (int v = 0; v < 4; v++)
         {
+
             foreach (GameObject fallingObject in falling)
             {
-                fallingObject.transform.position = fallingObjectArea.transform.GetChild(Mathf.RoundToInt(Random.Range(1, 11))).position;
+                fallingObject.transform.localPosition = fallingObjectArea.transform.GetChild(Mathf.RoundToInt(Random.Range(1, 11))).localPosition;
             }
 
             yield return new WaitForSeconds(3);
 
+            enemyAnimator.SetTrigger("Throw");
             foreach (GameObject fallingObject in falling)
             {
                 fallingObject.GetComponent<Rigidbody2D>().simulated = true;
@@ -198,12 +226,9 @@ public class enemyScripting : MonoBehaviour
 
     private IEnumerator snipe()
     {
-        for (int i = 0; i < currentData.sprites.Length; i++)
-        {
-            textureAnimation.AddSprite(currentData.sprites[i]);
-        }
+        
 
-        lasersBitch.SetPosition(0, transform.localPosition);
+        lasersBitch.SetPosition(0, transform.position);
         particleCollider.lifetimeLoss = 1;
         for (int i = 0; i < 8; i++)
         {
@@ -213,7 +238,7 @@ public class enemyScripting : MonoBehaviour
             if (snipeHit.collider != null)
             {
                 lasersBitch.enabled = true;
-                DOTween.To(() => lasersBitch.GetPosition(1), (x) => lasersBitch.SetPosition(1, x), player.transform.localPosition, .5f).Play();
+                DOTween.To(() => lasersBitch.GetPosition(1), (x) => lasersBitch.SetPosition(1, x), player.transform.position, .5f).Play();
                 yield return new WaitForSeconds(1);
 
                 shape.rotation = new Vector3(-rotate, -90, 0);
@@ -228,10 +253,6 @@ public class enemyScripting : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < textureAnimation.spriteCount; i++)
-        {
-            textureAnimation.RemoveSprite(i);
-        }
 
         loopFight();
 
@@ -240,14 +261,13 @@ public class enemyScripting : MonoBehaviour
     float rotate;
     private IEnumerator doubleShot()
     {
-        for (int i = 0; i < currentData.sprites.Length; i++)
-        {
-            textureAnimation.AddSprite(currentData.sprites[i]);
-        }
+        
 
+        rotationOverLifetime.enabled = true;
         particleCollider.lifetimeLoss = 1;
         emission.rateOverTime = 0;
-        main.startSpeed = 4.5f;
+        main.startSpeed = 35;
+        main.startSize = 2;
         shooter.Play();
         ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
         bursts[0].count = 6;
@@ -267,30 +287,28 @@ public class enemyScripting : MonoBehaviour
             enemyAnimator.SetTrigger("DualShot");
             rotate = Mathf.Rad2Deg * Mathf.Atan(Mathf.Abs(player.transform.position.y - transform.position.y) / Mathf.Abs(player.transform.position.x - transform.position.x));
             shape.rotation = new Vector3(-rotate, -90, 0);
-            shooter.Emit(emitOverride, 12);
+            shooter.Emit(emitOverride, 24);
             yield return new WaitForSeconds(1.5f);
         }
             
         emission.SetBursts(new ParticleSystem.Burst[0]);
-        for (int i = 0; i < textureAnimation.spriteCount; i++)
-        {
-            textureAnimation.RemoveSprite(i);
-        }
+        print(textureAnimation.spriteCount);
+        
+        rotationOverLifetime.enabled = false;
         print("sasdfs");
         loopFight();
     }
 
     private IEnumerator spray()
     {
-        for (int i = 0; i < currentData.sprites.Length; i++)
-        {
-            textureAnimation.AddSprite(currentData.sprites[i]);
-        }
+
+        rotationOverLifetime.enabled = true;
+        
         //main.duration = 10;
         shooter.Play();
         main.loop = true;
         transform.DORotate(new Vector3(0, 0, 0), .5f);
-        main.startSpeed = 4;
+        main.startSpeed = 15;
         emission.rateOverTime = 8;
         shape.angle = 60;
         shape.arc = 360;
@@ -300,38 +318,27 @@ public class enemyScripting : MonoBehaviour
         noice.strength = 0.09f;
         yield return new WaitForSeconds(Random.Range(10, 20));
         shooter.Stop();
-        for (int i = 0; i < textureAnimation.spriteCount; i++)
-        {
-            textureAnimation.RemoveSprite(i);
-        }
+        
+        rotationOverLifetime.enabled = false;
         loopFight();
     }
 
     private IEnumerator narrow()
     {
-        for (int i = 0; i < currentData.sprites.Length; i++)
-        {
-            textureAnimation.AddSprite(currentData.sprites[i]);
-        }
+        
         shooter.Play();
         int fruityLoops = Mathf.RoundToInt(Random.Range(3, 7));
         DOTween.To(() => shape.angle, x => shape.angle = x, 10, 2);
         transform.Rotate(new Vector3(0, 0, -35));
         yield return transform.DORotate(new Vector3(0, 0, 30), 2).SetLoops(fruityLoops, LoopType.Yoyo).WaitForCompletion();
         shooter.Stop();
-        for (int i = 0; i < textureAnimation.spriteCount; i++)
-        {
-            textureAnimation.RemoveSprite(i);
-        }
+        
         loopFight();
     }
 
     private IEnumerator throwable()
     {
-        for (int i = 0; i < currentData.sprites.Length; i++)
-        {
-            textureAnimation.AddSprite(currentData.sprites[i]);
-        }
+        
         shape.rotation = new Vector3(-60, -90, 0);
         shape.arc = 1;
         emission.rateOverTime = .5f;
@@ -352,10 +359,7 @@ public class enemyScripting : MonoBehaviour
         main.simulationSpeed = 1;
         forceOverLifetime.enabled = false;
         explody.SetSubEmitterEmitProbability(0, 0);
-        for (int i = 0; i < textureAnimation.spriteCount; i++)
-        {
-            textureAnimation.RemoveSprite(i);
-        }
+        
         loopFight();
 
     }
@@ -399,7 +403,7 @@ public class enemyScripting : MonoBehaviour
 
         //audioSystem.clip = FightMusic;
         //audioSystem.Play();
-        transform.DOMove(enemyPosition, 1);
+        transform.DOLocalMove(enemyPosition, 1);
         playerScript.inFight = true;
 
         if (FirstLevel)
@@ -437,7 +441,8 @@ public class enemyScripting : MonoBehaviour
 
     public void loopFight()
     {
-        
+        clearSprites();
+        regenerateSprites();
 
         print(currentData.attackType);
         if (enemyHealth > 0)

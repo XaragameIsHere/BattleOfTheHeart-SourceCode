@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gunslinger_Stun_0
+      name: gambler_Stun_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 120
-        height: 185
+        width: 240
+        height: 370
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,13 +144,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger_Stun_1
+      name: gambler_Stun_1
       rect:
         serializedVersion: 2
-        x: 120
+        x: 240
         y: 0
-        width: 120
-        height: 185
+        width: 240
+        height: 370
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,8 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gunslinger_Stun_0: 302054345
-      Gunslinger_Stun_1: -1626447255
+      gambler_Stun_0: 302054345
+      gambler_Stun_1: -1626447255
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

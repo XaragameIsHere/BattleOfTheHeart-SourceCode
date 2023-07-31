@@ -27,6 +27,7 @@ public class playerUIController : MonoBehaviour
     [SerializeField] Image playerTextEnter;
     [SerializeField] Image enemyTextEnter;
     [SerializeField] Image zoomIn;
+    [SerializeField] float camSize;
     
 
     private IEnumerator dialogue(dialogueParsing.dialogueLine[] lines)
@@ -77,7 +78,7 @@ public class playerUIController : MonoBehaviour
         dialogueEnemy.transform.DOLocalMoveX(880, 1);
         zoomIn.transform.DOLocalMoveY(0, 1);
         playerStuff.playerCamera.transform.DOMove(playerStuff.tweenPos.transform.position, 1);
-        playerStuff.playerCamera.DOOrthoSize(10, 1);
+        playerStuff.playerCamera.DOOrthoSize(camSize, 1);
 
         if (!dev_SkipCutscene)
         {
