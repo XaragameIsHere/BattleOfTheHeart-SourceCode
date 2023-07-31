@@ -97,18 +97,18 @@ public class playerMovement : MonoBehaviour
 
 	
 
-    void parry()
+    IEnumerator parry()
     {
 		playerCamera.DOShakePosition(1, .1f);
         GameObject newObj = new GameObject("Name");
         Instantiate(newObj);
-        newObj.transform.position = transform.position;
+        newObj.transform.localPosition = transform.localPosition;
 
         SpriteRenderer throwSprite = newObj.AddComponent<SpriteRenderer>();
         throwSprite.sprite = enemyScript.currentData.sprites[0];
 
-        newObj.transform.localScale = new Vector3(.1f, .1f, .1f);
-        newObj.transform.DOMove(enemyScript.transform.position, .5f);
+        newObj.transform.localScale = new Vector3(2, 2, 2);
+        yield return newObj.transform.DOLocalMove(enemyScript.transform.localPosition, .5f).WaitForCompletion();
         enemyScript.enemyHealth -= 1;
     }
 
@@ -119,7 +119,7 @@ public class playerMovement : MonoBehaviour
             enemyScript.hit = true;
             if (parryCollider.enabled && enemyScript.currentData.parryable)
             {
-                parry();
+                StartCoroutine(parry());
             }
 
             else

@@ -134,17 +134,19 @@ public class enemyScripting : MonoBehaviour
 
     private void regenerateSprites()
     {
+        print(textureAnimation.spriteCount);
+
         for (int i = 0; i < currentData.sprites.Length; i++)
         {
+            //print(textureAnimation.GetSprite(i).name);
             textureAnimation.AddSprite(currentData.sprites[i]);
         }
     }
 
     IEnumerator slowMoParry()
     {
-        clearSprites();
-        regenerateSprites();
 
+        tutorial.dropHint(tutorialFlyingKey);
         yield return new WaitForSeconds(2);
         shape.rotation = new Vector3(0, -90, 0);
         shape.arc = 1;
@@ -161,6 +163,8 @@ public class enemyScripting : MonoBehaviour
         colorAd.colorFilter.Override(newHDRColor);
         main.simulationSpeed = .6f;
 
+        availableAttackTypes.RemoveAt(0);
+        currentData = availableAttackTypes[Random.Range(0, availableAttackTypes.Count)];
         loopFight();
 
     }
@@ -338,7 +342,8 @@ public class enemyScripting : MonoBehaviour
 
     private IEnumerator throwable()
     {
-        
+
+        rotationOverLifetime.enabled = true;
         shape.rotation = new Vector3(-60, -90, 0);
         shape.arc = 1;
         emission.rateOverTime = .5f;
@@ -359,7 +364,8 @@ public class enemyScripting : MonoBehaviour
         main.simulationSpeed = 1;
         forceOverLifetime.enabled = false;
         explody.SetSubEmitterEmitProbability(0, 0);
-        
+        rotationOverLifetime.enabled = false;
+
         loopFight();
 
     }
@@ -395,31 +401,19 @@ public class enemyScripting : MonoBehaviour
         loopFight();
     }
 
-    public bool FirstLevel;
     public void continualizeFight()
     {
 
-        print("start");
-
-        //audioSystem.clip = FightMusic;
-        //audioSystem.Play();
         transform.DOLocalMove(enemyPosition, 1);
         playerScript.inFight = true;
-
-        if (FirstLevel)
-        {
-            print("sdsf");
-            tutorial.dropHint(tutorialFlyingKey);
-            StartCoroutine(slowMoParry());
-        }
-        else
-        {
-            enemyAnimator.SetBool("stunned", false);
-            playerScript.inFight = false;
-            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1000, 1000));
-            StartCoroutine(waitForFall());
+        
+        
+        enemyAnimator.SetBool("stunned", false);
+        playerScript.inFight = false;
+        player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1000, 1000));
+        StartCoroutine(waitForFall());
             
-        }
+        
     }
 
     
@@ -443,12 +437,16 @@ public class enemyScripting : MonoBehaviour
     {
         clearSprites();
         regenerateSprites();
+        shooter.Clear();
 
         print(currentData.attackType);
         if (enemyHealth > 0)
         {
             switch (currentData.attackType)
             {
+                case attacks.sloMoParry:
+                    StartCoroutine(slowMoParry());
+                    break;
                 case attacks.snipe:
                     StartCoroutine(snipe());
                     break;
@@ -477,8 +475,7 @@ public class enemyScripting : MonoBehaviour
         }
         else
         {
-            if (FirstLevel)
-                tutorial.dropHint(eKey);
+            tutorial.dropHint(eKey);
             
             StartCoroutine(check());
         }

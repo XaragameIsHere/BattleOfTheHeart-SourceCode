@@ -21963,7 +21963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStuff: {fileID: 1242927996}
   enemyStuff: {fileID: 189802455}
-  dev_SkipCutscene: 0
+  dev_SkipCutscene: 1
   dialogueChoiceBox: {fileID: 1188535636}
   patienceMeter: {fileID: 925026358}
   choiceButtons:
