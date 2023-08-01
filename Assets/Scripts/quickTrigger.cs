@@ -17,7 +17,8 @@ public class quickTrigger : MonoBehaviour
     private IEnumerator waitFor()
     {
         yield return new WaitForSeconds(2);
-        GetComponent<Collider2D>().enabled = keepTrigger;
+        GetComponent<Collider2D>().isTrigger = keepTrigger;
+        //GetComponent<Collider2D>().enabled = keepTrigger;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,8 +29,8 @@ public class quickTrigger : MonoBehaviour
             eventDemo.Invoke();
             print("collide");
             
-            GetComponent<Collider2D>().enabled = false;
-
+            //GetComponent<Collider2D>().enabled = false;
+            StartCoroutine(waitFor());
         }
     }
     

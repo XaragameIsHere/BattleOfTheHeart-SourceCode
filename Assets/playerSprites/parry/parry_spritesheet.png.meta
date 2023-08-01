@@ -128,8 +128,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 13
-        height: 16
+        width: 130
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: parry_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 13
+        x: 130
         y: 0
-        width: 13
-        height: 16
+        width: 130
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: parry_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 26
+        x: 260
         y: 0
-        width: 13
-        height: 16
+        width: 130
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: parry_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 39
+        x: 390
         y: 0
-        width: 13
-        height: 16
+        width: 130
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: parry_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 52
+        x: 520
         y: 0
-        width: 13
-        height: 16
+        width: 130
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

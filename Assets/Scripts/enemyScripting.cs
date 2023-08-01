@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -120,12 +121,10 @@ public class enemyScripting : MonoBehaviour
 
     private void clearSprites()
     {
-        print(textureAnimation.spriteCount);
         if (textureAnimation.GetSprite(0) is Sprite)
         {
             for (int i = textureAnimation.spriteCount; i >= 1; i--)
             {
-                print(textureAnimation.GetSprite(i - 1).name);
                 textureAnimation.RemoveSprite(i - 1);
             }
         }
@@ -164,10 +163,12 @@ public class enemyScripting : MonoBehaviour
         main.simulationSpeed = .6f;
 
         availableAttackTypes.RemoveAt(0);
-        currentData = availableAttackTypes[Random.Range(0, availableAttackTypes.Count)];
+        attackDataBuffer = availableAttackTypes[Random.Range(0, availableAttackTypes.Count)];
         loopFight();
 
     }
+
+    private attackData attackDataBuffer;
 
     public void initializeFight()
     {
@@ -177,8 +178,8 @@ public class enemyScripting : MonoBehaviour
         playerScript.inDialogue = true;
         player.transform.DOLocalMove(playerPostion, .5f);
         Controller.startDialogue(dialogueRoot);
-        currentData = availableAttackTypes[0];
-
+        attackDataBuffer = availableAttackTypes[0];
+        print("Starting fight with " + gameObject.name);
 
     }
 
@@ -195,10 +196,12 @@ public class enemyScripting : MonoBehaviour
         {
 
             
-            Instantiate(dropTemplate);
-            var spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+            var newDrop = Instantiate(dropTemplate);
+            var spriteRenderer = newDrop.GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = currentData.sprites[Random.Range(0, currentData.sprites.Length)];
-
+            newDrop.transform.parent = fallingObjectArea.transform;
+            newDrop.transform.localScale = new Vector3(2, 2);
+            falling.Add(newDrop);
         }
 
         for (int v = 0; v < 4; v++)
@@ -206,10 +209,10 @@ public class enemyScripting : MonoBehaviour
 
             foreach (GameObject fallingObject in falling)
             {
-                fallingObject.transform.localPosition = fallingObjectArea.transform.GetChild(Mathf.RoundToInt(Random.Range(1, 11))).localPosition;
+                fallingObject.transform.localPosition = fallingObjectArea.transform.GetChild(Mathf.RoundToInt(Random.Range(0, fallingObjectArea.transform.childCount))).localPosition;
             }
 
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(.5f);
 
             enemyAnimator.SetTrigger("Throw");
             foreach (GameObject fallingObject in falling)
@@ -217,7 +220,7 @@ public class enemyScripting : MonoBehaviour
                 fallingObject.GetComponent<Rigidbody2D>().simulated = true;
             }
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(.5f);
 
             foreach (GameObject fallingObject in falling)
             {
@@ -225,12 +228,18 @@ public class enemyScripting : MonoBehaviour
             }
 
         }
+
+        foreach (GameObject fallingObject in falling)
+        {
+            Destroy(fallingObject);
+        }
         loopFight();
     }
 
     private IEnumerator snipe()
     {
-        
+
+        main.startSize = 2;
 
         lasersBitch.SetPosition(0, transform.position);
         particleCollider.lifetimeLoss = 1;
@@ -265,7 +274,8 @@ public class enemyScripting : MonoBehaviour
     float rotate;
     private IEnumerator doubleShot()
     {
-        
+
+        main.startSize = 2;
 
         rotationOverLifetime.enabled = true;
         particleCollider.lifetimeLoss = 1;
@@ -313,6 +323,7 @@ public class enemyScripting : MonoBehaviour
         main.loop = true;
         transform.DORotate(new Vector3(0, 0, 0), .5f);
         main.startSpeed = 15;
+        main.startSize = 2; 
         emission.rateOverTime = 8;
         shape.angle = 60;
         shape.arc = 360;
@@ -379,6 +390,7 @@ public class enemyScripting : MonoBehaviour
 
         spriteRenderer.sprite = currentData.sprites[0];
 
+        enemyAnimator.SetTrigger("Throw");
         for (int v = 0; v < 8; v++)
         {
             yield return new WaitForSeconds(3);
@@ -431,10 +443,9 @@ public class enemyScripting : MonoBehaviour
     }
 
 
-
-
     public void loopFight()
     {
+        currentData = attackDataBuffer;
         clearSprites();
         regenerateSprites();
         shooter.Clear();
@@ -471,7 +482,7 @@ public class enemyScripting : MonoBehaviour
 
             }
 
-            currentData = availableAttackTypes[Random.Range(0,availableAttackTypes.Count)];
+            attackDataBuffer = availableAttackTypes[Random.Range(0,availableAttackTypes.Count)];
         }
         else
         {

@@ -24,6 +24,7 @@ public class playerMovement : MonoBehaviour
 	[SerializeField] Slider fuelMeter;
 	[SerializeField] ParticleSystem parryParticles;
 	[SerializeField] Canvas deathScreen;
+	[SerializeField] GameObject parryBack;
 
 	public CircleCollider2D parryCollider;
 	public int playerLives = 4;
@@ -51,10 +52,12 @@ public class playerMovement : MonoBehaviour
 	private float startDistance;
 	private playerMovement theScript;
 	private Dictionary<bool, string> dialogueType = new Dictionary<bool, string>();
-	
+    [ColorUsage(true, true)]
+    public Color someHDRColor;
 
-	// Start is called before the first frame update
-	void Start()
+
+    // Start is called before the first frame update
+    void Start()
 	{
 		dialogueType.Add(true, "SelectionStartOBJECT1");
         dialogueType.Add(false, "SelectionStartNOOBJECT1");
@@ -99,17 +102,19 @@ public class playerMovement : MonoBehaviour
 
     IEnumerator parry()
     {
-		playerCamera.DOShakePosition(1, .1f);
-        GameObject newObj = new GameObject("Name");
-        Instantiate(newObj);
-        newObj.transform.localPosition = transform.localPosition;
+        playerCamera.DOShakePosition(1, .6f);
+        var newObj = Instantiate(parryBack);
+        var spriteRenderer = newObj.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = enemyScript.currentData.sprites[Random.Range(0, enemyScript.currentData.sprites.Length)];
+		newObj.transform.parent = transform;
+		newObj.transform.position = transform.position;
 
-        SpriteRenderer throwSprite = newObj.AddComponent<SpriteRenderer>();
-        throwSprite.sprite = enemyScript.currentData.sprites[0];
-
-        newObj.transform.localScale = new Vector3(2, 2, 2);
-        yield return newObj.transform.DOLocalMove(enemyScript.transform.localPosition, .5f).WaitForCompletion();
+        newObj.transform.localScale = new Vector3(8, 8, 8);
+        yield return newObj.transform.DOMove(enemyScript.transform.position, .5f).WaitForCompletion();
+		enemyScript.transform.DOJump(enemyScript.transform.position, 2, 1, .6f);
         enemyScript.enemyHealth -= 1;
+
+		Destroy(newObj);
     }
 
     private void OnParticleCollision(GameObject particleSystem)
@@ -117,9 +122,13 @@ public class playerMovement : MonoBehaviour
         if (particleSystem.layer == 8)
         {
             enemyScript.hit = true;
+
+            print(parryCollider.enabled);
+			print(enemyScript.currentData.attackType);
             if (parryCollider.enabled && enemyScript.currentData.parryable)
             {
                 StartCoroutine(parry());
+				print("bitch");
             }
 
             else
@@ -144,8 +153,10 @@ public class playerMovement : MonoBehaviour
 	public void killPlayer()
 	{
 		alive = false;
-        deathScreen.gameObject.SetActive(true);
-		StartCoroutine(waitToStart());
+		deathScreen.transform.GetChild(2).DOLocalMoveY(190, .75f);
+		deathScreen.transform.GetChild(0).GetComponent<Image>().DOColor(new Color(0, 0, 0, 255), 1);
+
+        StartCoroutine(waitToStart());
         
     }
 
