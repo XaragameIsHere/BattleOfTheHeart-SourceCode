@@ -111,7 +111,7 @@ public class playerMovement : MonoBehaviour
 
         newObj.transform.localScale = new Vector3(8, 8, 8);
         yield return newObj.transform.DOMove(enemyScript.transform.position, .5f).WaitForCompletion();
-		enemyScript.transform.DOJump(enemyScript.transform.position, 2, 1, .6f);
+		enemyScript.transform.DOJump(new Vector3(60, 0, 0), 2, 1, .6f);
         enemyScript.enemyHealth -= 1;
 
 		Destroy(newObj);
@@ -153,6 +153,7 @@ public class playerMovement : MonoBehaviour
 	public void killPlayer()
 	{
 		alive = false;
+		deathScreen.gameObject.SetActive(true);
 		deathScreen.transform.GetChild(2).DOLocalMoveY(190, .75f);
 		deathScreen.transform.GetChild(0).GetComponent<Image>().DOColor(new Color(0, 0, 0, 255), 1);
 
