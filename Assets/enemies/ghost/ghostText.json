@@ -1,0 +1,1133 @@
+
+    {
+      
+     
+        "cutscene_Dialogue":
+        [
+            {
+                "Start":
+                [
+                    
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Helloooooo",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Ghost?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "This time I mean the big, scary, man who I wanna talk to and not my cat.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Although Ghost the cat, if you’re there... with my spaceship that would be fine because I really don’t wanna go against this ghost the human guy",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Hey lady, do you know where this scary ghost guy is",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Why I certainly do!",
+                        "Subject": false
+                    }, 
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "REALLY!? Can ya point me in his direction?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Ghost: Of course I can. Well not really, I mean I can’t point you in HIS direction. Since Ghost isn’t a he. Ghost is... well... Ghost is a me.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "...",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "It’s my voice isn’t it?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "God, I forget voice training one day and now the entire New West thinks I’m a guy.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Un-fucking-believable",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You fuck up one aspect of femininity and now all of a sudden you’re nothing. You’re a subhuman piece of mockery.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "I’m sorry, and I think your voice sounds nice",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Oh don’t bother flattering me. It’s been a long time since I’ve cared about any of that crap. Might as well call me a “he” or a “they” or whatever. At least it’s human.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "You know, you live as long as me and you start to realize none of this matters",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Goddamn death is a virtue",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You are saying A LOT of bad words",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Let me ask you-",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "-Who led you here?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "-Don’t answer",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "-Let me guess, Llewelyn the stupid gunslinger and that degenerate gambler Michael",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You know, if they just accept the peaceful slumber of death",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Always fighting and for what?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "To waste away in some bar. Suffering, for years.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Look, if I could just grab my spaceship and my cat over there that’d be great...",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Oooohhhh, sorry can’t do that gorge. See I kinda have reputation to uphold",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Like if I let you go then I gotta let the next guy go and the next guy go. And like, the whole reason I’ve been cloned is to kill people",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I mean, if I don’t spare people from the pain of life. Then the pain of my life is meaningless",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Why else would they keep cloning me",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Anyways, sorry kid but you know. It’s my namesake.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "No one sees me and lives",
+                        "Subject": false
+                    }
+                ],
+                "End":
+                [
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Why should I keep going there’s nothing left to do. Life just feels like I’m retreading the same path over and over again.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "And killing people doesn’t feel that way?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I don’t know it… it feels meaningful you know",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "like I know I’m saving people from the meaninglessness of life",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I’m doing what I was put on earth to do",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I’m letting people rest",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I suppose that’s one way of looking at it.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "But the way I see it, you’re taking away people’s ability to experience the beautiful parts of life.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Tell me this… uhh",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Leah… the name’s Leah",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Leah… why bother living when our whole lives revolve around a videogame?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Huh?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "The people who’ve been cloning me, they’re the developers of the game. We’re inside a videogame. Our existence is meaningless, we’re just scripted events in a game Leah.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "why should we go on?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "By killing these people I’m saving people from the pain of realizing their existence is meaningless",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You’re only giving them false hope",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Pretending that we mean anything more in the universe than a bunch c# code in a compiler",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Ghost, my hope isn’t false, because my life isn’t false. I know my experiences are real. My feelings are real, and my life is real.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "So what if it doesn’t have meaning, that only means the restrictions of happiness are gone.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "If life has no meaning then we have true freedom to do what we want",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "see that’s the difference between you and me",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "We both drowned in the void, the emptiness, the meaninglessness, but when you fell in…",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "…you kept struggling, swimming towards some falsehood of meaning.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Whereas I’ve found peace in drowning",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "but what experience do I have left? I’m tired, Leah. If my infinite life has no meaning then what do I do with it.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Hmm...",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "...Well the developers keep cloning you because they expect you to kill, right?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Yeah",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "So why don’t you just not kill, maybe they’ll stop cloning you",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "And what do I do if they don’t?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Well maybe try finding what’s unique in yourself. Keep trying to discover yourself. And when that becomes boring try discovering other people",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "There’s whole planet of interesting people you have infinite time to get to know",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "What happens when they leave me?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "When they die on me",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Then be happy, because you helped them experience life and now they have finally gone to rest",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Now you’ve given them two gifts.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Maybe you can start with me",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "...",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "alright, you can have your cat back",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "...And your spaceship.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Thank you",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "But you gotta promise me you’ll come back",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I’ll be back Ghost",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "My name’s Natalie",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I’ll be back Natalie",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Friends?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Friends",
+                        "Subject": false
+                    }
+                ]
+                
+            }
+        ],
+        "combat_Selections":
+        [
+            {
+                
+                "Name": "SelectionStartOBJECT1",
+                "enemy_Text": "What now?",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "What's this?",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "This is a pretty neat guitar",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Why do you have a dumbass guitar",
+                        
+                        "next_Dialogue_Selection": "Selection6"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Why's this guitar here?",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ]
+            },  
+            {
+                "Name": "SelectionStartNOOBJECT1",
+                "enemy_Text": "Accept your rest",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "Why do you want to kill me?",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Can’t I just have my spaceship?",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "I’LL NEVER GIVE IN",
+                        
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "You kll me and what? What next?",
+                        "next_Dialogue_Selection": "Selection5"
+                    }
+                ]
+            },       
+            {
+                "Name": "Selection2",
+                "enemy_Text": "Why can’t you accept the help I’m giving you",
+                "choices": 
+                [
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "Help? YOU’RE TRYING TO KILL ME IDIOT!",
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "YOU’RE NOT HELPING",
+                        
+                        "next_Dialogue_Selection": "Selection11"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Why can’t you just let me fix my spaceship",
+                        
+                        "next_Dialogue_Selection": "Selection19"
+                    },
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "I don’t even know what you want from me",
+                        "next_Dialogue_Selection": "Selection12"
+                    }
+                ]
+            },   
+            {
+                "Name": "Selection3",
+                "enemy_Text": "Why would you want to keep going. Life is an exercise in futility. It’s just pure meaninglessness.",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Look, I don’t wanna kill you",
+                        "next_Dialogue_Selection": "Selection12"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Because life is worth living!",
+                        
+                        "next_Dialogue_Selection": "Selection15"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Because I just wanna go home",
+                        
+                        "next_Dialogue_Selection": "Selection13"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "Oh boo hoo, you get to live forever",
+                        "next_Dialogue_Selection": "Selection11"
+                    }
+                ]
+            },
+                      
+            {
+                "Name": "Selection4",
+                "enemy_Text": "Mortality is a virtue, just accept it",
+                "choices": 
+                [
+                    {
+                        "Reaction": -1,
+                        
+                        "dialogueLine": "What are you even talking about?",
+                        "next_Dialogue_Selection": "Selection7"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Look I don’t wanna kill you",
+                        
+                        "next_Dialogue_Selection": "Selection12"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "I just can’t accept that as truth. I think you know there’s more to life than death",
+                        
+                        "next_Dialogue_Selection": "Selection15"
+                    },
+                    {
+                        "Reaction": -1,
+                        
+                        "dialogueLine": "I don’t even know what you want from me",
+                        "next_Dialogue_Selection": "Selection12"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection5",
+                "enemy_Text": "my suffering has purpose, I have a job to do. And I need you dead. It’s nothing personal",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Your suffering, you’ve lived for years. What suffering?",
+                        "next_Dialogue_Selection": "Selection7"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "So you think killing me will bring purpose?",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Look, can’t we just fix your ceiling?",
+                        
+                        "next_Dialogue_Selection": "Selection8"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "I don’t even know what you want from me",
+                        "next_Dialogue_Selection": "Selection12"
+                    }
+                ]
+            },    
+            {
+                "Name": "Selection7",
+                "enemy_Text": "I’ve done everything I can with life. There’s nothing else to do I’ve lived for three centuries and there’s just no reason to keep going",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "You just need to find meaning in life",
+                        "next_Dialogue_Selection": "end"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Stop overreacting",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "I don’t know what you can do about that",
+                        
+                        "next_Dialogue_Selection": "end"
+                    },
+                    {
+                        "Reaction": -1,
+                        
+                        "dialogueLine": "Just try being happier",
+                        "next_Dialogue_Selection": "Selection18"
+                    }
+                ]
+            },      
+            
+            {
+                "Name": "Selection8",
+                "enemy_Text": "Why bother fixing it. Won’t make any difference",
+                "choices": 
+                [
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "Because you like it dark here, it brings you joy",
+                        "next_Dialogue_Selection": "Selection18"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Ugh...Fine.",
+                        
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Well then I don’t care either",
+                        
+                        "next_Dialogue_Selection": "SelectionStartNOOBJECT1"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Well why are we even here",
+                        "next_Dialogue_Selection": "Selection9"
+                    }
+                ]
+            },      
+            {
+                "Name": "Selection9",
+                "enemy_Text": "I was cloned for a reason, it was to spare fools like you from the meaningless suffering of life. I suffer to bring the world peace",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "What makes you happy?",
+                        "next_Dialogue_Selection": "Selection18"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Stop overreacting",
+                        
+                        "next_Dialogue_Selection": "Selection17"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "I don’t even know what you want from me",
+                        
+                        "next_Dialogue_Selection": "Selection12"
+                    },
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "But does it make you happy?",
+                        "next_Dialogue_Selection": "Selection18"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection10",
+                "enemy_Text": "pain? You don’t know pain, you don’t know the pain of being cloned for 300 years. To see every friend, family member, ally, whatever just die before me. A continual loop of unchanging loss",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "You have a gift, Ghost!",
+                        "next_Dialogue_Selection": "Selection17"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Stop overreacting",
+                        
+                        "next_Dialogue_Selection": "Selection15"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "That sounds like it hurt quite a lot",
+                        
+                        "next_Dialogue_Selection": "Selection21"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "Oh boo hoo, I bet you have lots of pain",
+                        "next_Dialogue_Selection": "Selection2"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection11",
+                "enemy_Text": "look, I was granted the curse of infinite life for a reason",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "And what reason is that?",
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Stop overreacting",
+                        
+                        "next_Dialogue_Selection": "Selection10"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "You were cloned, how’s that a curse? What job do you have from that?",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "I mean, come onnn can I leave. I can help fix the ceiling",
+                        "next_Dialogue_Selection": "Selection8"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection12",
+                "enemy_Text": "Oh I know you don’t wanna kill me. I just wanna save you",
+                "choices": 
+                [
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "YOU’RE NOT SAVING ME!",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "I Just want to leave",
+                        
+                        "next_Dialogue_Selection": "Selection19"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Killing me won’t save anything",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "Why do you feel killing me will do anything?",
+                        "next_Dialogue_Selection": "Selection9"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection13",
+                "enemy_Text": "You know, It was nice having a dark room. Y’know, before you ruined it.",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "What does that have to do with me leaving?",
+                        "next_Dialogue_Selection": "Selection14"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Sorry but hey, if we stop fighting we can fix the hole in the ceiling",
+                        
+                        "next_Dialogue_Selection": "Selection8"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "I feel like there’s pain behind the darkness of the room",
+                        
+                        "next_Dialogue_Selection": "Selection10"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "Then stay in darkness, I don’t care!",
+                        "next_Dialogue_Selection": "Selection8"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection14",
+                "enemy_Text": "Nothing, I just wanted to mess with you",
+                "choices": 
+                [
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "Why can’t I just GO HOME. IN MY SPACE SHIP. WITH MY CAT!",
+                        "next_Dialogue_Selection": "Selection19"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "You know I don’t get you what is it that even makes you happy",
+                        
+                        "next_Dialogue_Selection": "Selection18"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "That’s it, I’m done",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "Can we just fix the ceiling",
+                        "next_Dialogue_Selection": "Selection8"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection15",
+                "enemy_Text": "Really now? You really think our world has any meaning that’s worth living?",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "Of course life has reason otherwise while would we exist",
+                        "next_Dialogue_Selection": "Selection16"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "You don’t have to kill me Ghost. Your life has meaning",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Leave Me ALONE!",
+                        
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "Can I just have my cat and my ship",
+                        "next_Dialogue_Selection": "Selection13"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection16",
+                "enemy_Text": "Oh you fool. Leah, my near infinite life has made me see things to make me know life has no meaning",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "Of course life has reason otherwise while would we exist. That reason is just derived from happiness",
+                        "next_Dialogue_Selection": "Selection18"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "You can keep going, you just need to find reasons to go on",
+                        
+                        "next_Dialogue_Selection": "end"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Whatever can I just go in my spaceship",
+                        
+                        "next_Dialogue_Selection": "Selection19"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "Alright fine",
+                        "next_Dialogue_Selection": "Selection17"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection17",
+                "enemy_Text": "I HAVE A CURSE!",
+                "choices": 
+                [
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "You have near infinite life, you can see things no one else gets to",
+                        "next_Dialogue_Selection": "Selection16"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Fine, you’re cursed just let me go",
+                        
+                        "next_Dialogue_Selection": "Selection19"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "You don’t have a curse",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "You can experience the joy of life forever",
+                        "next_Dialogue_Selection": "Selection7"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection18",
+                "enemy_Text": "Oh cut the bullshit, what does it even mean to be happy?",
+                "choices": 
+                [
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "I don’t quite know, you tell me what it means to you",
+                        "next_Dialogue_Selection": "Selection20"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Fine, stay in pain you melodramatic weirdo",
+                        
+                        "next_Dialogue_Selection": "Selection10"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Eh I don’t even care",
+                        
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Forget it.",
+                        "next_Dialogue_Selection": "Selection2"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection19",
+                "enemy_Text": "Oh you mean that ship that crashed into my FUCKING HOUSE",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Yeahhh...",
+                        "next_Dialogue_Selection": "Selection13"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "If you let it go we can fix it",
+                        
+                        "next_Dialogue_Selection": "Selection8"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Please let me go",
+                        
+                        "next_Dialogue_Selection": "Selection11"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "You’ve lived for centuries and yet you care about a ceiling?",
+                        "next_Dialogue_Selection": "Selection11"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection20",
+                "enemy_Text": "It, it’s complicated... I don’t even. What do I even answer that with. I like killing people I guess.",
+                "choices": 
+                [
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "Why does that make you happy?",
+                        "next_Dialogue_Selection": "Selection23"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Well that’s a weird thing to derive joy from",
+                        
+                        "next_Dialogue_Selection": "Selection11"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Okay...and?",
+                        
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": -1,
+                        
+                        "dialogueLine": "Why do you feel the need to kill me?",
+                        "next_Dialogue_Selection": "Selection23"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection21",
+                "enemy_Text": "Huh?",
+                "choices": 
+                [
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "Yeah, It sounds really awful to just go on for years and years without change",
+                        "next_Dialogue_Selection": "Selection22"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Nevermind",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "But you have infinite life",
+                        
+                        "next_Dialogue_Selection": "Selection17"
+                    },
+                    {
+                        "Reaction": -1,
+                        
+                        "dialogueLine": "Oh boo hoo, I bet you have lots of pain",
+                        "next_Dialogue_Selection": "Selection10"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection22",
+                "enemy_Text": "And yet you still want to live?",
+                "choices": 
+                [
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "Yeah",
+                        "next_Dialogue_Selection": "end"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "I guess",
+                        
+                        "next_Dialogue_Selection": "Selection18"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Well, yeah and that’s life.",
+                        
+                        "next_Dialogue_Selection": "end"
+                    },
+                    {
+                        "Reaction": -1,
+                        
+                        "dialogueLine": "Pretty Much",
+                        "next_Dialogue_Selection": "Selection7"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection23",
+                "enemy_Text": "Because I don’t know it...it means something. It brings meaning to my lack of mortality",
+                "choices": 
+                [
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "Maybe you need to see why that gives you meaning",
+                        "next_Dialogue_Selection": "end"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "I see",
+                        
+                        "next_Dialogue_Selection": "Selection7"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Well maybe just don’t kill me and let me go",
+                        
+                        "next_Dialogue_Selection": "Selection20"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "I think this may not be a healthy mode of coping",
+                        "next_Dialogue_Selection": "end"
+                    }
+                ]
+            }
+        ]
+      
+    }
