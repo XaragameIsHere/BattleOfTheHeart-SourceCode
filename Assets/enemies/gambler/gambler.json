@@ -1,0 +1,493 @@
+
+    {
+      
+     
+        "cutscene_Dialogue":
+        [
+            {
+                "Start":
+                [
+                    
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Wow! What a fine looking establishment! Sorry to bother you sir, would you happen to know -",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Shut it kid. I know who you’re after.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Oh, how great! Can you please help me find my ship?",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Hah! Help you? No can do partner. You ain’t making it anywhere near him.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Him? You mean Ghost? I don’t care about him! I just want my cat!",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I DON’T GIVE A RATS ASS WHAT YOU WANT!! He told me to stop you.",
+                        "Subject": false
+                    }, 
+                    {
+                        "Sprite": "Assets/Enemies/lesbianDuck/AnimationSprites/speaking.png",
+                        "dialogueText": "Look, I’m sure we can figure something out here -",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You’ll have to get through me! DIE!!!",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "AAAAA NOT AGAIN!!!",
+                        "Subject": true
+                    }
+                ],
+                "End":
+                [
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Maybe...I...do you think it’s too late for me?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": " Of course not!",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "It just feels so...hopeless. Like I’ve already lost so much...how can I reclaim my life?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You can start with reclaiming your freedom. You choose your actions, not anyone else. Choose to be better.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "And what about Ghost? He will never let me leave...",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Let me worry about Ghost.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I’ve got to get my cat back anyway.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I’m sorry I tried to stop you. I was just...so scared.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Everyone can change.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "It all depends on you though.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You have to be your own catalyst, your own reason to change.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "...",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Thank you. I don’t know who you are, but you’ve saved me.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I promise you I’ll do my best.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I believe in you.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "First, I need to go find myself again.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I’ve gotta get off this damn rock.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I’ve gotta get off this damn rock.",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Thank you...wait what was your name?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "It’s Leah.",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Good luck finding your cat Leah. And kick Ghost’s ass for me, yeah?",
+                        "Subject": false
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "I can’t promise anything, but I’ll do my best",
+                        "Subject": true
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Thanks kid",
+                        "Subject": false
+                    }
+                ]
+            }
+        ],
+        "combat_Selections":
+        [
+            
+            {
+                "Name": "SelectionStartNOOBJECT1",
+                "enemy_Text": "You ain’t getting past me!",
+                "choices": 
+                [
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "Hey, let’s just talk about this.",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Hey, let’s just talk about this.",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Are you just Ghost’s pawn?",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "OH YEAH I AM",
+                        "next_Dialogue_Selection": "Selection4"
+                    }
+                ]
+            },       
+            {
+                "Name": "Selection2",
+                "enemy_Text": "Ain’t got nothing to talk about with you.",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Why not?",
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "What, you scared to talk?",
+                        
+                        "next_Dialogue_Selection": "Selection5"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Hey it’s okay! We can figure this out.",
+                        
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Fine, be like that!",
+                        "next_Dialogue_Selection": "Selection7"
+                    }
+                ]
+            },   
+            {
+                "Name": "Selection3",
+                "enemy_Text": "He told me to stop you! You’re becoming a problem!",
+                "choices": 
+                [
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "YOU’RE A PROBLEM",
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Who cares what he said?",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "Why do you even listen to him?",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": -1,
+                        
+                        "dialogueLine": "Yeah good luck with that buddy.",
+                        "next_Dialogue_Selection": "Selection4"
+                    }
+                ]
+            },
+                      
+            {
+                "Name": "Selection4",
+                "enemy_Text": "I’ll kill you! Eat lasers!",
+                "choices": 
+                [
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "Hold on, I’m sorry, let’s just talk!",
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Do you even want to kill me?",
+                        
+                        "next_Dialogue_Selection": "Selection12"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "You don’t have to kill me!!",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Exactly! Let’s talk about this, please!",
+                        "next_Dialogue_Selection": "Selection2"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection5",
+                "enemy_Text": "AAAAAA!!! I AIN’T DYING TODAY!",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Wait, wait, I’m not trying to kill you!",
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Do you even want to kill me?",
+                        
+                        "next_Dialogue_Selection": "Selection12"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "You don’t have to kill me!!",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": 2,
+                        
+                        "dialogueLine": "Exactly! Let’s talk about this, please!",
+                        "next_Dialogue_Selection": "Selection2"
+                    }
+                ]
+            },    
+            {
+                "Name": "Selection8",
+                "enemy_Text": "I just want to be myself again. I barely remember who I was...before...",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "Who were you before?",
+                        "next_Dialogue_Selection": "Selection10"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "You can be! We just need to stand up to Ghost!",
+                        
+                        "next_Dialogue_Selection": "Selection10"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "Not my problem, I just want my cat",
+                        
+                        "next_Dialogue_Selection": "Selection4"
+                    },
+                    {
+                        "Reaction": -1,
+                        
+                        "dialogueLine": "Uhhhh...sounds rough...good luck!",
+                        "next_Dialogue_Selection": "Selection4"
+                    }
+                ]
+            },      
+            {
+                "Name": "Selection9",
+                "enemy_Text": "I...I am too weak. He’ll kill me if I stand up to him. I owe him anyway.",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "Wait, why do you owe him?",
+                        "next_Dialogue_Selection": "Selection10"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "You’re not weak! You’ve got this!",
+                        
+                        "next_Dialogue_Selection": "Selection12"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Don’t you want to get away from him?",
+                        
+                        "next_Dialogue_Selection": "Selection12"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "I don’t care, I just want my ship.",
+                        "next_Dialogue_Selection": "Selection3"
+                    }
+                ]
+            }, 
+            {
+                "Name": "Selection10",
+                "enemy_Text": "I gambled my life away. Loss, after loss, always trying to win it back. Eventually Ghost came along, offered a way out...I used to be a good person...before him.",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "You can be good again",
+                        "next_Dialogue_Selection": "end"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "It’s never too late to be better",
+                        
+                        "next_Dialogue_Selection": "end"
+                    },
+                    {
+                        "Reaction": -2,
+                        "dialogueLine": "You sound weak...",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": -1,
+                        
+                        "dialogueLine": "Why don’t you just let me go to my ship?",
+                        "next_Dialogue_Selection": "Selection3"
+                    }
+                ]
+            },      
+            {
+                "Name": "Selection11",
+                "enemy_Text": "Listen, I can’t, he’ll kill me!",
+                "choices": 
+                [
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "We can figure this out together!",
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": 1,
+                        "dialogueLine": "No he won’t, don’t be dramatic.",
+                        
+                        "next_Dialogue_Selection": "Selection9"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Who cares!! I want my ship!",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": 0,
+                        
+                        "dialogueLine": "SO WILL I SO TALK!!",
+                        "next_Dialogue_Selection": "Selection2"
+                    }
+                ]
+            },
+            {
+                "Name": "Selection12",
+                "enemy_Text": "It doesn’t matter what I want...",
+                "choices": 
+                [
+                    {
+                        "Reaction": 1,
+                        
+                        "dialogueLine": "Maybe not to him, but it matters to me!",
+                        "next_Dialogue_Selection": "Selection8"
+                    },
+                    {
+                        "Reaction": 2,
+                        "dialogueLine": "That’s not true! What do you want?",
+                        
+                        "next_Dialogue_Selection": "Selection8"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Well, I WANT MY CAT",
+                        
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+                        
+                        "dialogueLine": "Yeah, well, that’s too damn bad",
+                        "next_Dialogue_Selection": "Selection4"
+                    }
+                ]
+            }
+        ]
+      
+    }

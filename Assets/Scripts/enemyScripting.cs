@@ -144,7 +144,6 @@ public class enemyScripting : MonoBehaviour
 
     IEnumerator slowMoParry()
     {
-
         tutorial.dropHint(tutorialFlyingKey);
         yield return new WaitForSeconds(2);
         shape.rotation = new Vector3(0, -90, 0);
@@ -155,10 +154,13 @@ public class enemyScripting : MonoBehaviour
         yield return new WaitForSeconds(.5f);
 
         tutorial.dropHint(tutorialKey);
+            
 
         colorAd.colorFilter.Override(someHDRColor);
         main.simulationSpeed = .08f;
-        yield return new WaitUntil(() => hit == true);
+        yield return new WaitUntil(() => hit == true || shooter.particleCount <= 0);
+
+        
         colorAd.colorFilter.Override(newHDRColor);
         main.simulationSpeed = .6f;
 
