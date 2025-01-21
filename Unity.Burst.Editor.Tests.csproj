@@ -12,11 +12,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{e4d03ed7-71b7-90e7-45cb-93aecb56519f}</ProjectGuid>
+    <ProjectGuid>{f51da2b8-99f8-a2d9-0a30-92813b8f8e24}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
+    <AssemblyName>Unity.Burst.Editor.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -41,8 +41,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Folder Include="Assets/Plugins/Demigiant/DOTween/Editor/Imgs" />
-     <Folder Include="Assets/Plugins/Demigiant/DOTween/Editor" />
+     <Folder Include="Library/PackageCache/com.unity.burst@1.8.17/Tests/Editor" />
+     <None Include="Library/PackageCache/com.unity.burst@1.8.17/Tests/Editor/Unity.Burst.Editor.Tests.asmdef" />
+     <None Include="Library/PackageCache/com.unity.burst@1.8.17/Tests/Editor/burstTestTarget.txt" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2022.3.42f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

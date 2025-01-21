@@ -12,11 +12,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{e4d03ed7-71b7-90e7-45cb-93aecb56519f}</ProjectGuid>
+    <ProjectGuid>{e6734bfc-d509-01b9-f499-011970e2a9ed}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
+    <AssemblyName>Unity.RenderPipelines.Core.Editor.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -41,8 +41,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Folder Include="Assets/Plugins/Demigiant/DOTween/Editor/Imgs" />
-     <Folder Include="Assets/Plugins/Demigiant/DOTween/Editor" />
+     <None Include="Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/ShaderStripping/DummyPipelineShader.shader" />
+     <None Include="Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/ShaderStripping/Results/UI_Default_0_0.json" />
+     <Folder Include="Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/Volumes" />
+     <Folder Include="Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/ShaderStripping/Results" />
+     <Folder Include="Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor" />
+     <None Include="Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/ShaderStripping/Results/UI_Default_Sprites_Default_5_0.5.json" />
+     <Folder Include="Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/ShaderStripping" />
+     <Folder Include="Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/Debugging" />
+     <Folder Include="Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/Utilities" />
+     <None Include="Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/ShaderStripping/Results/UI_Default_Sprites_Default_5_0.json" />
+     <None Include="Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/Unity.RenderPipelines.Core.Editor.Tests.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2022.3.42f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

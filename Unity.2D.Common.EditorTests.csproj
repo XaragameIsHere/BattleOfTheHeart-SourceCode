@@ -12,11 +12,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{e4d03ed7-71b7-90e7-45cb-93aecb56519f}</ProjectGuid>
+    <ProjectGuid>{b58e77f7-ace8-480a-27c3-55c4d3a46e30}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
+    <AssemblyName>Unity.2D.Common.EditorTests</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -41,8 +41,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Folder Include="Assets/Plugins/Demigiant/DOTween/Editor/Imgs" />
-     <Folder Include="Assets/Plugins/Demigiant/DOTween/Editor" />
+     <None Include="Library/PackageCache/com.unity.2d.common@8.0.3/Tests/Editor/Unity.2D.Common.EditorTests.asmdef" />
+     <Folder Include="Library/PackageCache/com.unity.2d.common@8.0.3/Tests/Editor" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2022.3.42f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

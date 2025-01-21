@@ -12,11 +12,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{e4d03ed7-71b7-90e7-45cb-93aecb56519f}</ProjectGuid>
+    <ProjectGuid>{a90d9712-ca55-c436-d758-55f300f1d613}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
+    <AssemblyName>Unity.Searcher.EditorTests</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -41,8 +41,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Folder Include="Assets/Plugins/Demigiant/DOTween/Editor/Imgs" />
-     <Folder Include="Assets/Plugins/Demigiant/DOTween/Editor" />
+     <None Include="Library/PackageCache/com.unity.searcher@4.9.2/Tests/Editor/Unity.Searcher.EditorTests.asmdef" />
+     <Folder Include="Library/PackageCache/com.unity.searcher@4.9.2/Tests/Editor" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2022.3.42f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
